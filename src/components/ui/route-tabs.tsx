@@ -40,49 +40,43 @@ export function RouteTabs({
   }, [pathname, tabs]);
 
   return (
-    <div className="w-full">
-      <div className="flex flex-col items-center pt-10 pb-16">
-        <p className="font-mono text-xs text-primary mb-6">dremnik</p>
-        <Tabs
-          value={active}
-          onValueChange={(val) => {
-            const next = tabs.find((t) => t.value === val);
-            if (next) router.push(next.href);
-          }}
-          className={cn("w-full max-w-3xl", className)}
-        >
-          <TabsList className="mb-16 flex justify-center gap-8 w-full">
-            {tabs.map((t) => {
-              const isActive = active === t.value;
-              return (
-                <TabsTrigger
-                  key={t.value}
-                  value={t.value}
-                  asChild
-                  className="text-[15.4px] px-0 pb-2 rounded-none font-sans-display font-normal text-muted-foreground data-[state=active]:text-foreground-soft relative"
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  <Link href={t.href} prefetch>
-                    {t.label}
-                    {isActive && (
-                      <motion.div
-                        layoutId="route-tabs-underline"
-                        className="absolute inset-x-0 -bottom-0.5 h-0.5 bg-primary"
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 35,
-                        }}
-                      />
-                    )}
-                  </Link>
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-        </Tabs>
-      </div>
-      <div className="pb-32"></div>
-    </div>
+    <Tabs
+      value={active}
+      onValueChange={(val) => {
+        const next = tabs.find((t) => t.value === val);
+        if (next) router.push(next.href);
+      }}
+      className={cn("w-full max-w-3xl", className)}
+    >
+      <TabsList className="flex justify-center gap-8 w-full">
+        {tabs.map((t) => {
+          const isActive = active === t.value;
+          return (
+            <TabsTrigger
+              key={t.value}
+              value={t.value}
+              asChild
+              className="text-[15.4px] px-0 pb-2 rounded-none font-sans-display font-normal text-muted-foreground data-[state=active]:text-foreground-soft relative"
+              aria-current={isActive ? "page" : undefined}
+            >
+              <Link href={t.href} prefetch>
+                {t.label}
+                {isActive && (
+                  <motion.div
+                    layoutId="route-tabs-underline"
+                    className="absolute inset-x-0 -bottom-0.5 h-0.5 bg-primary"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 35,
+                    }}
+                  />
+                )}
+              </Link>
+            </TabsTrigger>
+          );
+        })}
+      </TabsList>
+    </Tabs>
   );
 }
