@@ -1,59 +1,24 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+
+import { sfPro, sfProDisplay, sfMono, founderGrotesk } from "@/lib/fonts";
+
+/* components */
+import { Header } from "@/components/header";
+import { RouteTabs } from "@/components/ui/route-tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 import "./globals.css";
-
-const sfPro = localFont({
-  src: "../../public/fonts/SF/SF-Pro.ttf",
-  variable: "--font-sf-pro",
-});
-
-const sfProDisplay = localFont({
-  src: [
-    {
-      path: "../../public/fonts/SF/SF-Pro-Display-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/SF/SF-Pro-Display-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/SF/SF-Pro-Display-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-sf-pro-display",
-});
-
-const sfMono = localFont({
-  src: [
-    {
-      path: "../../public/fonts/SF/SF-Mono-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/SF/SF-Mono-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--font-sf-mono",
-});
-
-const founderGrotesk = localFont({
-  src: "../../public/fonts/FoundersGrotesk/TestFoundersGrotesk-Regular.otf",
-  variable: "--font-founder-grotesk",
-});
 
 export const metadata: Metadata = {
   title: "Charles Maurice",
   description: "Designer, Engineer, Student of Life",
 };
+
+const tabs = [
+  { value: "about", href: "/", label: "About", exact: true },
+  { value: "portfolio", href: "/portfolio", label: "Portfolio" },
+  { value: "blog", href: "/blog", label: "Blog" },
+];
 
 export default function RootLayout({
   children,
@@ -65,7 +30,14 @@ export default function RootLayout({
       <body
         className={`${sfPro.variable} ${sfProDisplay.variable} ${sfMono.variable} ${founderGrotesk.variable} font-sans antialiased bg-background text-foreground`}
       >
-        {children}
+        <div className="min-h-screen">
+          <Header />
+
+          <ScrollArea className="h-screen w-full">
+            <RouteTabs tabs={tabs} />
+            {children}
+          </ScrollArea>
+        </div>
       </body>
     </html>
   );
