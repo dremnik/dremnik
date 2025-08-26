@@ -108,6 +108,33 @@ export function IconMoon({ className, ...props }: React.ComponentProps<"svg">) {
   );
 }
 
+export function IconLeaf({ className, ...props }: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        d="M8.24998 15C6.93303 15.004 5.66267 14.5129 4.69087 13.6241C3.71907 12.7352 3.11681 11.5137 3.00354 10.2016C2.89026 8.8895 3.27425 7.58277 4.07935 6.54056C4.88444 5.49834 6.05183 4.79678 7.34998 4.575C11.625 3.75 12.75 3.36 14.25 1.5C15 3 15.75 4.635 15.75 7.5C15.75 11.625 12.165 15 8.24998 15Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M1.5 15.75C1.5 13.5 2.8875 11.73 5.31 11.25C7.125 10.89 9 9.75 9.75 9"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
+
 export function IconChevronUpDown({
   className,
   ...props

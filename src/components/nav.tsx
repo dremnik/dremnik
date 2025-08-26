@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Tabs,
   TabsList,
@@ -15,17 +15,22 @@ interface NavProps {
 
 export function Nav({ children }: NavProps) {
   const pathname = usePathname();
-  
+  const router = useRouter();
+
   // Initialize activeTab based on current URL to prevent flash
   const getInitialTab = () => {
     if (pathname === "/") return "about";
+
+    // Check if we're on a blog subpage
+    if (pathname.startsWith("/blog")) return "blog";
+
     const tabName = pathname.slice(1);
-    if (tabName === "about" || tabName === "portfolio" || tabName === "blog") {
+    if (tabName === "about" || tabName === "portfolio") {
       return tabName;
     }
     return "about"; // fallback
   };
-  
+
   const [activeTab, setActiveTab] = useState(getInitialTab);
   const aboutRef = useRef<HTMLButtonElement>(null);
   const portfolioRef = useRef<HTMLButtonElement>(null);
@@ -41,14 +46,20 @@ export function Nav({ children }: NavProps) {
   useEffect(() => {
     // If user is on root path, redirect to /about
     if (pathname === "/") {
-      window.history.replaceState(null, '', '/about');
+      window.history.replaceState(null, "", "/about");
       setActiveTab("about");
       return;
     }
-    
+
+    // Check if we're on a blog subpage
+    if (pathname.startsWith("/blog")) {
+      setActiveTab("blog");
+      return;
+    }
+
     // Extract tab name from pathname (e.g., "/about" -> "about")
     const tabName = pathname.slice(1);
-    if (tabName && (tabName === "about" || tabName === "portfolio" || tabName === "blog")) {
+    if (tabName && (tabName === "about" || tabName === "portfolio")) {
       setActiveTab(tabName);
     }
   }, [pathname]);
@@ -56,9 +67,15 @@ export function Nav({ children }: NavProps) {
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     const route = `/${value}`;
-    if (route !== pathname) {
-      // Update URL without navigation using History API
-      window.history.replaceState(null, '', route);
+    
+    // Scroll to top when switching tabs
+    window.scrollTo(0, 0);
+    
+    // Use actual navigation for blog routes, history API for others
+    if (value === "blog" || pathname.startsWith("/blog")) {
+      router.push(route);
+    } else if (route !== pathname) {
+      window.history.replaceState(null, "", route);
     }
   };
 
@@ -68,10 +85,10 @@ export function Nav({ children }: NavProps) {
         <p className="font-mono text-xs text-primary mb-6">dremnik</p>
         <Tabs
           value={activeTab}
-          className="w-full max-w-3xl"
+          className="w-full"
           onValueChange={handleTabChange}
         >
-          <TabsList className="mb-16 flex justify-center gap-8 w-full">
+          <TabsList className="mb-12 flex justify-center gap-8 w-full">
             <TabsTrigger
               ref={aboutRef}
               value="about"

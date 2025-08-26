@@ -1,8 +1,8 @@
 "use client";
 
-import { About } from "@/app/about/about";
-import { Portfolio } from "@/app/portfolio/portfolio";
-import { Blog } from "@/app/blog/blog";
+import About from "@/app/about/about";
+import Portfolio from "@/app/portfolio/portfolio";
+import Blog from "@/app/blog/blog";
 
 /* components */
 import { Nav } from "@/components/nav";
