@@ -1,4 +1,197 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+// PROJECTS
+
+export const PROJECT_ICONS = {
+  kernl: <IconKernl className="size-9" />,
+  microprojects: <IconMicroprojects className="size-9" />,
+  reverie: <IconReverie className="size-6" />,
+  emblem: <IconEmblem height={40} width={40} />,
+  propics: <IconPropics height={40} width={40} />,
+  esonut: <IconEsonut className="size-10" />,
+} as const;
+
+export function IconKernl({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 30 41"
+      fill="none"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <g clipPath="url(#clip0_52_1359)">
+        <path
+          d="M10.3139 20.4823C11.6182 20.4366 12.9007 20.1276 14.0876 19.5734C15.2745 19.0192 16.3423 18.2305 17.2296 17.2529C18.1168 16.2753 18.8061 15.1284 19.2574 13.8776C19.7087 12.6268 19.9128 11.2974 19.8589 9.9655C19.8589 2.96859 13.896 0.7572 10.3139 0.00646973C14.6544 0.00646973 29.8939 4.828 30.0008 20.4861C30.1077 36.1442 15.7578 40.9475 10.3139 41.0068C8.95291 41.0113 7.60446 40.7397 6.34704 40.2078C5.08963 39.6758 3.94831 38.894 2.989 37.9078C2.02968 36.9217 1.27164 35.751 0.758841 34.4633C0.246039 33.1756 -0.0113168 31.7964 0.00172307 30.4063C0.107657 23.8767 5.60499 20.4823 10.3139 20.4823Z"
+          fill="#B5D1FF"
+        />
+        <path
+          d="M9.91657 13.4385C11.6966 13.4385 13.1396 11.9645 13.1396 10.1464C13.1396 8.32817 11.6966 6.85425 9.91657 6.85425C8.13654 6.85425 6.69354 8.32817 6.69354 10.1464C6.69354 11.9645 8.13654 13.4385 9.91657 13.4385Z"
+          fill="#B5D1FF"
+        />
+        <path
+          d="M9.91657 34.1303C11.6966 34.1303 13.1396 32.6564 13.1396 30.8382C13.1396 29.0201 11.6966 27.5461 9.91657 27.5461C8.13654 27.5461 6.69354 29.0201 6.69354 30.8382C6.69354 32.6564 8.13654 34.1303 9.91657 34.1303Z"
+          fill="#080909"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_52_1359">
+          <rect width="30" height="41" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
+export function IconMicroprojects({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 37 34"
+      fill="none"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M18.5 0.183716L18.9109 0.39738L26.3328 4.25675L26.8125 4.50621V5.04693V13.9532V14.4938L26.3328 14.7433L18.9109 18.6027L18.5 18.8163L18.0891 18.6027L10.6672 14.7433L10.1875 14.4938V13.9532V5.04693V4.50621L10.6672 4.25675L18.0891 0.39738L18.5 0.183716ZM11.9688 13.4125V6.46074L17.6094 9.28107V16.3456L11.9688 13.4125ZM19.3906 16.3456L25.0312 13.4125V6.46072L19.3906 9.28103V16.3456ZM18.5 2.19139L23.9347 5.01747L18.5 7.73486L13.0652 5.01748L18.5 2.19139Z"
+        fill="#F9F7F5"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M27.5 15.1837L27.9109 15.3974L35.3328 19.2568L35.8125 19.5062V20.0469V28.9532V29.4938L35.3328 29.7433L27.9109 33.6027L27.5 33.8163L27.0891 33.6027L19.6672 29.7433L19.1875 29.4938V28.9532V20.0469V19.5062L19.6672 19.2568L27.0891 15.3974L27.5 15.1837ZM20.9688 28.4125V21.4607L26.6094 24.2811V31.3456L20.9688 28.4125ZM28.3906 31.3456L34.0312 28.4125V21.4607L28.3906 24.281V31.3456ZM27.5 17.1914L32.9347 20.0175L27.5 22.7349L22.0652 20.0175L27.5 17.1914Z"
+        fill="#F9F7F5"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M9.5 15.1837L9.91089 15.3974L17.3328 19.2568L17.8125 19.5062V20.0469V28.9532V29.4938L17.3328 29.7433L9.91089 33.6027L9.5 33.8163L9.08911 33.6027L1.66724 29.7433L1.1875 29.4938V28.9532V20.0469V19.5062L1.66724 19.2568L9.08911 15.3974L9.5 15.1837ZM2.96875 28.4125V21.4607L8.60938 24.2811V31.3456L2.96875 28.4125ZM10.3906 31.3456L16.0312 28.4125V21.4607L10.3906 24.281V31.3456ZM9.5 17.1914L14.9347 20.0175L9.49998 22.7349L4.06523 20.0175L9.5 17.1914Z"
+        fill="#F9F7F5"
+      />
+    </svg>
+  );
+}
+
+export function IconReverie({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <g clipPath="url(#clip0_55_1465)">
+        <path
+          d="M18.5547 16.276C12.066 16.276 7.91605 12.2099 7.91605 5.70917C7.91605 4.22191 8.23988 2.41082 8.67167 1.41531C8.77962 1.13945 8.80361 0.959543 8.80361 0.851596C8.80361 0.539752 8.56373 0.179932 8.08396 0.179932C7.95203 0.179932 7.66417 0.203921 7.38831 0.311866C2.97452 2.07498 0 6.72867 0 11.5982C0 18.4468 5.55322 24 12.4019 24C17.5712 24 21.901 20.8696 23.4243 16.9835C23.5323 16.6957 23.5563 16.3958 23.5563 16.2879C23.5563 15.8321 23.1964 15.5442 22.8606 15.5442C22.7046 15.5442 22.5727 15.5802 22.3449 15.6522C21.4093 15.9521 20.03 16.276 18.5547 16.276Z"
+          fill="#B5D1FF"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_55_1465">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
+
+export function IconEmblem({
+  className,
+  height = 40,
+  width = 40,
+  ...props
+}: {
+  className?: string;
+  height?: number;
+  width?: number;
+}) {
+  return (
+    <Image
+      src="/logo-emblem.png"
+      alt="Emblem"
+      height={height}
+      width={width}
+      className={className}
+    />
+  );
+}
+
+export function IconPropics({
+  className,
+  height = 40,
+  width = 40,
+  ...props
+}: {
+  className?: string;
+  height?: number;
+  width?: number;
+}) {
+  return (
+    <Image
+      src="/logo-propics.png"
+      alt="ProPics"
+      height={height}
+      width={width}
+      className={className}
+    />
+  );
+}
+
+export function IconEsonut({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <g clipPath="url(#clip0_54_1450)">
+        <path
+          d="M24.693 32.5075C30.9502 26.4647 25.9908 20 25.9908 20C16.1925 7.87881 30.1304 3.03032 30.1304 3.03032C30.9502 7.87881 32.59 8.68689 34.2297 10.303C41.6086 16.7677 38.8809 25.6307 38.8809 25.6307C37.7444 29.6176 35.3086 33.1252 31.9492 35.6125C28.5898 38.0998 24.4934 39.4286 20.2919 39.394C15.0732 39.394 10.0683 37.3507 6.37815 33.7136C2.68801 30.0765 0.614906 25.1436 0.614906 20C0.614906 14.8564 2.68801 9.9235 6.37815 6.28643C10.0683 2.64936 15.0732 0.606079 20.2919 0.606079"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.33894 35.4028C10.4534 32.9293 13.7329 33.7373 14.5528 33.7373C12.0931 30.505 12.913 27.2727 12.913 25.6565C15.3726 18.3838 24.4134 19.1919 26.031 20"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M22.6261 10.6101C21.9316 7.07071 17.8323 3.83838 17.8323 3.83838C16.1925 4.64646 16.0121 6.26262 15.6924 6.66666C12.0931 6.26262 5.53415 12.7273 5.53415 15.1515C12.0931 20.8081 17.0124 15.1515 17.0124 15.1515"
+          stroke="white"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M12.913 25.6566C12.913 25.6566 7.1739 26.4647 5.53415 23.2324C9.63352 22.4243 12.1513 17.7689 12.1513 17.7689"
+          stroke="white"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_54_1450">
+          <rect width="40" height="40" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
 
 // BRAND LOGOS
 
@@ -135,6 +328,27 @@ export function IconLeaf({ className, ...props }: React.ComponentProps<"svg">) {
   );
 }
 
+export function IconArrowUpDiagonalScale({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M9.74944 1H8.99944V2.5H9.74944H12.4388L9.46911 5.46967L8.93878 6L9.99944 7.06066L10.5298 6.53033L13.4983 3.56182V6.25V7H14.9983V6.25V2C14.9983 1.44772 14.5506 1 13.9983 1H9.74944ZM2.50195 12.4382V9.75V9H1.00195V9.75V14C1.00195 14.5523 1.44967 15 2.00195 15H6.25079H7.00079V13.5H6.25079H3.56145L6.53112 10.5303L7.06145 10L6.00079 8.93934L5.47046 9.46967L2.50195 12.4382Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  );
+}
+
 export function IconChevronUpDown({
   className,
   ...props
@@ -192,6 +406,48 @@ export function IconChevronUpSmall({
         fillRule="evenodd"
         clipRule="evenodd"
         d="M3.93933 9.24999L4.46966 8.71966L7.29288 5.89644C7.68341 5.50592 8.31657 5.50592 8.7071 5.89644L11.5303 8.71966L12.0607 9.24999L11 10.3107L10.4697 9.78032L7.99999 7.31065L5.53032 9.78032L4.99999 10.3107L3.93933 9.24999Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  );
+}
+
+export function IconChevronLeft({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M10.5 14.0607L9.96966 13.5303L5.14644 8.7071C4.75592 8.31658 4.75592 7.68341 5.14644 7.29289L9.96966 2.46966L10.5 1.93933L11.5607 2.99999L11.0303 3.53032L6.56065 7.99999L11.0303 12.4697L11.5607 13L10.5 14.0607Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  );
+}
+
+export function IconChevronRight({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5.50001 1.93933L6.03034 2.46966L10.8536 7.29288C11.2441 7.68341 11.2441 8.31657 10.8536 8.7071L6.03034 13.5303L5.50001 14.0607L4.43935 13L4.96968 12.4697L9.43935 7.99999L4.96968 3.53032L4.43935 2.99999L5.50001 1.93933Z"
         fill="currentColor"
       ></path>
     </svg>

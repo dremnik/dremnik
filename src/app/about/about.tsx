@@ -22,15 +22,15 @@ export default function About() {
       <div className="flex flex-col">
         <Avatar className="size-16 border border-muted mb-6">
           <AvatarImage
-            src="/charles_maurice.png"
-            alt="Charles Maurice"
+            src="/andrew_profile.jpeg"
+            alt="Andrew Jones"
             className="object-cover"
           />
           <AvatarFallback>CM</AvatarFallback>
         </Avatar>
 
         <h2 className="text-2xl font-normal mb-3 font-founder-grotesk">
-          Charles Maurice
+          Andrew Jones
         </h2>
         <p className="text-primary text-xs font-mono">
           [ designer, engineer, student of life ]
@@ -38,18 +38,20 @@ export default function About() {
       </div>
 
       <div className="space-y-8">
-        <Blockquote>
+        <Blockquote className="text-primary">
           <BlockquoteContent>
             Simplicity is the final achievement. After one has played a vast
             quantity of notes and more notes, it is simplicity that emerges as
             the crowning reward of art.
           </BlockquoteContent>
-          <BlockquoteCaption>F. Chopin</BlockquoteCaption>
+          <BlockquoteCaption className="justify-self-end text-xs font-mono">
+            - F. Chopin
+          </BlockquoteCaption>
         </Blockquote>
 
         <p className="text-foreground tracking-tight">
-          The pursuit of excellence in craft is the ultimate meaning in an age
-          of noise and distractions.
+          In an age of noise and distractions, the ultimate meaning is the
+          pursuit of excellence in our craft.
         </p>
 
         <p className="text-foreground tracking-tight">

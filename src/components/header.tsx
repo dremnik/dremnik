@@ -34,9 +34,7 @@ export function Header() {
     <>
       <div className="z-50 fixed top-0 left-0 p-13">
         <Link href="/">
-          <h2 className="text-[18.4px] font-founder-grotesk">
-            Charles Maurice
-          </h2>
+          <h2 className="text-[18.4px] font-founder-grotesk">Andrew Jones</h2>
         </Link>
       </div>
 

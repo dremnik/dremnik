@@ -24,6 +24,24 @@ const posts = defineCollection({
   },
 });
 
+const projects = defineCollection({
+  name: "projects",
+  directory: "src/content/projects",
+  include: "**/*.md",
+  schema: z.object({
+    name: z.string(),
+    slug: z.string(),
+    year: z.number(),
+    icon: z.string(), // We'll use the icon component name as a string
+    tagline: z.string(),
+    tags: z.array(z.string()),
+    github: z.string().optional(),
+    link: z.string().optional(),
+    gallery: z.array(z.string()).optional(), // Array of image paths
+    published: z.boolean().default(true),
+  }),
+});
+
 export default defineConfig({
-  collections: [posts],
+  collections: [posts, projects],
 });

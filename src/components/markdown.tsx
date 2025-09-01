@@ -32,12 +32,12 @@ const components: Components = {
     </blockquote>
   ),
   ul: ({ children }) => (
-    <ul className="list-disc list-inside text-prose space-y-2 mb-6">
+    <ul className="list-disc list-outside text-prose space-y-2 mb-6 ml-6">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal list-inside text-prose space-y-2 mb-6">
+    <ol className="markdown-ol list-decimal list-outside text-prose space-y-2 mb-6 ml-7 marker:text-xs marker:text-primary">
       {children}
     </ol>
   ),

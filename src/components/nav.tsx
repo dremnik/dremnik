@@ -23,9 +23,12 @@ export function Nav({ children }: NavProps) {
 
     // Check if we're on a blog subpage
     if (pathname.startsWith("/blog")) return "blog";
+    
+    // Check if we're on a portfolio subpage
+    if (pathname.startsWith("/portfolio")) return "portfolio";
 
     const tabName = pathname.slice(1);
-    if (tabName === "about" || tabName === "portfolio") {
+    if (tabName === "about") {
       return tabName;
     }
     return "about"; // fallback
@@ -56,10 +59,16 @@ export function Nav({ children }: NavProps) {
       setActiveTab("blog");
       return;
     }
+    
+    // Check if we're on a portfolio subpage
+    if (pathname.startsWith("/portfolio")) {
+      setActiveTab("portfolio");
+      return;
+    }
 
     // Extract tab name from pathname (e.g., "/about" -> "about")
     const tabName = pathname.slice(1);
-    if (tabName && (tabName === "about" || tabName === "portfolio")) {
+    if (tabName && tabName === "about") {
       setActiveTab(tabName);
     }
   }, [pathname]);
@@ -71,11 +80,9 @@ export function Nav({ children }: NavProps) {
     // Scroll to top when switching tabs
     window.scrollTo(0, 0);
     
-    // Use actual navigation for blog routes, history API for others
-    if (value === "blog" || pathname.startsWith("/blog")) {
+    // Always use actual navigation to ensure proper page loading
+    if (route !== pathname) {
       router.push(route);
-    } else if (route !== pathname) {
-      window.history.replaceState(null, "", route);
     }
   };
 

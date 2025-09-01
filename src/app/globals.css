@@ -38,6 +38,7 @@
     --color-secondary: var(--secondary);
     --color-primary-foreground: var(--primary-foreground);
     --color-primary: var(--primary);
+    --color-primary-muted: var(--primary-muted);
     --color-popover-foreground: var(--popover-foreground);
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
@@ -63,6 +64,7 @@
     --popover-foreground: oklch(0.145 0 0);
     --primary: hsl(193, 18%, 62%);
     --primary-foreground: oklch(0.985 0 0);
+    --primary-muted: hsl(184, 8%, 14%);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
     --muted: hsl(185, 9%, 24%);
@@ -100,12 +102,13 @@
     --popover-foreground: oklch(0.985 0 0);
     --primary: hsl(193, 18%, 62%);
     --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
+    --primary-muted: hsl(184, 8%, 14%);
+    --secondary: hsl(218, 100, 86%);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: hsl(185, 9%, 24%);
     --muted-foreground: hsl(197, 5%, 39%);
     --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
+    --accent-foreground: hsl(0, 0, 48%);
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
@@ -130,6 +133,11 @@
         @apply border-border outline-ring/50;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans tracking-tight;
+    }
+    
+    /* Custom ordered list styling */
+    ol.markdown-ol li {
+        padding-left: 0.5rem;
     }
 }

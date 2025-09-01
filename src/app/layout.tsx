@@ -6,7 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Charles Maurice",
+  title: "Andrew Jones | dremnik",
   description: "Designer, Engineer, Student of Life",
 };
 
@@ -22,9 +22,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen">
           <Header />
-          <ScrollArea className="h-screen w-full">
-            {children}
-          </ScrollArea>
+          <ScrollArea className="h-screen w-full">{children}</ScrollArea>
         </div>
       </body>
     </html>

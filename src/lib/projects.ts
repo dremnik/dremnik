@@ -1,0 +1,272 @@
+export type Project = {
+  slug: string;
+  name: string;
+  year: number;
+  tagline: string;
+  description: string;
+  tags: string[] | { name: string; url?: string }[];
+  github?: string;
+  url?: string;
+  gallery?: {
+    videos?: string[]; // Format: "youtube:videoId" or "file:/path/to/video.mp4"
+    images?: { src: string; title: string }[]; // Manual image configuration with titles
+    caption?: string;
+  };
+};
+
+const KERNL_DESCRIPTION = `kernl is an ongoing experiment to answer the question of the interface for AGI. My reflections towards the end of 2024 had led me to a few central ideas (I discuss some of them here: [design is the new bottleneck](/blog/design-is-the-new-bottleneck)):
+
+1. AI is on a steep trajectory of improvement in its capacity to perform general tasks and coherently plan sequences of actions with many tools.
+2. Thus a human shift from direct-contributive → executive functions (planning, strategy, synthesis, coordination, ...).
+3. And the need for a tool which will allow us to effectively organize and coordinate the work of many contributors (which now happen to be AI).
+
+Of course, the need to coordinate many contributors is not new, and there are precedents for how this might be done—though none of them is yet sufficient (imo).
+
+There are a few other motivations which are perhaps more personal in the design:
+
+* Minimalism + noise reduction. Other tools have felt very cluttered and distracting to me over the years, often getting in the way too much. And this presents the endlessly fascinating challenge of maintaining identity / character with the absolute minimum of visual elements.
+* Vim-inspired keyboard navigation. Vim is the highest bandwidth interface we currently have between human → computer; and the constant need of the mouse restricts the design space substantially (and anyways, we have to assume that the shift to executive functions will favor those who are willing to invest in higher bandwidth interfaces—no need to design for the LCD).
+`;
+
+// ==========
+
+const MICROPROJECTS_DESCRIPTION = `A Next.js template designed for rapidly launching SaaS products, with all the critical boilerplate included. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
+
+Given the ease of developing software now (as a result of AI), I expect we will see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and reducing as much boilerplate as possible is an obvious means to that end.
+
+Key features:
+
+* **Authentication with Clerk**. Secure, scalable auth system with support for multi-user workspaces.
+* **Multi-Tenancy**. Workspace-based separation of data to enable team and enterprise use cases.
+* **Billing & Payments**. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
+
+// ==========
+
+const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim of imagining what the next generation of content creation might look like in an AI-native creative suite. I spent a lot of time editing videos for fun when I was younger, so this is something which has interested me for quite a long time.
+
+The idea is something like a hybrid of Adobe's Creative Cloud and Midjourney's generative tools. There seems to be a gap between content management on the one hand, and the tools which are pushing the envelope of creation on the other.
+
+The mind works in an associative web of ideas + concepts, not unlike the latent space of a multi-modal model. If this gap could be bridged by multimodal embeddings, it would enable a new pace of creation via features like Midjourney's search by image: one image calls to mind all the others in the same region of the latent space..
+
+AI seems to be a kind of 'multimodal glue', so to speak, which will enable the seamless blending of different modalities—text, image, video, audio—leading to creative possibilities that would have been restricted by the previous generations of tools. And tools that are more adapted to the structure of the human mind seem certain to be the next frontier in this space.`;
+
+// ==========
+
+const EMBLEM_DESCRIPTION = `Emblem is an AI operating system for investors—combining deal management, portfolio monitoring, and automated reporting into a single platform. It is designed to accelerate and automate investor workflows end-to-end.
+
+Emblem gives firms a single, integrated platform to run their core workflows:
+
+* **Deal Management**. Track pipelines, manage relationships, and centralize diligence—all in one place.
+* **Portfolio Monitoring**. Eliminating spreadsheet chaos with a single source of truth for portfolio company financials. CFOs can submit data directly, which flows seamlessly into the platform.
+* **Automated Reporting**. Generate IC decks, investment memos, portfolio tearsheets, and updates instantly—branded and polished to your firm’s standards.
+
+With Emblem, firms reduce friction across deals, monitoring, and reporting—freeing teams to focus on sourcing, strategy, and value creation instead of chasing data and formatting slides.`;
+
+// ==========
+
+const PROPICS_DESCRIPTION = `ProPics is a personal AI photography service that allows you to upload pictures of yourself and generate both professional headshots + dating pictures.
+
+This was my first taste of using AI in an app, when some friends and I discovered Dreambooth, which allowed you to fine-tune a stable diffusion model on a likeness with a relatively small number of sample images.
+
+On the tech side, here was my first exposure to some of the distributed systems considerations concerning transactional state across workflows that could be relatively long-running (the fine-tuning jobs), and the challenges that arise from the kind of constraint.`;
+
+// ==========
+
+const ESONUT_DESCRIPTION = `esonut was an all-in-one platform for ESO—covering wikis, builds, tools, and interactive game resources. It was my first big project and a blast to create. My friends and I were playing this game quite a lot at the time (during COVID especially).
+
+It was my first real taste of the joy in design, and the freedom of having no constraints. Its sole purpose was to be a project of fun & learning, a way to get our toes wet in the world of programming, and it satisfied all of these objectives thoroughly.
+
+Core features:
+
+**Wiki & Game Database**
+
+* Deep dives into ESO content—classes, skills, sets, champion points, crafting, companions, and more.
+* Access to interactive resources like maps, zone info, and collectibles such as mounts and pets.
+* Stay informed on events, daily/weekly tasks, vendors, and server status.
+
+**Build Tools & Editor**
+
+* Create, customize, and share player builds using the Build Editor.
+* Explore pre-made builds categorized by role (Tank, Healer, DPS, One‑Bar, PvE, PvP, subclassing).
+* Simulate crafting and progression with dedicated tools for scribing, alchemy, champions, and potion making.
+
+**Community Forum & Messaging**
+
+* Forums where players could discuss aspects of the game—strategies, builds, news, etc.
+* Ability to share and discuss builds made with the build editor.
+`;
+
+export const PROJECTS: Project[] = [
+  {
+    slug: "kernl",
+    name: "kernl",
+    year: 2025,
+    tagline: "A vim-centric AI workspace",
+    description: KERNL_DESCRIPTION,
+    tags: [
+      { name: "rust", url: "https://www.rust-lang.org/" },
+      { name: "tauri", url: "https://tauri.app/" },
+      { name: "k8s", url: "https://kubernetes.io/" },
+    ],
+    url: "https://kernl.sh",
+    github: "dremnik/kernl",
+    gallery: {
+      videos: ["file:/projects/kernl/demo.mp4"], // Format: "youtube:videoId" or "file:/path/to/video.mp4"
+      images: [
+        {
+          src: "/projects/kernl/1 — Tasks — List View.png",
+          title: "Tasks List",
+        },
+        {
+          src: "/projects/kernl/2 — Tasks — Grid View.png",
+          title: "Tasks Grid",
+        },
+        {
+          src: "/projects/kernl/3 — Tasks — Indiv.png",
+          title: "Individual Task",
+        },
+        { src: "/projects/kernl/4 — Library.png", title: "Library" },
+        {
+          src: "/projects/kernl/5 — Document View.png",
+          title: "Document",
+        },
+        {
+          src: "/projects/kernl/6 – Document – Outline view.png",
+          title: "Document — Outline",
+        },
+        {
+          src: "/projects/kernl/7 — Composer.png",
+          title: "Composer",
+        },
+        { src: "/projects/kernl/8 — Home Nav.png", title: "Home Navigation" },
+        {
+          src: "/projects/kernl/9 — Project — Overview.png",
+          title: "Project — Overview",
+        },
+        {
+          src: "/projects/kernl/10 — Projects — Objectives.png",
+          title: "Projects — Objectives",
+        },
+        {
+          src: "/projects/kernl/11 – Spaces.png",
+          title: "Spaces",
+        },
+        {
+          src: "/projects/kernl/12 — Cycle — Progress.png",
+          title: "Cycle",
+        },
+        {
+          src: "/projects/kernl/13 – Calendar – Month View.png",
+          title: "Calendar — Month",
+        },
+        {
+          src: "/projects/kernl/14 — Inbox — MASTER.png",
+          title: "Inbox",
+        },
+        {
+          src: "/projects/kernl/15 — History — Boxes.png",
+          title: "History",
+        },
+      ],
+    },
+  },
+  {
+    slug: "microprojects",
+    name: "microprojects",
+    year: 2025,
+    tagline:
+      "Next.js template with all boilerplate for a multi-tenant AI SaaS.",
+    description: MICROPROJECTS_DESCRIPTION,
+    tags: [
+      { name: "next.js", url: "https://nextjs.org/" },
+      { name: "clerk", url: "https://clerk.com/" },
+      { name: "stripe", url: "https://stripe.com/" },
+    ],
+    url: "https://microprojects.dev",
+    github: "dremnik/microprojects",
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+  {
+    slug: "reverie",
+    name: "rêverie",
+    year: 2025,
+    tagline: "AI canvas and multimodal library for creatives",
+    description: REVERIE_DESCRIPTION,
+    tags: [],
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+  {
+    slug: "emblem",
+    name: "Emblem",
+    year: 2023,
+    tagline: "AI operating system for investors — PE, VC, IB",
+    description: EMBLEM_DESCRIPTION,
+    tags: [
+      { name: "next.js", url: "https://nextjs.org/" },
+      { name: "mastra", url: "https://mastra.ai/" },
+      { name: "fastify", url: "https://fastify.dev/" },
+    ],
+    url: "https://emblem.pe",
+    gallery: {
+      videos: [],
+      images: [
+        {
+          src: "/projects/emblem/0 - Universal Chat - Tasks.png",
+          title: "Universal Chat - Tasks",
+        },
+        {
+          src: "/projects/emblem/1 - UC - Emblem Agents.png",
+          title: "Universal Chat - Emblem Agents",
+        },
+      ],
+    },
+  },
+  {
+    slug: "propics",
+    name: "ProPics",
+    year: 2023,
+    tagline: "Professional AI headshots using Dreambooth",
+    description: PROPICS_DESCRIPTION,
+    tags: [
+      { name: "firebase", url: "https://firebase.google.com/" },
+      {
+        name: "argo workflows",
+        url: "https://argoproj.github.io/workflows/",
+      },
+      { name: "tensorflow", url: "https://www.tensorflow.org/" },
+      { name: "dreambooth", url: "https://dreambooth.github.io/" },
+    ],
+    url: "https://propics.ai",
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+  {
+    slug: "esonut",
+    name: "esonut",
+    year: 2021,
+    tagline: "Wiki for The Elder Scrolls Online",
+    description: ESONUT_DESCRIPTION,
+    tags: [
+      { name: "next.js", url: "https://nextjs.org/" },
+      { name: "go", url: "https://golang.org/" },
+      { name: "rust", url: "https://www.rust-lang.org/" },
+    ],
+    github: "dremnik/esonut",
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+];
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return PROJECTS.find((project) => project.slug === slug);
+}

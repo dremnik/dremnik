@@ -22,7 +22,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mb-8">
         <Link
           href="/blog"
-          className="text-muted hover:text-primary/60 transition-colors text-xs font-mono inline-flex items-center gap-1"
+          className="text-muted hover:text-primary transition-colors text-xs font-mono inline-flex items-center gap-1"
         >
           <IconChevronLeftSmall />
           back
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: `${post.title} - Charles Maurice`,
+    title: `${post.title} - dremnik`,
     description: post.title,
   };
 }
