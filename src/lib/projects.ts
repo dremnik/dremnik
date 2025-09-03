@@ -20,9 +20,9 @@ const KERNL_DESCRIPTION = `kernl is an ongoing experiment to answer the question
 2. Thus a human shift from direct-contributive → executive functions (planning, strategy, synthesis, coordination, ...).
 3. And the need for a tool which will allow us to effectively organize and coordinate the work of many contributors (which now happen to be AI).
 
-Of course, the need to coordinate many contributors is not new, and there are precedents for how this might be done—though none of them is yet sufficient (imo).
+Of course, the need to coordinate contributors is not new, and there are precedents for how this might be done—though none of them is yet sufficient (imo).
 
-There are a few other motivations which are perhaps more personal in the design:
+There are a few other personal motivations in the design:
 
 * Minimalism + noise reduction. Other tools have felt very cluttered and distracting to me over the years, often getting in the way too much. And this presents the endlessly fascinating challenge of maintaining identity / character with the absolute minimum of visual elements.
 * Vim-inspired keyboard navigation. Vim is the highest bandwidth interface we currently have between human → computer; and the constant need of the mouse restricts the design space substantially (and anyways, we have to assume that the shift to executive functions will favor those who are willing to invest in higher bandwidth interfaces—no need to design for the LCD).
@@ -30,9 +30,9 @@ There are a few other motivations which are perhaps more personal in the design:
 
 // ==========
 
-const MICROPROJECTS_DESCRIPTION = `A Next.js template designed for rapidly launching SaaS products, with all the critical boilerplate included. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
+const MICROPROJECTS_DESCRIPTION = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
 
-Given the ease of developing software now (as a result of AI), I expect we will see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and reducing as much boilerplate as possible is an obvious means to that end.
+With AI making development so much faster, I expect we will start to see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and boilertplate reduction is an obvious means to that end.
 
 Key features:
 
@@ -47,8 +47,7 @@ const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim o
 The idea is something like a hybrid of Adobe's Creative Cloud and Midjourney's generative tools. There seems to be a gap between content management on the one hand, and the tools which are pushing the envelope of creation on the other.
 
 The mind works in an associative web of ideas + concepts, not unlike the latent space of a multi-modal model. If this gap could be bridged by multimodal embeddings, it would enable a new pace of creation via features like Midjourney's search by image: one image calls to mind all the others in the same region of the latent space..
-
-AI seems to be a kind of 'multimodal glue', so to speak, which will enable the seamless blending of different modalities—text, image, video, audio—leading to creative possibilities that would have been restricted by the previous generations of tools. And tools that are more adapted to the structure of the human mind seem certain to be the next frontier in this space.`;
+`;
 
 // ==========
 
@@ -174,19 +173,39 @@ export const PROJECTS: Project[] = [
     slug: "microprojects",
     name: "microprojects",
     year: 2025,
-    tagline:
-      "Next.js template with all boilerplate for a multi-tenant AI SaaS.",
+    tagline: "Next.js template with boilerplate for a multi-tenant AI SaaS.",
     description: MICROPROJECTS_DESCRIPTION,
     tags: [
       { name: "next.js", url: "https://nextjs.org/" },
       { name: "clerk", url: "https://clerk.com/" },
       { name: "stripe", url: "https://stripe.com/" },
     ],
-    url: "https://microprojects.dev",
+    url: "https://microprojects.app",
     github: "dremnik/microprojects",
     gallery: {
       videos: [],
-      images: [],
+      images: [
+        {
+          src: "/projects/microprojects/1 - Login.png",
+          title: "Login",
+        },
+        {
+          src: "/projects/microprojects/2 - Create workspace.png",
+          title: "Create workspace",
+        },
+        {
+          src: "/projects/microprojects/3 - Workspace settings.png",
+          title: "Workspace settings",
+        },
+        {
+          src: "/projects/microprojects/4 - Billing.png",
+          title: "Billing",
+        },
+        {
+          src: "/projects/microprojects/5 - Users.png",
+          title: "Manage users",
+        },
+      ],
     },
   },
   {
@@ -198,7 +217,36 @@ export const PROJECTS: Project[] = [
     tags: [],
     gallery: {
       videos: [],
-      images: [],
+      images: [
+        {
+          src: "/projects/reverie/1 - Moodboard.png",
+          title: "Moodboard",
+        },
+        {
+          src: "/projects/reverie/2 - Moodboard - Modal.png",
+          title: "Mooboard - Asset Modal",
+        },
+        {
+          src: "/projects/reverie/3 - Editor.png",
+          title: "Multimodal Editor",
+        },
+        {
+          src: "/projects/reverie/4 - Moodboard - with text.png",
+          title: "Moodboard - With Note",
+        },
+        {
+          src: "/projects/reverie/5 - My Library.png",
+          title: "Asset Library",
+        },
+        {
+          src: "/projects/reverie/6 - Library - Collections.png",
+          title: "Library - Collections",
+        },
+        {
+          src: "/projects/reverie/7 - Collection - Favorites.png",
+          title: "Collection - Favorites",
+        },
+      ],
     },
   },
   {
@@ -262,7 +310,56 @@ export const PROJECTS: Project[] = [
     github: "dremnik/esonut",
     gallery: {
       videos: [],
-      images: [],
+      images: [
+        {
+          src: "/projects/esonut/1 - Landing.png",
+          title: "Landing Page",
+        },
+        {
+          src: "/projects/esonut/2 - Login.png",
+          title: "Login",
+        },
+        {
+          src: "/projects/esonut/3 - User Profile.png",
+          title: "User Profile",
+        },
+        {
+          src: "/projects/esonut/4 - User Profile - Builds.png",
+          title: "User Profile - Builds",
+        },
+        {
+          src: "/projects/esonut/5 - Sets - Monster Sets.png",
+          title: "Sets - Monster Sets",
+        },
+        {
+          src: "/projects/esonut/6 - Sets - Individual Set.png",
+          title: "Sets - Individual Set",
+        },
+        {
+          src: "/projects/esonut/7 - Skills - Necromancer.png",
+          title: "Skills - Necromancer",
+        },
+        {
+          src: "/projects/esonut/8 - Skill - Lava Whip.png",
+          title: "Skill - Lava Whip",
+        },
+        {
+          src: "/projects/esonut/9 - Build Editor.png",
+          title: "Build Editor",
+        },
+        {
+          src: "/projects/esonut/10 - Build Creator - Gear.png",
+          title: "Build Creator - Gear",
+        },
+        {
+          src: "/projects/esonut/11 - Build Creator - Skills.png",
+          title: "Build Creator - Skills",
+        },
+        {
+          src: "/projects/esonut/12 - Build Creator - CP.png",
+          title: "Build Creator - CP",
+        },
+      ],
     },
   },
 ];

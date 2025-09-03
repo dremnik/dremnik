@@ -30,8 +30,8 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       <article className="prose prose-invert prose-lg max-w-none">
-        <header className="relative mb-8 space-y-3">
-          <div className="text-primary text-xs font-mono">
+        <header className="relative mb-8 space-y-2">
+          <div className="text-primary text-[13px] font-mono">
             {new Date(post.date)
               .toLocaleDateString("en-US", {
                 month: "numeric",
@@ -41,12 +41,12 @@ export default async function BlogPostPage({ params }: Props) {
               .replaceAll("/", ".")}
           </div>
           <IconLeaf className="absolute top-1/2 translate-y-1/3 -left-9 text-primary size-5" />
-          <h1 className="text-3xl font-founder-grotesk font-normal text-white mb-4">
+          <h1 className="text-[32px] font-founder-grotesk font-normal text-white mb-4">
             {post.title}
           </h1>
         </header>
 
-        <div className="text-prose leading-relaxed tracking-tight">
+        <div className="leading-relaxed">
           <Markdown content={post.content} />
         </div>
       </article>

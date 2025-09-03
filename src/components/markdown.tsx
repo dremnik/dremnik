@@ -19,12 +19,14 @@ const components: Components = {
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="text-[20px] font-founder-grotesk font-normal text-primary mb-6 mt-12">
+    <h4 className="text-[21px] font-founder-grotesk font-normal text-primary mb-6 mt-12">
       {children}
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[15.6px] text-prose leading-relaxed mb-6">{children}</p>
+    <p className="text-[16.4px] tracking-tight text-prose leading-relaxed mb-6">
+      {children}
+    </p>
   ),
   blockquote: ({ children }) => (
     <blockquote className="border-l-2 border-primary/20 pl-3 italic my-8">

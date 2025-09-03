@@ -52,7 +52,7 @@ export default function Blog() {
                     <div className="relative flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
                       <div className="flex items-center gap-3">
                         <IconLeaf className="absolute top-1/2 -translate-y-1/3 -left-[26px] text-primary size-4.5" />
-                        <h3 className="border-b text-[18px] font-sans-display font-normal group-hover:text-white/80 transition-colors">
+                        <h3 className="border-b text-[18px] font-sans-display tracking-[0.001em] font-normal group-hover:text-white/80 transition-colors">
                           {post.title}
                         </h3>
                       </div>
