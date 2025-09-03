@@ -17,9 +17,9 @@ The narrative sounds something like this:
 
 And whether it's actually said or merely implied by the prevailing mood, the result is the same.
 
-I personally know what lies on the other side of 80 hour weeks from experience. I have tasted the Kool-Aid myself: burnout, exhaustion, sleep deprivation, chronic bags drooping under bloodshot eyes…
+I personally know what lies on the other side of 80 hour weeks from experience. I've tasted the Kool-Aid myself: burnout, exhaustion, sleep deprivation, bags under the bloodshot eyes…
 
-I struggled for years to free myself from this pernicious influence, and it's taken me much experience to overcome—learning to trust my own judgment on the matter, taking a critical eye to the collective habit. So what I hope I can offer is an alternative perspective that is more appropriate for creative work, and which is almost certainly better adapted to a world in which the actual execution of our work is done increasingly by AI.
+I struggled for years to free myself from this destructive influence, and it's taken me much experience to overcome—learning to trust my own judgment on the matter, taking a critical eye to the collective habit. So what I hope I can offer is an alternative perspective that is more appropriate for creative work, and almost certainly better adapted to a world in which the actual execution of our work is done increasingly by AI.
 
 #### work is a product of vectors
 

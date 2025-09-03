@@ -18,7 +18,7 @@ export default function About() {
     .slice(0, LATEST_LENGTH);
 
   return (
-    <div className="max-w-[var(--content-width)] space-y-12 mx-auto px-6">
+    <div className="max-w-[var(--content-width)] space-y-8 mx-auto px-6">
       <div className="flex flex-col">
         <Avatar className="size-16 border border-muted mb-6">
           <AvatarImage
@@ -38,7 +38,7 @@ export default function About() {
       </div>
 
       <div className="space-y-8">
-        <Blockquote className="text-primary">
+        {/*<Blockquote className="text-primary">
           <BlockquoteContent>
             Simplicity is the final achievement. After one has played a vast
             quantity of notes and more notes, it is simplicity that emerges as
@@ -47,7 +47,7 @@ export default function About() {
           <BlockquoteCaption className="justify-self-end text-xs font-mono">
             - F. Chopin
           </BlockquoteCaption>
-        </Blockquote>
+        </Blockquote>*/}
 
         <p className="text-foreground tracking-tight">
           In an age of noise and distractions, the ultimate meaning is the
@@ -55,8 +55,9 @@ export default function About() {
         </p>
 
         <p className="text-foreground tracking-tight">
-          Life is short, and craft long, opportunity fleeting, experimentations
-          perilous, and judgment difficult.
+          My current focus is AI, bridging the gap between human and machine. I
+          work end-to-end on everything ranging from product strategy + UX to
+          backend + infra.
         </p>
       </div>
 
@@ -68,7 +69,7 @@ export default function About() {
             <div key={post.slug} className="group">
               <Link href={`/blog/${post.slug}`}>
                 <div className="flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
-                  <h3 className="text-[18px] font-sans-display font-normal group-hover:text-white/80 transition-colors">
+                  <h3 className="text-[18px] border-b font-sans-display font-normal group-hover:text-white/80 transition-colors">
                     {post.title}
                   </h3>
 

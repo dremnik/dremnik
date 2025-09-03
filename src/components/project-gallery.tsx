@@ -20,7 +20,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ProjectGalleryProps {
   videos?: string[];
-  images?: (string | { src: string; title?: string })[];
+  images?: (string | { src: string; title?: string; width?: number; height?: number; ref?: boolean })[];
   projectName: string;
 }
 
@@ -35,7 +35,7 @@ export function ProjectGallery({
   const [startIndex, setStartIndex] = useState(0);
   const [dialogCurrent, setDialogCurrent] = useState(0);
 
-  // Normalize images to objects with title
+  // Normalize images to objects with title and dimensions
   const normalizedImages = (images || []).map((img) =>
     typeof img === "string"
       ? {
@@ -46,11 +46,26 @@ export function ProjectGallery({
               .pop()
               ?.replace(/\.[^.]+$/, "")
               ?.replace(/[\-_]+/g, " ") || "",
+          width: undefined,
+          height: undefined,
+          ref: false,
         }
-      : { src: img.src, title: img.title || "" }
+      : { 
+          src: img.src, 
+          title: img.title || "",
+          width: img.width,
+          height: img.height,
+          ref: img.ref || false,
+        }
   );
   const videosCount = videos?.length || 0;
   const totalImages = normalizedImages.length;
+
+  // Find reference image dimensions or use default aspect ratio
+  const refImage = normalizedImages.find(img => img.ref);
+  const refAspectRatio = refImage && refImage.width && refImage.height 
+    ? refImage.width / refImage.height 
+    : 16 / 9; // fallback to 16:9 if no ref image
 
   const handleImageClick = (index: number) => {
     // Account for videos being first
@@ -168,21 +183,52 @@ export function ProjectGallery({
                   ))}
 
                   {/* Images in dialog */}
-                  {normalizedImages?.map((image, index) => (
-                    <CarouselItem key={`dialog-image-${index}`} className="h-full min-h-0">
-                      <div className="h-full py-6">
-                        <ScrollArea className="w-full h-full">
-                          <Image
-                            src={image.src}
-                            alt={image.title || `${projectName} fullscreen ${index + 1}`}
-                            width={1920}
-                            height={1080}
-                            className="block w-full h-auto select-none"
-                          />
-                        </ScrollArea>
-                      </div>
-                    </CarouselItem>
-                  ))}
+                  {normalizedImages?.map((image, index) => {
+                    // Check if image is taller than reference
+                    const imageAspectRatio = image.width && image.height 
+                      ? image.width / image.height 
+                      : refAspectRatio;
+                    const isTaller = imageAspectRatio < refAspectRatio;
+
+                    return (
+                      <CarouselItem key={`dialog-image-${index}`} className="h-full min-h-0">
+                        <div className="h-full py-6 flex items-center justify-center">
+                          <div className="w-full max-w-[1400px] flex items-center justify-center">
+                            <div 
+                              className="w-full relative"
+                              style={{
+                                aspectRatio: refAspectRatio,
+                                maxHeight: 'calc(100vh - 200px)'
+                              }}
+                            >
+                              {isTaller ? (
+                                <ScrollArea className="w-full h-full">
+                                  <Image
+                                    src={image.src}
+                                    alt={image.title || `${projectName} fullscreen ${index + 1}`}
+                                    width={image.width || 1920}
+                                    height={image.height || 1080}
+                                    className="block w-full h-auto select-none"
+                                  />
+                                </ScrollArea>
+                              ) : (
+                                <div className="w-full h-full flex items-start justify-center">
+                                  <Image
+                                    src={image.src}
+                                    alt={image.title || `${projectName} fullscreen ${index + 1}`}
+                                    width={image.width || 1920}
+                                    height={image.height || 1080}
+                                    className="block w-auto h-full select-none"
+                                    style={{ maxWidth: '100%' }}
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    );
+                  })}
                 </CarouselContent>
                 <div className="w-14 sm:w-20 md:w-24 flex justify-center pl-2 sm:pl-3">
                   <CarouselNext className="static top-auto right-auto translate-y-0 !bg-transparent !border-primary-muted hover:bg-primary-muted/20 hover:cursor-pointer" />

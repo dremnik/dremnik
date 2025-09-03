@@ -9,7 +9,7 @@ export type Project = {
   url?: string;
   gallery?: {
     videos?: string[]; // Format: "youtube:videoId" or "file:/path/to/video.mp4"
-    images?: { src: string; title: string }[]; // Manual image configuration with titles
+    images?: { src: string; title: string; width?: number; height?: number; ref?: boolean }[]; // Manual image configuration with titles and dimensions
     caption?: string;
   };
 };
@@ -115,56 +115,93 @@ export const PROJECTS: Project[] = [
         {
           src: "/projects/kernl/1 — Tasks — List View.png",
           title: "Tasks List",
+          width: 3840,
+          height: 2398,
+          ref: true,
         },
         {
           src: "/projects/kernl/2 — Tasks — Grid View.png",
           title: "Tasks Grid",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/3 — Tasks — Indiv.png",
           title: "Individual Task",
+          width: 3840,
+          height: 4484,
         },
-        { src: "/projects/kernl/4 — Library.png", title: "Library" },
+        {
+          src: "/projects/kernl/4 — Library.png",
+          title: "Library",
+          width: 3840,
+          height: 2398,
+        },
         {
           src: "/projects/kernl/5 — Document View.png",
           title: "Document",
+          width: 3840,
+          height: 3366,
         },
         {
           src: "/projects/kernl/6 – Document – Outline view.png",
           title: "Document — Outline",
+          width: 3840,
+          height: 2368,
         },
         {
           src: "/projects/kernl/7 — Composer.png",
           title: "Composer",
+          width: 3840,
+          height: 2398,
         },
-        { src: "/projects/kernl/8 — Home Nav.png", title: "Home Navigation" },
+        {
+          src: "/projects/kernl/8 — Home Nav.png",
+          title: "Home Navigation",
+          width: 3840,
+          height: 2398,
+        },
         {
           src: "/projects/kernl/9 — Project — Overview.png",
           title: "Project — Overview",
+          width: 3840,
+          height: 5114,
         },
         {
           src: "/projects/kernl/10 — Projects — Objectives.png",
           title: "Projects — Objectives",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/11 – Spaces.png",
           title: "Spaces",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/12 — Cycle — Progress.png",
           title: "Cycle",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/13 – Calendar – Month View.png",
           title: "Calendar — Month",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/14 — Inbox — MASTER.png",
           title: "Inbox",
+          width: 3840,
+          height: 2398,
         },
         {
           src: "/projects/kernl/15 — History — Boxes.png",
           title: "History",
+          width: 3840,
+          height: 2396,
         },
       ],
     },
@@ -188,22 +225,33 @@ export const PROJECTS: Project[] = [
         {
           src: "/projects/microprojects/1 - Login.png",
           title: "Login",
+          width: 3018,
+          height: 1888,
+          ref: true,
         },
         {
           src: "/projects/microprojects/2 - Create workspace.png",
           title: "Create workspace",
+          width: 3018,
+          height: 1888,
         },
         {
           src: "/projects/microprojects/3 - Workspace settings.png",
           title: "Workspace settings",
+          width: 3018,
+          height: 1888,
         },
         {
           src: "/projects/microprojects/4 - Billing.png",
           title: "Billing",
+          width: 3018,
+          height: 1888,
         },
         {
           src: "/projects/microprojects/5 - Users.png",
           title: "Manage users",
+          width: 3018,
+          height: 1888,
         },
       ],
     },
@@ -221,30 +269,45 @@ export const PROJECTS: Project[] = [
         {
           src: "/projects/reverie/1 - Moodboard.png",
           title: "Moodboard",
+          width: 3028,
+          height: 2038,
+          ref: true,
         },
         {
           src: "/projects/reverie/2 - Moodboard - Modal.png",
           title: "Mooboard - Asset Modal",
+          width: 3028,
+          height: 2038,
         },
         {
           src: "/projects/reverie/3 - Editor.png",
           title: "Multimodal Editor",
+          width: 3028,
+          height: 1928,
         },
         {
           src: "/projects/reverie/4 - Moodboard - with text.png",
           title: "Moodboard - With Note",
+          width: 3028,
+          height: 2038,
         },
         {
           src: "/projects/reverie/5 - My Library.png",
           title: "Asset Library",
+          width: 3028,
+          height: 2038,
         },
         {
           src: "/projects/reverie/6 - Library - Collections.png",
           title: "Library - Collections",
+          width: 3028,
+          height: 2038,
         },
         {
           src: "/projects/reverie/7 - Collection - Favorites.png",
           title: "Collection - Favorites",
+          width: 3028,
+          height: 2038,
         },
       ],
     },
@@ -267,10 +330,15 @@ export const PROJECTS: Project[] = [
         {
           src: "/projects/emblem/0 - Universal Chat - Tasks.png",
           title: "Universal Chat - Tasks",
+          width: 3024,
+          height: 1964,
+          ref: true,
         },
         {
           src: "/projects/emblem/1 - UC - Emblem Agents.png",
           title: "Universal Chat - Emblem Agents",
+          width: 3024,
+          height: 1964,
         },
       ],
     },
@@ -314,50 +382,75 @@ export const PROJECTS: Project[] = [
         {
           src: "/projects/esonut/1 - Landing.png",
           title: "Landing Page",
+          width: 3840,
+          height: 8000,
         },
         {
           src: "/projects/esonut/2 - Login.png",
           title: "Login",
+          width: 3840,
+          height: 2148,
+          ref: true,
         },
         {
           src: "/projects/esonut/3 - User Profile.png",
           title: "User Profile",
+          width: 3840,
+          height: 2900,
         },
         {
           src: "/projects/esonut/4 - User Profile - Builds.png",
           title: "User Profile - Builds",
+          width: 3840,
+          height: 3400,
         },
         {
           src: "/projects/esonut/5 - Sets - Monster Sets.png",
           title: "Sets - Monster Sets",
+          width: 3840,
+          height: 9300,
         },
         {
           src: "/projects/esonut/6 - Sets - Individual Set.png",
           title: "Sets - Individual Set",
+          width: 3840,
+          height: 3844,
         },
         {
           src: "/projects/esonut/7 - Skills - Necromancer.png",
           title: "Skills - Necromancer",
+          width: 3840,
+          height: 7700,
         },
         {
           src: "/projects/esonut/8 - Skill - Lava Whip.png",
           title: "Skill - Lava Whip",
+          width: 3840,
+          height: 3578,
         },
         {
           src: "/projects/esonut/9 - Build Editor.png",
           title: "Build Editor",
+          width: 3840,
+          height: 2792,
         },
         {
           src: "/projects/esonut/10 - Build Creator - Gear.png",
           title: "Build Creator - Gear",
+          width: 3840,
+          height: 2838,
         },
         {
           src: "/projects/esonut/11 - Build Creator - Skills.png",
           title: "Build Creator - Skills",
+          width: 3840,
+          height: 4000,
         },
         {
           src: "/projects/esonut/12 - Build Creator - CP.png",
           title: "Build Creator - CP",
+          width: 3840,
+          height: 3744,
         },
       ],
     },
