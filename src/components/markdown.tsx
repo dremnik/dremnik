@@ -1,6 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkSupersub from "remark-supersub";
 import type { Components } from "react-markdown";
+import Image from "next/image";
 
 const components: Components = {
   h1: ({ children }) => (
@@ -72,6 +74,35 @@ const components: Components = {
     <strong className="font-semibold text-white">{children}</strong>
   ),
   em: ({ children }) => <em className="italic text-prose/90">{children}</em>,
+  sub: ({ children }) => (
+    <sub className="text-[0.75em] text-prose/80">{children}</sub>
+  ),
+  sup: ({ children }) => (
+    <sup className="text-[0.75em] text-prose/80">{children}</sup>
+  ),
+  img: ({ src, alt }) => {
+    if (!src) return null;
+
+    // Convert Blob to string if needed
+    const srcString = typeof src === "string" ? src : "";
+    if (!srcString) return null;
+
+    // Check if it's an external URL
+    const isExternal =
+      srcString.startsWith("http://") || srcString.startsWith("https://");
+
+    return (
+      <Image
+        src={srcString}
+        alt={alt || ""}
+        width={800}
+        height={450}
+        className="my-8 w-full h-auto rounded-lg inline-block"
+        style={{ objectFit: "cover" }}
+        unoptimized={isExternal}
+      />
+    );
+  },
 };
 
 interface MarkdownProps {
@@ -80,7 +111,10 @@ interface MarkdownProps {
 
 export function Markdown({ content }: MarkdownProps) {
   return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+    <ReactMarkdown
+      remarkPlugins={[[remarkGfm, { singleTilde: false }], remarkSupersub]}
+      components={components}
+    >
       {content}
     </ReactMarkdown>
   );
