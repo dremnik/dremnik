@@ -8,6 +8,23 @@ import {
   BlockquoteCaption,
 } from "@/components/ui/blockquote";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Markdown } from "@/components/markdown";
+
+const description = `Hello world.
+
+I'm Andrew — a software designer, engineer and founder currently based
+in Scottsdale, AZ. I'm glad you've landed here, hopefully you find
+some things that spark your curiosity.
+
+I'm currently focused on AI, bridging the gap between man and machine.
+I love everything about the process of creating products — from product
+strategy and UX to backend / infra. The most exciting thing for me is to be
+on the cutting edge of technology + humanity, where the possibilities
+of the future are waiting to be discovered.
+
+Aside from that, I have a bit of an obsession with minimalism + focus. In an age of noise and distractions, the ultimate meaning is the
+pursuit of excellence in our craft.
+`;
 
 const LATEST_LENGTH = 3;
 
@@ -20,20 +37,20 @@ export default function About() {
   return (
     <div className="max-w-[var(--content-width)] space-y-8 mx-auto px-6">
       <div className="flex flex-col">
-        <Avatar className="size-16 border border-muted mb-6">
+        <Avatar className="size-18 border border-muted mb-6">
           <AvatarImage
             src="/andrew_profile.jpeg"
             alt="Andrew Jones"
             className="object-cover"
           />
-          <AvatarFallback>CM</AvatarFallback>
+          <AvatarFallback>AJ</AvatarFallback>
         </Avatar>
 
         <h2 className="text-2xl font-normal mb-3 font-founder-grotesk">
           Andrew Jones
         </h2>
-        <p className="text-primary text-xs font-mono">
-          [ designer, engineer, student of life ]
+        <p className="text-primary text-[13px] font-mono">
+          [ Designer, Engineer, & Student of Life ]
         </p>
       </div>
 
@@ -49,16 +66,7 @@ export default function About() {
           </BlockquoteCaption>
         </Blockquote>*/}
 
-        <p className="text-foreground tracking-tight">
-          In an age of noise and distractions, the ultimate meaning is the
-          pursuit of excellence in our craft.
-        </p>
-
-        <p className="text-foreground tracking-tight">
-          My current focus is AI, bridging the gap between human and machine. I
-          work end-to-end on everything ranging from product strategy + UX to
-          backend + infra.
-        </p>
+        <Markdown content={description} />
       </div>
 
       <div className="pt-8">
