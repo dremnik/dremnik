@@ -9,7 +9,13 @@ export type Project = {
   url?: string;
   gallery?: {
     videos?: string[]; // Format: "youtube:videoId" or "file:/path/to/video.mp4"
-    images?: { src: string; title: string; width?: number; height?: number; ref?: boolean }[]; // Manual image configuration with titles and dimensions
+    images?: {
+      src: string;
+      title: string;
+      width?: number;
+      height?: number;
+      ref?: boolean;
+    }[]; // Manual image configuration with titles and dimensions
     caption?: string;
   };
 };
@@ -107,8 +113,8 @@ export const PROJECTS: Project[] = [
       { name: "tauri", url: "https://tauri.app/" },
       { name: "k8s", url: "https://kubernetes.io/" },
     ],
-    url: "https://kernl.sh",
-    github: "dremnik/kernl",
+    // url: "https://kernl.sh",
+    // github: "dremnik/kernl",
     gallery: {
       videos: ["file:/projects/kernl/demo.mp4"], // Format: "youtube:videoId" or "file:/path/to/video.mp4"
       images: [
@@ -217,7 +223,7 @@ export const PROJECTS: Project[] = [
       { name: "clerk", url: "https://clerk.com/" },
       { name: "stripe", url: "https://stripe.com/" },
     ],
-    url: "https://microprojects.app",
+    // url: "https://microprojects.app",
     github: "dremnik/microprojects",
     gallery: {
       videos: [],
