@@ -40,7 +40,7 @@ Design—real design—is not “making it pretty.” It’s the process of fram
 
 A great designer is part detective, part psychologist, part philosopher. They chase down the hidden assumptions that shape our understanding of the problem. They decide when simplicity is clarity and when it is cowardice. They exercise empathy not as a slogan but as a tool for discovery: what’s it actually like to live inside the head of the person who will use this?
 
-This is the new bottleneck. We can have thousands of agents or engineers or even AI copilots, but unless the problem is framed correctly, all that parallelism is wasted on the wrong pursuit.
+This is the new bottleneck. We can have thousands of agents or engineers or even AI copilots, but unless the problem is framed correctly, all that parallelism cannot be coherently synthesized or made sense of.
 
 #### what i mean by "design"
 
