@@ -88,14 +88,14 @@ export function Nav({ children }: NavProps) {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col items-center pt-10 pb-16">
-        <p className="font-mono text-xs text-primary mb-6">dremnik</p>
+      <div className="flex flex-col items-center pt-24 md:pt-10 pb-16">
+        <p className="hidden md:block font-mono text-xs text-primary mb-6">dremnik</p>
         <Tabs
           value={activeTab}
           className="w-full"
           onValueChange={handleTabChange}
         >
-          <TabsList className="mb-12 flex justify-center gap-8 w-full">
+          <TabsList className="mb-12 hidden md:flex justify-center gap-8 w-full">
             <TabsTrigger
               ref={aboutRef}
               value="about"

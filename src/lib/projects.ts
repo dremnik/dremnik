@@ -4,6 +4,7 @@ export type Project = {
   year: number;
   tagline: string;
   description: string;
+  descriptionMobile?: string;
   tags: string[] | { name: string; url?: string }[];
   github?: string;
   url?: string;
@@ -34,11 +35,25 @@ There are a few other personal motivations in the design:
 * Vim-inspired keyboard navigation. Vim is the highest bandwidth interface we currently have between human → computer; and the constant need of the mouse restricts the design space substantially (and anyways, we have to assume that the shift to executive functions will favor those who are willing to invest in higher bandwidth interfaces—no need to design for the LCD).
 `;
 
+const KERNL_DESCRIPTION_MOBILE = `kernl is an ongoing experiment to answer the question of the interface for AGI. My reflections towards the end of 2024 had led me to a few central ideas (I discuss some of them here: [design is the new bottleneck](/blog/design-is-the-new-bottleneck)):
+
+1. AI is on a steep trajectory of improvement in its capacity to perform general tasks and coherently plan sequences of actions with many tools.
+2. Thus a human shift from direct-contributive → executive functions (planning, strategy, synthesis, coordination, ...).
+3. And the need for a tool which will allow us to effectively organize and coordinate the work of many contributors (which now happen to be AI).`;
+
 // ==========
 
 const MICROPROJECTS_DESCRIPTION = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
 
-With AI making development so much faster, I expect we will start to see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and boilertplate reduction is an obvious means to that end.
+With AI making development so much faster, I expect we will start to see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and boilerplate reduction is an obvious means to that end.
+
+Key features:
+
+* **Authentication with Clerk**. Secure, scalable auth system with support for multi-user workspaces.
+* **Multi-Tenancy**. Workspace-based separation of data to enable team and enterprise use cases.
+* **Billing & Payments**. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
+
+const MICROPROJECTS_DESCRIPTION_MOBILE = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
 
 Key features:
 
@@ -51,8 +66,6 @@ Key features:
 const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim of imagining what the next generation of content creation might look like in an AI-native creative suite. I spent a lot of time editing videos for fun when I was younger, so this is something which has interested me for quite a long time.
 
 The idea is something like a hybrid of Adobe's Creative Cloud and Midjourney's generative tools. There seems to be a gap between content management on the one hand, and the tools which are pushing the envelope of creation on the other.
-
-The mind works in an associative web of ideas + concepts, not unlike the latent space of a multi-modal model. If this gap could be bridged by multimodal embeddings, it would enable a new pace of creation via features like Midjourney's search by image: one image calls to mind all the others in the same region of the latent space..
 `;
 
 // ==========
@@ -108,6 +121,7 @@ export const PROJECTS: Project[] = [
     year: 2025,
     tagline: "A vim-centric AI workspace",
     description: KERNL_DESCRIPTION,
+    descriptionMobile: KERNL_DESCRIPTION_MOBILE,
     tags: [
       { name: "rust", url: "https://www.rust-lang.org/" },
       { name: "tauri", url: "https://tauri.app/" },
@@ -218,8 +232,8 @@ export const PROJECTS: Project[] = [
     year: 2025,
     tagline: "Next.js template with boilerplate for a multi-tenant AI SaaS.",
     description: MICROPROJECTS_DESCRIPTION,
+    descriptionMobile: MICROPROJECTS_DESCRIPTION_MOBILE,
     tags: [
-      { name: "next.js", url: "https://nextjs.org/" },
       { name: "clerk", url: "https://clerk.com/" },
       { name: "stripe", url: "https://stripe.com/" },
     ],
@@ -327,7 +341,6 @@ export const PROJECTS: Project[] = [
     tags: [
       { name: "next.js", url: "https://nextjs.org/" },
       { name: "mastra", url: "https://mastra.ai/" },
-      { name: "fastify", url: "https://fastify.dev/" },
     ],
     url: "https://emblem.pe",
     gallery: {
@@ -356,13 +369,12 @@ export const PROJECTS: Project[] = [
     tagline: "Professional AI headshots using Dreambooth",
     description: PROPICS_DESCRIPTION,
     tags: [
-      { name: "firebase", url: "https://firebase.google.com/" },
+      { name: "dreambooth", url: "https://dreambooth.github.io/" },
+      // { name: "tensorflow", url: "https://www.tensorflow.org/" },
       {
         name: "argo workflows",
         url: "https://argoproj.github.io/workflows/",
       },
-      { name: "tensorflow", url: "https://www.tensorflow.org/" },
-      { name: "dreambooth", url: "https://dreambooth.github.io/" },
     ],
     url: "https://propics.ai",
     gallery: {

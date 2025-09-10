@@ -36,7 +36,7 @@ export default async function ProjectPage({
   return (
     <div className="max-w-[var(--content-width)] mx-auto px-6">
       {/* Back button */}
-      <div className="mb-10">
+      <div className="mb-10 hidden md:block">
         <Link
           href="/portfolio"
           className="text-muted hover:text-primary transition-colors text-xs font-mono inline-flex items-center gap-1"
@@ -51,55 +51,68 @@ export default async function ProjectPage({
         {PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS]}
       </div>
 
-      {/* Title and tags */}
-      <div className="mb-2.5 flex items-center justify-between">
-        <div className="flex items-center space-x-5">
-          {/* Title and tags */}
-          <h1 className="text-3xl font-medium text-foreground">
-            {project.name}
-          </h1>
+      {/* Title, tags, and responsive GitHub */}
+      <div className="mb-2.5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-5 min-w-0">
+            <h1 className="text-3xl font-medium text-foreground truncate">
+              {project.name}
+            </h1>
+            <div className="flex items-center gap-3">
+              {project.tags.map((tag) => {
+                const tagName = typeof tag === "string" ? tag : tag.name;
+                const tagUrl = typeof tag === "string" ? undefined : tag.url;
 
-          {/* Tags */}
-          <div className="flex items-center gap-3">
-            {project.tags.map((tag) => {
-              const tagName = typeof tag === "string" ? tag : tag.name;
-              const tagUrl = typeof tag === "string" ? undefined : tag.url;
+                if (tagUrl) {
+                  return (
+                    <Link
+                      key={tagName}
+                      href={tagUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Badge className="font-mono text-[13px] hover:bg-muted-foreground/20 transition-colors cursor-pointer">
+                        {tagName}
+                      </Badge>
+                    </Link>
+                  );
+                }
 
-              if (tagUrl) {
                 return (
-                  <Link
-                    key={tagName}
-                    href={tagUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Badge className="font-mono text-[13px] hover:bg-muted-foreground/20 transition-colors cursor-pointer">
-                      {tagName}
-                    </Badge>
-                  </Link>
+                  <Badge key={tagName} className="font-mono text-[13px]">
+                    {tagName}
+                  </Badge>
                 );
-              }
-
-              return (
-                <Badge key={tagName} className="font-mono text-[13px]">
-                  {tagName}
-                </Badge>
-              );
-            })}
+              })}
+            </div>
           </div>
+
+          {project.github && (
+            <Link
+              href={`https://github.com/${project.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center space-x-3 hover:opacity-80 transition-opacity shrink-0"
+            >
+              <IconGithub />
+              <span className="text-xs font-mono">{project.github}</span>
+            </Link>
+          )}
         </div>
 
-        {/* GitHub link */}
+        {/* Mobile: GitHub under title to avoid overflow */}
         {project.github && (
-          <Link
-            href={`https://github.com/${project.github}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-          >
-            <IconGithub />
-            <span className="text-xs font-mono">{project.github}</span>
-          </Link>
+          <div className="mt-3 md:hidden">
+            <Link
+              href={`https://github.com/${project.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-3 hover:opacity-80 transition-opacity"
+            >
+              <IconGithub />
+              <span className="text-xs font-mono">{project.github}</span>
+            </Link>
+          </div>
         )}
       </div>
 
@@ -122,7 +135,18 @@ export default async function ProjectPage({
         <p className="font-sans-display text-lg text-muted-foreground">
           {project.tagline}
         </p>
-        <Markdown content={project.description} />
+        {project.descriptionMobile ? (
+          <>
+            <div className="md:hidden">
+              <Markdown content={project.descriptionMobile} />
+            </div>
+            <div className="hidden md:block">
+              <Markdown content={project.description} />
+            </div>
+          </>
+        ) : (
+          <Markdown content={project.description} />
+        )}
       </div>
 
       {/* Gallery section */}

@@ -6,7 +6,7 @@ import { PROJECT_ICONS } from "@/components/ui/icons";
 export default function Portfolio() {
   return (
     <div className="max-w-[var(--content-width)] mx-auto px-6">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 mt-4 gap-y-10 md:gap-x-12 md:gap-y-16">
         {PROJECTS.map((project) => {
           const icon = PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS];
           return (

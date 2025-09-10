@@ -21,11 +21,7 @@ export default function Blog() {
 
     sortedPosts.forEach((post) => {
       const year = new Date(post.date).getFullYear().toString();
-
-      if (!grouped[year]) {
-        grouped[year] = [];
-      }
-
+      if (!grouped[year]) grouped[year] = [];
       grouped[year].push(post);
     });
 
@@ -51,7 +47,10 @@ export default function Blog() {
                   <Link href={`/blog/${post.slug}`}>
                     <div className="relative flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
                       <div className="flex items-center gap-3">
-                        <IconLeaf className="absolute top-1/2 -translate-y-1/3 -left-[26px] text-primary size-4.5" />
+                        {/* Desktop: absolute leaf outside the content edge */}
+                        <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[26px] text-primary size-4.5" />
+                        {/* Mobile: inline leaf to avoid overflow */}
+                        <IconLeaf className="md:hidden text-primary size-4" />
                         <h3 className="border-b text-[18px] font-sans-display tracking-[0.001em] font-normal group-hover:text-white/80 transition-colors">
                           {post.title}
                         </h3>
@@ -70,9 +69,9 @@ export default function Blog() {
                             backgroundPosition: "center",
                           }}
                         ></div>
-                        {/* Blocking div with spring animation */}
+                        {/* Blocking div with spring animation (hidden on mobile) */}
                         <motion.div
-                          className="absolute inset-0 bg-background"
+                          className="hidden md:block absolute inset-0 bg-background"
                           initial={{ x: 0 }}
                           animate={{
                             x: hoveredPost === post.slug ? "100%" : 0,

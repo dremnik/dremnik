@@ -2,29 +2,15 @@ import Link from "next/link";
 import { allPosts } from "content-collections";
 
 /* components */
-import {
-  Blockquote,
-  BlockquoteContent,
-  BlockquoteCaption,
-} from "@/components/ui/blockquote";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Markdown } from "@/components/markdown";
 
 const description = `Hello world.
 
-I'm Andrew — a software designer, engineer and founder currently based
-in Scottsdale, AZ. I'm glad you've landed here, hopefully you find
+I'm Andrew — a software designer, engineer and founder. I'm glad you've landed here, hopefully you find
 some things that spark your curiosity.
 
-I'm currently focused on AI, bridging the gap between man and machine.
-I love everything about the process of creating products — from product
-strategy and UX to backend / infra. The most exciting thing for me is to be
-on the cutting edge of technology + humanity, where the possibilities
-of the future are waiting to be discovered.
-
-Aside from that, I have a bit of an obsession with minimalism + focus. In an age of noise and distractions, the ultimate meaning is the
-pursuit of excellence in our craft.
-`;
+I have a bit of an obsession with minimalism + craft, and my current goal is to push the frontier of human-AI collaboration.`;
 
 const LATEST_LENGTH = 3;
 
@@ -55,17 +41,6 @@ export default function About() {
       </div>
 
       <div className="space-y-8">
-        {/*<Blockquote className="text-primary">
-          <BlockquoteContent>
-            Simplicity is the final achievement. After one has played a vast
-            quantity of notes and more notes, it is simplicity that emerges as
-            the crowning reward of art.
-          </BlockquoteContent>
-          <BlockquoteCaption className="justify-self-end text-xs font-mono">
-            - F. Chopin
-          </BlockquoteCaption>
-        </Blockquote>*/}
-
         <Markdown content={description} />
       </div>
 

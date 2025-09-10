@@ -19,7 +19,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="max-w-[var(--content-width)] -mt-3 mx-auto px-6">
-      <div className="mb-8">
+      <div className="mb-8 hidden md:block">
         <Link
           href="/blog"
           className="text-muted hover:text-primary transition-colors text-xs font-mono inline-flex items-center gap-1"
@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: Props) {
               })
               .replaceAll("/", ".")}
           </div>
-          <IconLeaf className="absolute top-1/2 translate-y-1/3 -left-9 text-primary size-5" />
+          <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-primary size-5" />
           <h1 className="text-[32px] font-founder-grotesk font-normal text-white mb-4">
             {post.title}
           </h1>

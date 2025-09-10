@@ -511,6 +511,24 @@ export function IconPlus({ className, ...props }: React.ComponentProps<"svg">) {
   );
 }
 
+export function IconMenu({ className, ...props }: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      strokeLinejoin="round"
+      viewBox="0 0 16 16"
+      className={cn("size-4", className)}
+      {...props}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1.5 3.25C1.5 2.83579 1.83579 2.5 2.25 2.5H13.75C14.1642 2.5 14.5 2.83579 14.5 3.25C14.5 3.66421 14.1642 4 13.75 4H2.25C1.83579 4 1.5 3.66421 1.5 3.25ZM1.5 8C1.5 7.58579 1.83579 7.25 2.25 7.25H13.75C14.1642 7.25 14.5 7.58579 14.5 8C14.5 8.41421 14.1642 8.75 13.75 8.75H2.25C1.83579 8.75 1.5 8.41421 1.5 8ZM2.25 12C1.83579 12 1.5 12.3358 1.5 12.75C1.5 13.1642 1.83579 13.5 2.25 13.5H13.75C14.1642 13.5 14.5 13.1642 14.5 12.75C14.5 12.3358 14.1642 12 13.75 12H2.25Z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  );
+}
+
 export function IconSearch({
   className,
   ...props
