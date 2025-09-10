@@ -20,9 +20,9 @@ export default function RootLayout({
       <body
         className={`${sfPro.variable} ${sfProDisplay.variable} ${sfMono.variable} ${founderGrotesk.variable} font-sans antialiased bg-background text-foreground`}
       >
-        <div className="min-h-screen">
+        <div className="min-h-[100svh]">
           <Header />
-          <ScrollArea className="h-screen w-full">{children}</ScrollArea>
+          <ScrollArea className="w-full h-auto md:h-[100dvh]">{children}</ScrollArea>
         </div>
       </body>
     </html>
