@@ -73,7 +73,7 @@ export function MobileMenu() {
           <div className="flex items-center">
             <div className="flex-1 min-w-0">
               <Link href="/">
-                <h2 className="text-[18.4px] font-founder-grotesk">Andrew Jones</h2>
+                <h2 className="text-[18.4px] font-founder-grotesk">Andrew</h2>
               </Link>
             </div>
             <div className="flex-1 flex justify-center">
@@ -120,7 +120,7 @@ export function MobileMenu() {
           <div className="flex flex-col items-center space-y-4">
             <div className="flex items-center space-x-3">
               <a
-                href="#"
+                href="https://x.com/dremnik"
                 target="_blank"
                 className="text-foreground-soft hover:text-foreground transition-colors"
               >

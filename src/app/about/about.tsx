@@ -26,14 +26,14 @@ export default function About() {
         <Avatar className="size-18 border border-muted mb-6">
           <AvatarImage
             src="/andrew_profile.jpeg"
-            alt="Andrew Jones"
+            alt="Andrew"
             className="object-cover"
           />
           <AvatarFallback>AJ</AvatarFallback>
         </Avatar>
 
         <h2 className="text-2xl font-normal mb-3 font-founder-grotesk">
-          Andrew Jones
+          Andrew
         </h2>
         <p className="text-primary text-[13px] font-mono">
           [ Designer, Engineer, & Student of Life ]

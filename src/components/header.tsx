@@ -37,7 +37,7 @@ export function Header() {
         <div className="flex items-center">
           <div className="flex-1 min-w-0 pointer-events-auto">
             <Link href="/">
-              <h2 className="text-[18.4px] font-founder-grotesk">Andrew Jones</h2>
+              <h2 className="text-[18.4px] font-founder-grotesk">Andrew</h2>
             </Link>
           </div>
           <div className="md:hidden flex-1 flex justify-center pointer-events-auto">
@@ -51,7 +51,7 @@ export function Header() {
               <Separator orientation="vertical" className="!h-4" />
               <div className="flex items-center gap-3">
                 <a
-                  href="#"
+                  href="https://x.com/dremnik"
                   target="_blank"
                   className="text-foreground-soft hover:text-foreground transition-colors"
                 >

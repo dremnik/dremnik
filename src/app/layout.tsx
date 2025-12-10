@@ -6,7 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Andrew Jones | dremnik",
+  title: "Andrew | dremnik",
   description: "Designer, Engineer, Student of Life",
 };
 
