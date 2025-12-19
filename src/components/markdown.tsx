@@ -31,7 +31,7 @@ const components: Components = {
     </p>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-primary/20 pl-3 italic my-8">
+    <blockquote className="border-l-2 border-primary/20 pl-3 italic my-8 [&_p]:text-prose/60">
       {children}
     </blockquote>
   ),
@@ -48,9 +48,19 @@ const components: Components = {
   li: ({ children }) => (
     <li className="text-prose leading-relaxed">{children}</li>
   ),
-  code: ({ children }) => {
+  code: ({ children, className }) => {
+    // If className exists, it's a code block (has language tag)
+    const isBlock = Boolean(className);
+    if (isBlock) {
+      return (
+        <code className="block text-sm font-mono text-prose">
+          {children}
+        </code>
+      );
+    }
+    // Inline code
     return (
-      <code className="block bg-muted/10 p-4 rounded-lg text-sm font-mono text-prose overflow-x-auto mb-4">
+      <code className="bg-muted/10 px-1.5 py-0.5 rounded text-sm font-mono text-prose">
         {children}
       </code>
     );

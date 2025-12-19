@@ -25,7 +25,7 @@ export default function About() {
       <div className="flex flex-col">
         <Avatar className="size-18 border border-muted mb-6">
           <AvatarImage
-            src="/andrew_profile.jpeg"
+            src="/florentine_andrew.jpeg"
             alt="Andrew"
             className="object-cover"
           />
