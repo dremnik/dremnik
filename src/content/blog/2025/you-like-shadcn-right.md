@@ -16,8 +16,6 @@ thus came the decree from above:
 
 > You may change the color, peasant, but only through my narrow API, and only on the third full moon of a minor version release. And don't even think about writing a theme of your own.
 
-you can file issues, beg on your knees for `className`, wait for new props .. line up and hope the bureaucracy will have mercy on you.
-
 tweaking anything meaningful is bashing your head against the wall of someone else's choices — like entering a marriage where your partner didn't tell you they were $100k in debt when you signed the contract. oopsies.
 
 #### the age of reason
