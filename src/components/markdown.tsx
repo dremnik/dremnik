@@ -26,7 +26,7 @@ const components: Components = {
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[16.4px] tracking-tight text-prose leading-relaxed mb-6">
+    <p className="text-[16.4px] tracking-[-0.03em] text-prose leading-relaxed mb-6">
       {children}
     </p>
   ),
