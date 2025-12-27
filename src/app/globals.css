@@ -140,4 +140,26 @@
     ol.markdown-ol li {
         padding-left: 0.5rem;
     }
+
+    /* Footnote references */
+    .fn-ref {
+        @apply text-xs text-primary/70 hover:text-primary transition-colors no-underline align-super ml-0.5;
+    }
+
+    /* Footnotes section */
+    .footnotes {
+        @apply mt-16 pt-8 border-t border-primary/10;
+    }
+
+    .footnotes p {
+        @apply text-[11px] text-muted-foreground leading-relaxed mb-2;
+    }
+
+    .footnotes .fn {
+        @apply text-primary/50 mr-1;
+    }
+
+    .footnotes a {
+        @apply text-primary/60 hover:text-primary transition-colors;
+    }
 }

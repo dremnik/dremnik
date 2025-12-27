@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkSupersub from "remark-supersub";
+import rehypeRaw from "rehype-raw";
 import type { Components } from "react-markdown";
 import Image from "next/image";
 
@@ -83,12 +84,34 @@ const components: Components = {
   strong: ({ children }) => (
     <strong className="font-semibold text-white">{children}</strong>
   ),
-  em: ({ children }) => <em className="italic text-prose/90">{children}</em>,
+  em: ({ children }) => <em className="italic text-prose">{children}</em>,
   sub: ({ children }) => (
     <sub className="text-[0.75em] text-prose/80">{children}</sub>
   ),
   sup: ({ children }) => (
     <sup className="text-[0.75em] text-prose/80">{children}</sup>
+  ),
+  table: ({ children }) => (
+    <div className="overflow-x-auto my-8">
+      <table className="w-full text-left border-collapse">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => (
+    <thead className="border-b border-primary/20">{children}</thead>
+  ),
+  tbody: ({ children }) => <tbody>{children}</tbody>,
+  tr: ({ children }) => (
+    <tr className="border-b border-primary/10 last:border-0">{children}</tr>
+  ),
+  th: ({ children }) => (
+    <th className="py-2 pr-6 text-sm font-medium text-white whitespace-nowrap">
+      {children}
+    </th>
+  ),
+  td: ({ children }) => (
+    <td className="py-2 pr-6 text-sm text-prose tabular-nums whitespace-nowrap">
+      {children}
+    </td>
   ),
   img: ({ src, alt }) => {
     if (!src) return null;
@@ -123,6 +146,7 @@ export function Markdown({ content }: MarkdownProps) {
   return (
     <ReactMarkdown
       remarkPlugins={[[remarkGfm, { singleTilde: false }], remarkSupersub]}
+      rehypePlugins={[rehypeRaw]}
       components={components}
     >
       {content}
