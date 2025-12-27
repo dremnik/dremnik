@@ -4,10 +4,6 @@ date: "2025-12-18"
 slug: "you-like-shadcn-right"
 ---
 
-so do i.
-
-so let's take a trip down memory lane together and dissect this strange success (or not so strange .. as we'll see).
-
 #### the dark ages
 
 for years, UI libraries were basically landlords, running local fiefdoms like little dictatorial overlords (albeit benign ones). you didn't own your buttons, you rented them. and every abstraction came with a silent contract: you can use them, but they don't belong to you.
