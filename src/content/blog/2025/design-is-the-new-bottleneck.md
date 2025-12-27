@@ -12,7 +12,7 @@ actually we already have a way to quantify the exact limits of this theoretical 
 
 #### amdahl's law
 
-the formula was proposed by Gene Amdahl in 1967 <a href="#fn-3" class="fn-ref">[3]</a>, and it gives us a way to quantify the maximum speedup of a task when more resources are added. specifically, it describes the relationship between the portion of a task we can optimize, and that which we cannot. often used in parallel computing, we can apply it to this problem in the same way:
+the formula was proposed by Gene Amdahl in 1967 <a href="#fn-1" class="fn-ref">[1]</a>, and it gives us a way to quantify the maximum speedup of a task when more resources are added. specifically, it describes the relationship between the portion of a task we can optimize, and that which we cannot. often used in parallel computing, we can apply it to this problem in the same way:
 
 the overall speedup of a given task will be limited by whatever portion of the work has to be done sequentially. so that even if we have thousands of agents — or millions even — _we_ remain the bottleneck. and a hard bottleneck at that. even if you parallelize 99% of a process to infinity, that remaining 1% sets a hard ceiling on the speed of light.
 
@@ -52,7 +52,7 @@ small teams also have the advantage of high-trust. new ideas are fragile, and th
 
 Apple understood this, and through Jobs' initiative encoded a cultural DNA that placed design at the top of the hierarchy (literally). after being urged by Esslinger, who was the founder of Frog Design and secured a contract to help redesign the Macintosh, Jobs reorganized the company completely and inverted the previous engineering-supremacy culture that had existed before:
 
-> Designers at Apple reported to the company's engineers and saw no reason to change their weak position within the organizational hierarchy—but I did because design must be "top down". From the start of my career, I insisted on working directly with the owners or leaders of companies that contracted with me, because design cannot succeed from the "bottom up." It was clear to me that it would be impossible to achieve Steve's goal if designers remained servants at the mercy of conservative engineers. Steve agreed. -- Esslinger <a href="#fn-1" class="fn-ref">[1]</a>
+> Designers at Apple reported to the company's engineers and saw no reason to change their weak position within the organizational hierarchy—but I did because design must be "top down". From the start of my career, I insisted on working directly with the owners or leaders of companies that contracted with me, because design cannot succeed from the "bottom up." It was clear to me that it would be impossible to achieve Steve's goal if designers remained servants at the mercy of conservative engineers. Steve agreed. -- Esslinger <a href="#fn-2" class="fn-ref">[2]</a>
 
 Jony Ive has talked about the fact that it was always clear that they would keep the design team at Apple very small (< 15), and worked very hard to preserve this decision. they would meet at each other's houses, and gather in small groups to discuss the design problems at hand in this high-trust environment.
 
@@ -87,7 +87,7 @@ taste is subjective of course. in a world where humans are primarily steering th
 
 power laws occur everywhere in the world. and yet they are hard to understand because our brains don't seem to be wired very well for extreme distributions. variation in output between individuals is more dramatic than most would like to admit.
 
-some variation of Price's Law seems to dominate creative output in most domains. that law states that the square of the number of contributors produce half of the output (originally formulated regarding scientific publications) - so that if you have 10,000 contributors, the top 1% contribute 50% of the total output. it isn't exactly clear how you would quantify the total number of contributors here, but some studies suggest output variation of 20-25x <a href="#fn-2" class="fn-ref">[2]</a> among programmers. and i personally suspect the difference may be even greater than this.
+some variation of Price's Law seems to dominate creative output in most domains. that law states that the square of the number of contributors produce half of the output (originally formulated regarding scientific publications) - so that if you have 10,000 contributors, the top 1% contribute 50% of the total output. it isn't exactly clear how you would quantify the total number of contributors here, but some studies suggest output variation of 20-25x <a href="#fn-3" class="fn-ref">[3]</a> among programmers. and i personally suspect the difference may be even greater than this.
 
 if Joe produces 5 apples, and Sally produces 100 apples, then even a simple constant multiple of augmentation produces vastly greater _absolute_ differences:
 
@@ -116,10 +116,10 @@ in a world where execution is cheap, the only real advantage is knowing what's w
 
 <div class="footnotes">
 
-<span id="fn-1" class="fn">[1]</span> Esslinger, Hartmut (2013). Keep It Simple: The Early Design Years of Apple. Stuttgart: Arnoldsche Art Publishers.
+<span id="fn-1" class="fn">[1]</span> [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law). Wikipedia.
 
-<span id="fn-2" class="fn">[2]</span> Sackman, H.; Erikson, W.J.; Grant, E.E. (January 1968). "Exploratory Experimental Studies Comparing Online and Offline Programming Performance". Communications of the ACM. 11 (1): 3–11.
+<span id="fn-2" class="fn">[2]</span> Esslinger, Hartmut (2013). Keep It Simple: The Early Design Years of Apple. Stuttgart: Arnoldsche Art Publishers.
 
-<span id="fn-3" class="fn">[3]</span> [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law). Wikipedia.
+<span id="fn-3" class="fn">[3]</span> Sackman, H.; Erikson, W.J.; Grant, E.E. (January 1968). "Exploratory Experimental Studies Comparing Online and Offline Programming Performance". Communications of the ACM. 11 (1): 3–11.
 
 </div>
