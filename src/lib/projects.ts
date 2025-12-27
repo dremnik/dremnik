@@ -21,31 +21,21 @@ export type Project = {
   };
 };
 
-const KERNL_DESCRIPTION = `kernl is an ongoing experiment to answer the question of the interface for AGI. My reflections towards the end of 2024 had led me to a few central ideas (I discuss some of them here: [design is the new bottleneck](/blog/design-is-the-new-bottleneck)):
+const KERNL_DESCRIPTION = `kernl is an ongoing experiment to answer the question of the interface for AGI. It is an AI workspace where tasks complete themselves, inspired by a couple principles:
 
-1. AI is on a steep trajectory of improvement in its capacity to perform general tasks and coherently plan sequences of actions with many tools.
-2. Thus a human shift from direct-contributive → executive functions (planning, strategy, synthesis, coordination, ...).
-3. And the need for a tool which will allow us to effectively organize and coordinate the work of many contributors (which now happen to be AI).
-
-Of course, the need to coordinate contributors is not new, and there are precedents for how this might be done—though none of them is yet sufficient (imo).
-
-There are a few other personal motivations in the design:
-
-* Minimalism + noise reduction. Other tools have felt very cluttered and distracting to me over the years, often getting in the way too much. And this presents the endlessly fascinating challenge of maintaining identity / character with the absolute minimum of visual elements.
-* Vim-inspired keyboard navigation. Vim is the highest bandwidth interface we currently have between human → computer; and the constant need of the mouse restricts the design space substantially (and anyways, we have to assume that the shift to executive functions will favor those who are willing to invest in higher bandwidth interfaces—no need to design for the LCD).
+* Minimalism + noise reduction
+* Vim-inspired keyboard navigation
 `;
 
-const KERNL_DESCRIPTION_MOBILE = `kernl is an ongoing experiment to answer the question of the interface for AGI. My reflections towards the end of 2024 had led me to a few central ideas (I discuss some of them here: [design is the new bottleneck](/blog/design-is-the-new-bottleneck)):
+const KERNL_DESCRIPTION_MOBILE = `kernl is an ongoing experiment to answer the question of the interface for AGI. It is an AI workspace where tasks complete themselves, inspired by a couple principles:
 
-1. AI is on a steep trajectory of improvement in its capacity to perform general tasks and coherently plan sequences of actions with many tools.
-2. Thus a human shift from direct-contributive → executive functions (planning, strategy, synthesis, coordination, ...).
-3. And the need for a tool which will allow us to effectively organize and coordinate the work of many contributors (which now happen to be AI).`;
+* Minimalism + noise reduction
+* Vim-inspired keyboard navigation
+`;
 
 // ==========
 
-const MICROPROJECTS_DESCRIPTION = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
-
-With AI making development so much faster, I expect we will start to see more of what could be called "App Studios", which are basically software studios that look more like game studios, developing suites of complementary apps instead of a single offering being their entrypoint into the market. Iteration speed will be a defining feature (imo) of the best ones, and boilerplate reduction is an obvious means to that end.
+const MICROPROJECTS_DESCRIPTION = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. Motivated by the idea of app studios which will arise due to the speed AI allows us to build.
 
 Key features:
 
@@ -53,7 +43,7 @@ Key features:
 * **Multi-Tenancy**. Workspace-based separation of data to enable team and enterprise use cases.
 * **Billing & Payments**. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
 
-const MICROPROJECTS_DESCRIPTION_MOBILE = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate. This template arose out of the need to address the growing trend in AI + SaaS applications shifting away from traditional per-seat subscriptions toward pay-by-usage models, making it easier for founders and developers to get to market quickly.
+const MICROPROJECTS_DESCRIPTION_MOBILE = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate.
 
 Key features:
 
@@ -63,10 +53,7 @@ Key features:
 
 // ==========
 
-const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim of imagining what the next generation of content creation might look like in an AI-native creative suite. I spent a lot of time editing videos for fun when I was younger, so this is something which has interested me for quite a long time.
-
-The idea is something like a hybrid of Adobe's Creative Cloud and Midjourney's generative tools. There seems to be a gap between content management on the one hand, and the tools which are pushing the envelope of creation on the other.
-`;
+const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim of imagining what the next generation of content creation might look like in an AI-native creative suite. I love and have spent a lot of time editing videos, so this problem has interested me for a while.`;
 
 // ==========
 
