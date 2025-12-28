@@ -87,7 +87,7 @@ taste is subjective of course. in a world where humans are primarily steering th
 
 power laws occur everywhere in the world. and yet they are hard to understand because our brains don't seem to be wired very well for extreme distributions. variation in output between individuals is more dramatic than most would like to admit.
 
-some variation of Price's Law seems to dominate creative output in most domains. that law states that the square of the number of contributors produce half of the output (originally formulated regarding scientific publications) - so that if you have 10,000 contributors, the top 1% contribute 50% of the total output. it isn't exactly clear how you would quantify the total number of contributors here, but some studies suggest output variation of 20-25x <a href="#fn-3" class="fn-ref">[3]</a> among programmers. and i personally suspect the difference may be even greater than this.
+some variation of Price's Law seems to dominate creative output in most domains. that law states that the square root of the number of contributors produce half of the output (originally formulated regarding scientific publications) - so that if you have 10,000 contributors, the top 1% contribute 50% of the total output. it isn't exactly clear how you would quantify the total number of contributors here, but some studies suggest output variation of 20-25x <a href="#fn-3" class="fn-ref">[3]</a> among programmers. and i personally suspect the difference may be even greater than this.
 
 if Joe produces 5 apples, and Sally produces 100 apples, then even a simple constant multiple of augmentation produces vastly greater _absolute_ differences:
 
