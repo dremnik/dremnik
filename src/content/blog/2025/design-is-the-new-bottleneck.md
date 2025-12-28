@@ -103,6 +103,8 @@ while the ratio stays constant (20:1), the absolute gap explodes.
 
 and the consequences of augmentation may even be more dramatic than a constant ratio in fact—because exceptional people were _more bottlenecked_ by execution than median people. outliers will reap disproportionate advantages, the median only marginal gains.
 
+thus every addition to the team must be intentional, as the opportunity cost of a bad decision is higher than ever.
+
 #### general > specialized.
 
 specialization made sense when execution was the bottleneck. now you need people who can see across boundaries. you can summon the expertise of 80% of the specialists knowledge on demand because of AI. so there is an invitable commodization of these skills, and a premium which will be set on the generalists ability to operate across domains.
