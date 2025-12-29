@@ -1,7 +1,7 @@
 ---
-title: "you can't scale taste"
+title: "you can't scale clarity"
 date: "2025-12-27"
-slug: "you-cant-scale-taste"
+slug: "you-cant-scale-clarity"
 ---
 
 i've been thinking a lot about what it means to build software now that AI can write code better than most people. there's a few memes going around to the tune of "i can't wait for 50x agency" or "imagine thousands of agents working on your behalf". and yet my intuition just can't seem to agree with these stories floating around on twitter.
@@ -73,7 +73,7 @@ these are a few principles that i've outlined for starting to approach this prob
 
 #### stay small.
 
-keeping our teams small and optimizing for high-signal environments follows naturally from the fact that clarity doesn't parallelize, and coordination costs scale faster than the advanges of headcount when individuals are augmented.
+keeping our teams small and optimizing for high-signal environments follows naturally from the fact that clarity doesn't parallelize, and coordination costs scale faster than the advantages of headcount when individuals are augmented.
 
 iteration speed is everything. the consensus loop must be tight and high-trust; velocity comes from _removing_ people not adding them.
 
@@ -107,7 +107,7 @@ thus every addition to the team must be intentional, as the opportunity cost of 
 
 #### general > specialized.
 
-specialization made sense when execution was the bottleneck. now you need people who can see across boundaries. you can summon the expertise of 80% of the specialists knowledge on demand because of AI. so there is an invitable commodization of these skills, and a premium which will be set on the generalists ability to operate across domains.
+specialization made sense when execution was the bottleneck. now you need people who can see across boundaries. you can summon the expertise of 80% of the specialists knowledge on demand because of AI. so there is an inevitable commoditization of these skills, and a premium which will be set on the generalists ability to operate across domains.
 
 when understanding is the bottleneck, generalists become valuable as the ones that can traverse cross-domain space with greater fluidity + speed than specialists can. they're valuable because they can hold enough of the problem in their head to see the connections that specialists miss, and communication overhead is far lower.
 
