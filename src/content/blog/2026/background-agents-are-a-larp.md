@@ -56,7 +56,7 @@ and in order to do that, the human must:
 * diagnose why the approach is wrong (vs merely unfamiliar)
 * decide it’s irrecoverable rather than salvageable
 
-so clearly rejection is not free.
+it's a mistake to think that you can manage 10-20 agents in realtime and multitask across them effectively. a quick survey of [the literature](https://www.apa.org/topics/research/multitasking) on this point proves this: comparative studies [consistently find](https://www.cambridge.org/core/journals/experimental-economics/article/multitasking/0D8CADEA4C6F6ACDBB1E51615B5D67DA) that multitasking _increases error rates_ and _memory lapses_ for cognitive work — people get slower, make more mistakes, and lose context compared to doing the same work sequentially. so while you might feel like a god-tier programming wizard managing 15 tmux sessions, Gandalf is unlikely to be impressed.
 
 #### a simple cost model
 
@@ -92,6 +92,10 @@ until models cross the reliability threshold, the winning workflow is boring:
 * steer aggressively, constantly re-referencing the specs + agreed-upon plans.
 * invest in automation that makes mistakes cheap to detect: tests, linters, type checks, evals.
 
-but: prepare for the moment when the phase transition happens.
-
 the practical rule is simple: **until agents are end-to-end reliable, keep autonomy proportional to how cheap it is to detect + undo mistakes.**
+
+#### stay tuned
+
+of course, this will all change very soon. models are being unhobbled at a shocking rate, and we'll have new problems to consider when working in this new mode of autonomy.
+
+more on that to come..
