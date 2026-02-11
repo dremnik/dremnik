@@ -29,7 +29,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="max-w-[964px] mx-auto px-6">
+    <div className="max-w-[var(--content-width)] mx-auto px-6">
       {Object.entries(groupedPosts)
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
         .map(([year, posts]) => (
@@ -48,10 +48,10 @@ export default function Blog() {
                     <div className="relative flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
                       <div className="flex items-center gap-3">
                         {/* Desktop: absolute leaf outside the content edge */}
-                        <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[26px] text-primary size-4.5" />
+                        <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[26px] text-accent-mono size-4.5" />
                         {/* Mobile: inline leaf to avoid overflow */}
-                        <IconLeaf className="md:hidden text-primary size-4" />
-                        <h3 className="border-b text-[18px] font-sans-display tracking-[0.001em] font-normal group-hover:text-white/80 transition-colors">
+                        <IconLeaf className="md:hidden text-accent-mono size-4" />
+                        <h3 className="border-b text-[18px] font-sans-display tracking-[0.001em] font-normal hover:text-foreground/70 dark:hover:text-white/80 transition-colors">
                           {post.title}
                         </h3>
                       </div>
@@ -84,7 +84,7 @@ export default function Blog() {
                         />
                       </div>
 
-                      <div className="relative font-mono text-primary text-[11px]">
+                      <div className="relative font-mono text-mono text-[11px]">
                         {new Date(post.date)
                           .toLocaleDateString("en-US", {
                             month: "numeric",

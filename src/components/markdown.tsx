@@ -22,12 +22,12 @@ const components: Components = {
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="text-[21px] font-founder-grotesk font-normal text-primary mb-6 mt-12">
+    <h4 className="text-[22px] font-founder-grotesk font-medium text-primary mb-6 mt-12">
       {children}
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[16.4px] tracking-[-0.03em] text-prose leading-relaxed mb-6">
+    <p className="text-[16.4px] font-[410] tracking-[-0.03em] text-prose leading-relaxed mb-6">
       {children}
     </p>
   ),
@@ -82,7 +82,7 @@ const components: Components = {
     </a>
   ),
   strong: ({ children }) => (
-    <strong className="font-semibold text-white">{children}</strong>
+    <strong className="font-semibold text-foreground">{children}</strong>
   ),
   em: ({ children }) => <em className="italic text-prose">{children}</em>,
   sub: ({ children }) => (
@@ -104,7 +104,7 @@ const components: Components = {
     <tr className="border-b border-primary/10 last:border-0">{children}</tr>
   ),
   th: ({ children }) => (
-    <th className="py-2 pr-6 text-sm font-medium text-white whitespace-nowrap">
+    <th className="py-2 pr-6 text-sm font-medium text-foreground whitespace-nowrap">
       {children}
     </th>
   ),

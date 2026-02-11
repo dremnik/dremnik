@@ -29,9 +29,9 @@ export default async function BlogPostPage({ params }: Props) {
         </Link>
       </div>
 
-      <article className="prose prose-invert prose-lg max-w-none">
+      <article className="prose prose-lg max-w-none dark:prose-invert">
         <header className="mb-8 space-y-2">
-          <div className="text-primary text-[13px] font-mono">
+          <div className="text-mono text-[13px] font-mono">
             {new Date(post.date)
               .toLocaleDateString("en-US", {
                 month: "numeric",
@@ -41,8 +41,8 @@ export default async function BlogPostPage({ params }: Props) {
               .replaceAll("/", ".")}
           </div>
           <div className="relative">
-            <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-primary size-5" />
-            <h1 className="text-[32px] font-founder-grotesk font-normal text-white mb-4">
+            <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-accent-mono size-5" />
+            <h1 className="text-[32px] font-founder-grotesk font-normal text-foreground mb-4">
               {post.title}
             </h1>
           </div>

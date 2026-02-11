@@ -26,16 +26,16 @@ export default function About() {
         <Avatar className="size-18 border border-muted mb-6">
           <AvatarImage
             src="/florentine_andrew.jpeg"
-            alt="Andrew"
+            alt="Andrew Jones"
             className="object-cover"
           />
           <AvatarFallback>AJ</AvatarFallback>
         </Avatar>
 
         <h2 className="text-2xl font-normal mb-3 font-founder-grotesk">
-          Andrew
+          Andrew Jones
         </h2>
-        <p className="text-primary text-[13px] font-mono">
+        <p className="text-mono text-[13px] font-mono font-medium dark:font-normal">
           [ Designer, Engineer, & Student of Life ]
         </p>
       </div>
@@ -52,7 +52,7 @@ export default function About() {
             <div key={post.slug} className="group">
               <Link href={`/blog/${post.slug}`}>
                 <div className="flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
-                  <h3 className="text-[18px] border-b font-sans-display font-normal group-hover:text-white/80 transition-colors">
+                  <h3 className="text-[18px] border-b font-sans-display font-normal hover:text-foreground/70 dark:hover:text-white/80 transition-colors">
                     {post.title}
                   </h3>
 
@@ -67,7 +67,7 @@ export default function About() {
                     }}
                   ></div>
 
-                  <div className="font-mono text-primary text-[11px]">
+                  <div className="font-mono text-mono text-[11px]">
                     {new Date(post.date)
                       .toLocaleDateString("en-US", {
                         month: "numeric",

@@ -16,14 +16,14 @@ export default function Portfolio() {
               className="flex flex-col items-center text-center group cursor-pointer"
             >
               {/* Icon container */}
-              <div className="w-20 h-20 mb-4 flex items-center justify-center text-4xl rounded-2xl transition-transform group-hover:scale-105">
+              <div className="w-20 h-20 mb-4 flex items-center justify-center text-foreground text-4xl rounded-2xl transition-transform group-hover:scale-105">
                 <span className="select-none">
                   {typeof icon === "string" ? icon : icon}
                 </span>
               </div>
 
               {/* Project name */}
-              <h3 className="text-foreground font-medium text-[15.2px] mb-1 group-hover:text-white transition-colors">
+              <h3 className="text-foreground font-medium text-[15.2px] mb-1 group-hover:text-foreground transition-colors">
                 {project.name}
               </h3>
 

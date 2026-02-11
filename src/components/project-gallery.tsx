@@ -140,13 +140,16 @@ export function ProjectGallery({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="!bg-transparent !border-primary-muted hover:bg-primary-muted/20 hover:cursor-pointer" />
-        <CarouselNext className="!bg-transparent !border-primary-muted hover:bg-primary-muted/20 hover:cursor-pointer" />
+        <CarouselPrevious className="!bg-transparent !border-border hover:bg-primary-muted/20 hover:cursor-pointer" />
+        <CarouselNext className="!bg-transparent !border-border hover:bg-primary-muted/20 hover:cursor-pointer" />
       </Carousel>
 
       {/* Dialog with centered viewport, title header, and footer index */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="flex flex-col min-h-0 w-[min(95vw,1400px)] max-w-[1400px] sm:max-w-[1400px] h-[85vh] p-0 border-0 rounded-lg bg-transparent overflow-hidden">
+        <DialogContent
+          overlayClassName="bg-black/30 dark:bg-black/40 backdrop-blur-[2px]"
+          className="flex flex-col min-h-0 w-[min(95vw,1400px)] max-w-[1400px] sm:max-w-[1400px] h-[85vh] p-0 border-0 rounded-lg bg-transparent overflow-hidden shadow-none"
+        >
           <DialogTitle className="sr-only">Gallery View</DialogTitle>
 
           {/* Title above slide */}
@@ -163,7 +166,7 @@ export function ProjectGallery({
             <Carousel className="w-full h-full min-h-0" setApi={setDialogApi}>
               <div className="grid grid-cols-[auto_1fr_auto] items-center h-full">
                 <div className="w-14 sm:w-20 md:w-24 flex justify-center pr-2 sm:pr-3">
-                  <CarouselPrevious className="static top-auto left-auto translate-y-0 !bg-transparent !border-primary-muted hover:bg-primary-muted/20 hover:cursor-pointer" />
+                  <CarouselPrevious className="static top-auto left-auto translate-y-0 !bg-transparent !border-border hover:bg-primary-muted/20 hover:cursor-pointer" />
                 </div>
                 <CarouselContent className="h-full min-h-0">
                   {/* Videos in dialog */}
@@ -231,7 +234,7 @@ export function ProjectGallery({
                   })}
                 </CarouselContent>
                 <div className="w-14 sm:w-20 md:w-24 flex justify-center pl-2 sm:pl-3">
-                  <CarouselNext className="static top-auto right-auto translate-y-0 !bg-transparent !border-primary-muted hover:bg-primary-muted/20 hover:cursor-pointer" />
+                  <CarouselNext className="static top-auto right-auto translate-y-0 !bg-transparent !border-border hover:bg-primary-muted/20 hover:cursor-pointer" />
                 </div>
               </div>
             </Carousel>
@@ -240,7 +243,7 @@ export function ProjectGallery({
           {/* Footer index (for all slides) */}
           {(videosCount > 0 || totalImages > 0) && (
             <div className="px-4 pb-3 pt-2 text-center">
-              <div className="text-xs font-mono text-primary">
+              <div className="text-xs font-mono text-mono">
                 {(() => {
                   const totalCount = videosCount + totalImages;
                   const digits = Math.max(2, String(totalCount).length);
