@@ -23,6 +23,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
     "gray-matter": "^4.0.3",
+    "katex": "^0.16.28",
     "lucide-react": "^0.541.0",
     "motion": "^12.23.12",
     "next": "16.1.1",
@@ -30,8 +31,10 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "remark-supersub": "^1.0.0",
     "tailwind-merge": "^3.3.1"
   },

@@ -1,7 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkSupersub from "remark-supersub";
+import remarkMath from "remark-math";
 import rehypeRaw from "rehype-raw";
+import rehypeKatex from "rehype-katex";
 import type { Components } from "react-markdown";
 import Image from "next/image";
 
@@ -145,8 +147,8 @@ interface MarkdownProps {
 export function Markdown({ content }: MarkdownProps) {
   return (
     <ReactMarkdown
-      remarkPlugins={[[remarkGfm, { singleTilde: false }], remarkSupersub]}
-      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[[remarkGfm, { singleTilde: false }], remarkSupersub, remarkMath]}
+      rehypePlugins={[rehypeRaw, rehypeKatex]}
       components={components}
     >
       {content}
