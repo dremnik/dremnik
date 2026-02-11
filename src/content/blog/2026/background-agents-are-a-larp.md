@@ -25,7 +25,7 @@ of course this is not a binary, but rather a spectrum of autonomy. and though "b
 
 the core distinction isn't _where_ the agent runs but rather the _feedback topology_. in other words, how tight is the feedback loop on decision making?
 
-### why delayed feedback compounds errors
+#### why delayed feedback compounds errors
 
 today, agents make non-trivial mistakes with meaningful probability. early assumptions are often wrong or underspecified, and downstream code depends on them.
 
@@ -56,7 +56,7 @@ and in order to do that, the human must:
 
 so clearly rejection is not free.
 
-### a simple cost model
+#### a simple cost model
 
 call this **diagnosis cost**. formally, if:
 
