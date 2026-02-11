@@ -4,7 +4,7 @@ date: "2026-02-07"
 slug: "background-agents-are-a-larp"
 ---
 
->> *a sober review of agent autonomy, and working with semi-toddlerish models* <<
+> *a sober review of agent autonomy, and working with semi-toddlerish models*
 
 if you've been trying to manage 20 claude sessions in tmux, or using cursor's background agents - i have bad news for you: you're probably doing yourself more harm than good.
 
@@ -93,4 +93,3 @@ until models cross the reliability threshold, the winning workflow is boring:
 but: prepare for the moment when the phase transition happens.
 
 the practical rule is simple: **until agents are end-to-end reliable, keep autonomy proportional to how cheap it is to detect + undo mistakes.**
-
