@@ -21,9 +21,11 @@ i like to think of them as landing somewhere on Karpathy's _autonomy slider_:
 - _partial autonomy_: human observes partial outputs → intervenes early → constrains trajectory
 - _fuller autonomy_: agent commits to a trajectory → human evaluates only after substantial work exists (work continues without waiting for feedback or results)
 
-of course this is not a binary, but rather a spectrum of autonomy. and though "background agents" tend run in the cloud or remote sandbox, that doesn't have to be the case. this distinction doesn't depend on the execution environment.
+thinking about the degree of autonomy is clearer than the "background agents" notion, because that tends to mean it runs in the cloud. for the purposes of this discussion, only the autonomy matters.
 
 the core distinction isn't _where_ the agent runs but rather the _feedback topology_. in other words, how tight is the feedback loop on decision making?
+
+moving right means batching more decisions before a human corrects course. that increases both the delay *and* the amount of output you have to verify and unwind if the early assumptions are wrong.
 
 #### why delayed feedback compounds errors
 
