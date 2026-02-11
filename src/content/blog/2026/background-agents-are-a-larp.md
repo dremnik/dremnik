@@ -4,9 +4,9 @@ date: "2026-02-07"
 slug: "background-agents-are-a-larp"
 ---
 
-> *a sober review of agent autonomy, and working with semi-toddlerish models*
+>> *a sober review of agent autonomy, and working with semi-toddlerish models* <<
 
-if you've been trying to manage 20 claude sessions in tmux, or using cursor's background agents - i have bad news for you: you're probably doing yourself more harm than good (unless quality isn't a concern for you - disregard this article).
+if you've been trying to manage 20 claude sessions in tmux, or using cursor's background agents - i have bad news for you: you're probably doing yourself more harm than good.
 
 there are a few names that people are giving to this idea right now:
 
@@ -14,7 +14,7 @@ there are a few names that people are giving to this idea right now:
 * ambient agents
 * async agents
 
-i like to think of them as landing somewhere on Karpathy's _autonomy slider_. 
+i like to think of them as landing somewhere on Karpathy's _autonomy slider_: 
 
 ![Karpathy autonomy slider](/blog/2026/autonomy-slider.png)
 
@@ -94,10 +94,3 @@ but: prepare for the moment when the phase transition happens.
 
 the practical rule is simple: **until agents are end-to-end reliable, keep autonomy proportional to how cheap it is to detect + undo mistakes.**
 
-use background agents only when:
-
-1. the spec is stable,
-2. verification is automated,
-3. rollback is trivial.
-
-otherwise, tight loops win.
