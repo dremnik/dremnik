@@ -119,7 +119,7 @@
     --primary-muted: hsl(184, 8%, 14%);
 
     --accent-mono: hsl(193, 18%, 62%);
-    --mono: hsl(0, 0%, 100%);
+    --mono: var(--primary);
     --secondary: hsl(218, 100, 86%);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: hsl(185, 9%, 24%);

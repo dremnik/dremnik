@@ -6,7 +6,7 @@ slug: "background-agents-are-a-larp"
 
 > *a sober review of agent autonomy, and working with semi-toddlerish models*
 
-if you've been trying to manage 20 claude sessions in tmux, or using cursor's background agents - i have bad news for you: you're probably doing yourself more harm than good.
+if you've been trying to manage 20 claude code sessions in tmux, or using cursor's background agents — i have bad news for you: you're probably doing yourself more harm than good.
 
 there are a few names that people are giving to this idea right now:
 
@@ -21,7 +21,7 @@ i like to think of them as landing somewhere on Karpathy's _autonomy slider_:
 - _partial autonomy_: human observes partial outputs → intervenes early → constrains trajectory
 - _fuller autonomy_: agent commits to a trajectory → human evaluates only after substantial work exists (work continues without waiting for feedback or results)
 
-thinking about the degree of autonomy is clearer than the "background agents" notion, because that tends to mean it runs in the cloud. for the purposes of this discussion, only the autonomy matters.
+thinking about the degree of autonomy is clearer than "background agents", because that tends to mean it runs in the cloud. for the purposes of this discussion, only the degree of autonomy matters.
 
 the core distinction isn't _where_ the agent runs but rather the _feedback topology_. in other words, how tight is the feedback loop on decision making?
 
@@ -66,7 +66,7 @@ call this **diagnosis cost**. formally, if:
   * if you want to connect this to per-step error: for a task requiring $k$ meaningful decisions and per-step error rate $e$, a simple model gives:
 
 $$
-p = 1 - (1-e)^k \approx k e \quad \text{(for small } e\text{)}
+p = 1 — (1-e)^k \approx k e \quad \text{(for small } e\text{)}
 $$
 
   so longer autonomous runs raise the chance of going off-trajectory even when $e$ is low.
@@ -82,7 +82,7 @@ $$
 
 with $R(d, n)$ non-decreasing in both arguments. in particular, as $n$ grows (batch size / review load), decision fatigue makes review slower + more error-prone.
 
-background agents increase $d$, while tight feedback loops minimize it because they prune bad branches early. in a tight loop, the human remembers what they just asked for because the mental state is warm, so rejection is fast + local - the cognitive overhead of context switching is limited.
+background agents increase $d$, while tight feedback loops minimize it because they prune bad branches early. in a tight loop, the human remembers what they just asked for because the mental state is warm, so rejection is fast + local — the cognitive overhead of context switching is limited.
 
 in other words, background agents only become useful when they can complete an end-to-end trajectory with a low enough probability of “trajectory-level” failure that the expected cost of delayed correction is small.
 
