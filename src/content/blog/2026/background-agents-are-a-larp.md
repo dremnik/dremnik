@@ -4,9 +4,7 @@ date: "2026-02-07"
 slug: "background-agents-are-a-larp"
 ---
 
-# 2026.02.07 - background agents are a larp
-
-*a sober review of agent autonomy, and working with semi-toddlerish models*
+> *a sober review of agent autonomy, and working with semi-toddlerish models*
 
 if you've been trying to manage 20 claude sessions in tmux, or using cursor's background agents - i have bad news for you: you're probably doing yourself more harm than good (unless quality isn't a concern for you - disregard this article).
 
