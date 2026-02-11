@@ -42,9 +42,14 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <div className="relative">
             <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-accent-mono size-5" />
-            <h1 className="text-[32px] font-founder-grotesk font-normal text-foreground mb-4">
+            <h1 className="text-[32px] font-founder-grotesk font-normal text-foreground mb-2">
               {post.title}
             </h1>
+            {post.description ? (
+              <div className="text-muted-foreground text-[15px] leading-snug max-w-prose">
+                {post.description}
+              </div>
+            ) : null}
           </div>
         </header>
 
