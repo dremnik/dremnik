@@ -15,7 +15,8 @@ there are a few names that people are giving to this idea right now:
 * async agents
 
 i like to think of them as landing somewhere on Karpathy's _autonomy slider_. 
-![[autonomy-slider 2.png]]
+
+![Karpathy autonomy slider](/blog/2026/autonomy-slider.png)
 
 - _partial autonomy_: human observes partial outputs → intervenes early → constrains trajectory
 - _fuller autonomy_: agent commits to a trajectory → human evaluates only after substantial work exists (work continues without waiting for feedback or results)
