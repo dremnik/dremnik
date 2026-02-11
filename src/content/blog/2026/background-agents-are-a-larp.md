@@ -2,9 +2,9 @@
 title: "background agents are a larp"
 date: "2026-02-07"
 slug: "background-agents-are-a-larp"
+description: "a sober review of agent autonomy, and working with semi-toddlerish models"
+ogImage: "/blog/2026/autonomy-slider.png"
 ---
-
-> *a sober review of agent autonomy, and working with semi-toddlerish models*
 
 if you've been trying to manage 20 claude code sessions in tmux, or using cursor's background agents — i have bad news for you: you're probably doing yourself more harm than good.
 

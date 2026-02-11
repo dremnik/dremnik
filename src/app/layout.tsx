@@ -8,6 +8,7 @@ import "./globals.css";
 import "katex/dist/katex.min.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dremnik.com"),
   title: "Andrew Jones | dremnik",
   description: "Designer, Engineer, Student of Life",
 };

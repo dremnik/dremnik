@@ -72,8 +72,24 @@ export async function generateMetadata({ params }: Props) {
     return {};
   }
 
+  const siteUrl = "https://dremnik.com";
+  const ogImage = post.ogImage;
+
   return {
     title: `${post.title} - dremnik`,
-    description: post.title,
+    description: post.description ?? post.title,
+    openGraph: {
+      title: post.title,
+      description: post.description ?? post.title,
+      url: `${siteUrl}/blog/${post.slug}`,
+      type: "article",
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description ?? post.title,
+      images: [ogImage],
+    },
   };
 }

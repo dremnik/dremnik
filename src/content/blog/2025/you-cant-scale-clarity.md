@@ -2,6 +2,8 @@
 title: "you can't scale clarity"
 date: "2025-12-27"
 slug: "you-cant-scale-clarity"
+description: "you can't scale clarity"
+ogImage: "/blog/design-is-the-new-bottleneck/amdahls-law-speedup.png"
 ---
 
 i've been thinking a lot about what it means to build software now that AI can write code better than most people. there's a few memes going around to the tune of "i can't wait for 50x agency" or "imagine thousands of agents working on your behalf". and yet my intuition just can't seem to agree with these stories floating around on twitter.

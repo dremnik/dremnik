@@ -9,6 +9,8 @@ const posts = defineCollection({
     title: z.string(),
     date: z.string(), // We'll parse this as date for sorting
     slug: z.string(),
+    description: z.string().optional(),
+    ogImage: z.string(),
     published: z.boolean().default(true),
   }),
   transform(document, context) {
