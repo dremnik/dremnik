@@ -1,3 +1,10 @@
+// -----------------------------------
+// projects/dremnik/landing/src/components/mobile-menu.tsx
+//
+// const NAV_LINKS                 L25
+// export function MobileMenu()    L31
+// -----------------------------------
+
 "use client";
 
 import { useEffect, useState } from "react";

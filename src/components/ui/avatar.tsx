@@ -1,3 +1,11 @@
+// --------------------------------
+// projects/dremnik/landing/src/components/ui/avatar.tsx
+//
+// function Avatar()            L16
+// function AvatarImage()       L32
+// function AvatarFallback()    L45
+// --------------------------------
+
 "use client"
 
 import * as React from "react"

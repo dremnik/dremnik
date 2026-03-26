@@ -3,6 +3,13 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 
+// -----------------------------------------
+// projects/dremnik/landing/src/lib/images.ts
+//
+// const SUPPORTED_EXTENSIONS            L13
+// export function getProjectImages()    L15
+// -----------------------------------------
+
 const SUPPORTED_EXTENSIONS = /\.(jpg|jpeg|png|gif|webp|avif)$/i;
 
 export function getProjectImages(projectSlug: string): string[] {

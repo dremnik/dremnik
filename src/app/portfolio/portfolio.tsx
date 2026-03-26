@@ -3,6 +3,12 @@ import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { PROJECT_ICONS } from "@/components/ui/icons";
 
+// ------------------------------------------
+// projects/dremnik/landing/src/app/portfolio/portfolio.tsx
+//
+// export default function Portfolio()    L12
+// ------------------------------------------
+
 export default function Portfolio() {
   return (
     <div className="max-w-[var(--content-width)] mx-auto px-6">

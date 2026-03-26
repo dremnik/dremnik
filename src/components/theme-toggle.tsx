@@ -1,3 +1,9 @@
+// ------------------------------------
+// projects/dremnik/landing/src/components/theme-toggle.tsx
+//
+// export function ThemeToggle()    L13
+// ------------------------------------
+
 "use client";
 
 import * as React from "react";

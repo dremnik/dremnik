@@ -3,6 +3,42 @@ import Image from "next/image";
 
 // PROJECTS
 
+// --------------------------------------------------
+// projects/dremnik/landing/src/components/ui/icons.tsx
+//
+// export const PROJECT_ICONS                     L42
+// export function IconKernl()                    L51
+// export function IconMicroprojects()            L86
+// export function IconReverie()                 L119
+// export function IconEmblem()                  L145
+// className                                     L150
+// height                                        L151
+// width                                         L152
+// export function IconPropics()                 L176
+// className                                     L182
+// height                                        L183
+// width                                         L184
+// export function IconEsonut()                  L197
+// export function IconTwitterX()                L245
+// export function IconLinkedIn()                L266
+// export function IconGithub()                  L287
+// export function IconSun()                     L315
+// export function IconMoon()                    L333
+// export function IconLeaf()                    L351
+// export function IconArrowUpDiagonalScale()    L378
+// export function IconChevronUpDown()           L399
+// export function IconChevronDownSmall()        L420
+// export function IconChevronUpSmall()          L441
+// export function IconChevronLeft()             L462
+// export function IconChevronRight()            L483
+// export function IconChevronLeftSmall()        L504
+// export function IconBox()                     L525
+// export function IconPlus()                    L543
+// export function IconMenu()                    L561
+// export function IconSearch()                  L579
+// export function IconCheck()                   L600
+// --------------------------------------------------
+
 export const PROJECT_ICONS = {
   kernl: <IconKernl className="size-9" />,
   microprojects: <IconMicroprojects className="size-9" />,

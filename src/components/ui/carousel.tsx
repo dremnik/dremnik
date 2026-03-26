@@ -1,3 +1,31 @@
+// -----------------------------------
+// projects/dremnik/landing/src/components/ui/carousel.tsx
+//
+// type CarouselApi                L39
+// type UseCarouselParameters      L40
+// type CarouselOptions            L41
+// type CarouselPlugin             L42
+// type CarouselProps              L44
+// opts                            L45
+// plugins                         L46
+// orientation                     L47
+// setApi                          L48
+// type CarouselContextProps       L51
+// carouselRef                     L52
+// api                             L53
+// scrollPrev                      L54
+// scrollNext                      L55
+// canScrollPrev                   L56
+// canScrollNext                   L57
+// const CarouselContext           L60
+// function useCarousel()          L62
+// function Carousel()             L72
+// function CarouselContent()     L162
+// function CarouselItem()        L183
+// function CarouselPrevious()    L201
+// function CarouselNext()        L231
+// -----------------------------------
+
 "use client"
 
 import * as React from "react"

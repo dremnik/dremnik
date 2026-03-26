@@ -7,6 +7,14 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
+// -------------------------------------------
+// projects/dremnik/landing/src/app/layout.tsx
+//
+// export const metadata                   L18
+// export default function RootLayout()    L24
+// children                                L27
+// -------------------------------------------
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://dremnik.com"),
   title: "Andrew Jones | dremnik",

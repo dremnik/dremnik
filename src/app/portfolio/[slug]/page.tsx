@@ -13,6 +13,15 @@ import {
   PROJECT_ICONS,
 } from "@/components/ui/icons";
 
+// ---------------------------------------------------
+// projects/dremnik/landing/src/app/portfolio/[slug]/page.tsx
+//
+// export async function generateStaticParams()    L25
+// export default async function ProjectPage()     L31
+// params                                          L34
+// slug                                            L34
+// ---------------------------------------------------
+
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
     slug: project.slug,

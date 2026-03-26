@@ -1,3 +1,10 @@
+// -------------------------------------------
+// projects/dremnik/landing/src/app/blog/layout.tsx
+//
+// export default function BlogLayout()    L13
+// children                                L16
+// -------------------------------------------
+
 'use client';
 
 import { Nav } from '@/components/nav';

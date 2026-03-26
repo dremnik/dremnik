@@ -1,3 +1,11 @@
+// ----------------------------
+// projects/dremnik/landing/src/components/nav.tsx
+//
+// interface NavProps       L20
+//   children               L21
+// export function Nav()    L24
+// ----------------------------
+
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";

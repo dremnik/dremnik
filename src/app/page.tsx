@@ -1,3 +1,9 @@
+// -------------------------------------
+// projects/dremnik/landing/src/app/page.tsx
+//
+// export default function Home()    L17
+// -------------------------------------
+
 "use client";
 
 import About from "@/app/about/about";

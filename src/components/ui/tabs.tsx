@@ -1,3 +1,19 @@
+// ----------------------------------------
+// projects/dremnik/landing/src/components/ui/tabs.tsx
+//
+// function Tabs()                      L26
+// function TabsList()                  L39
+// interface TabsTriggerProps           L55
+//   value                              L57
+// const TabsTrigger                    L60
+// function AnimatedTabsUnderline()     L82
+// activeTab                            L86
+// tabs                                 L87
+// value                                L88
+// ref                                  L89
+// function TabsContent()              L129
+// ----------------------------------------
+
 "use client";
 
 import * as React from "react";

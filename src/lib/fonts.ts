@@ -1,5 +1,14 @@
 import localFont from "next/font/local";
 
+// ----------------------------------
+// projects/dremnik/landing/src/lib/fonts.ts
+//
+// export const sfPro             L12
+// export const sfProDisplay      L17
+// export const sfMono            L38
+// export const founderGrotesk    L54
+// ----------------------------------
+
 export const sfPro = localFont({
   src: "../../public/fonts/SF/SF-Pro.ttf",
   variable: "--font-sf-pro",

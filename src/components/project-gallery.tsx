@@ -1,3 +1,18 @@
+// ---------------------------------------
+// projects/dremnik/landing/src/components/project-gallery.tsx
+//
+// interface ProjectGalleryProps       L36
+//   videos                            L37
+//   height                            L38
+//   images                            L38
+//   ref                               L38
+//   src                               L38
+//   title                             L38
+//   width                             L38
+//   projectName                       L39
+// export function ProjectGallery()    L42
+// ---------------------------------------
+
 "use client";
 
 import Image from "next/image";

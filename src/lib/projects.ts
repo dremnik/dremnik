@@ -1,3 +1,39 @@
+// ----------------------------------------------
+// projects/dremnik/landing/src/lib/projects.ts
+//
+// export type Project                        L37
+// slug                                       L38
+// name                                       L39
+// year                                       L40
+// tagline                                    L41
+// description                                L42
+// descriptionMobile                          L43
+// name                                       L44
+// tags                                       L44
+// url                                        L44
+// github                                     L45
+// url                                        L46
+// gallery                                    L47
+// videos                                     L48
+// images                                     L49
+// src                                        L50
+// title                                      L51
+// width                                      L52
+// height                                     L53
+// ref                                        L54
+// caption                                    L56
+// const KERNL_DESCRIPTION                    L60
+// const KERNL_DESCRIPTION_MOBILE             L66
+// const MICROPROJECTS_DESCRIPTION            L74
+// const MICROPROJECTS_DESCRIPTION_MOBILE     L82
+// const REVERIE_DESCRIPTION                  L92
+// const EMBLEM_DESCRIPTION                   L96
+// const PROPICS_DESCRIPTION                 L108
+// const ESONUT_DESCRIPTION                  L116
+// export const PROJECTS                     L140
+// export function getProjectBySlug()        L501
+// ----------------------------------------------
+
 export type Project = {
   slug: string;
   name: string;
@@ -213,56 +249,56 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
-  {
-    slug: "microprojects",
-    name: "microprojects",
-    year: 2025,
-    tagline: "Next.js template with boilerplate for a multi-tenant AI SaaS.",
-    description: MICROPROJECTS_DESCRIPTION,
-    descriptionMobile: MICROPROJECTS_DESCRIPTION_MOBILE,
-    tags: [
-      { name: "clerk", url: "https://clerk.com/" },
-      { name: "stripe", url: "https://stripe.com/" },
-    ],
-    // url: "https://microprojects.app",
-    github: "dremnik/microprojects",
-    gallery: {
-      videos: [],
-      images: [
-        {
-          src: "/projects/microprojects/1 - Login.png",
-          title: "Login",
-          width: 3018,
-          height: 1888,
-          ref: true,
-        },
-        {
-          src: "/projects/microprojects/2 - Create workspace.png",
-          title: "Create workspace",
-          width: 3018,
-          height: 1888,
-        },
-        {
-          src: "/projects/microprojects/3 - Workspace settings.png",
-          title: "Workspace settings",
-          width: 3018,
-          height: 1888,
-        },
-        {
-          src: "/projects/microprojects/4 - Billing.png",
-          title: "Billing",
-          width: 3018,
-          height: 1888,
-        },
-        {
-          src: "/projects/microprojects/5 - Users.png",
-          title: "Manage users",
-          width: 3018,
-          height: 1888,
-        },
-      ],
-    },
-  },
+  // {
+  //   slug: "microprojects",
+  //   name: "microprojects",
+  //   year: 2025,
+  //   tagline: "Next.js template with boilerplate for a multi-tenant AI SaaS.",
+  //   description: MICROPROJECTS_DESCRIPTION,
+  //   descriptionMobile: MICROPROJECTS_DESCRIPTION_MOBILE,
+  //   tags: [
+  //     { name: "clerk", url: "https://clerk.com/" },
+  //     { name: "stripe", url: "https://stripe.com/" },
+  //   ],
+  //   // url: "https://microprojects.app",
+  //   github: "dremnik/microprojects",
+  //   gallery: {
+  //     videos: [],
+  //     images: [
+  //       {
+  //         src: "/projects/microprojects/1 - Login.png",
+  //         title: "Login",
+  //         width: 3018,
+  //         height: 1888,
+  //         ref: true,
+  //       },
+  //       {
+  //         src: "/projects/microprojects/2 - Create workspace.png",
+  //         title: "Create workspace",
+  //         width: 3018,
+  //         height: 1888,
+  //       },
+  //       {
+  //         src: "/projects/microprojects/3 - Workspace settings.png",
+  //         title: "Workspace settings",
+  //         width: 3018,
+  //         height: 1888,
+  //       },
+  //       {
+  //         src: "/projects/microprojects/4 - Billing.png",
+  //         title: "Billing",
+  //         width: 3018,
+  //         height: 1888,
+  //       },
+  //       {
+  //         src: "/projects/microprojects/5 - Users.png",
+  //         title: "Manage users",
+  //         width: 3018,
+  //         height: 1888,
+  //       },
+  //     ],
+  //   },
+  // },
   {
     slug: "reverie",
     name: "rêverie",

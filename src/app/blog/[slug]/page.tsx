@@ -5,6 +5,17 @@ import { allPosts } from "content-collections";
 import { IconChevronLeftSmall, IconLeaf } from "@/components/ui/icons";
 import { Markdown } from "@/components/markdown";
 
+// ---------------------------------------------------
+// projects/dremnik/landing/src/app/blog/[slug]/page.tsx
+//
+// interface Props                                 L19
+//   params                                        L20
+//   slug                                          L20
+// export default async function BlogPostPage()    L23
+// export async function generateStaticParams()    L75
+// export async function generateMetadata()        L83
+// ---------------------------------------------------
+
 interface Props {
   params: Promise<{ slug: string }>;
 }

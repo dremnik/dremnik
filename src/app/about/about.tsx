@@ -5,6 +5,14 @@ import { allPosts } from "content-collections";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Markdown } from "@/components/markdown";
 
+// --------------------------------------
+// projects/dremnik/landing/src/app/about/about.tsx
+//
+// const description                  L16
+// const LATEST_LENGTH                L23
+// export default function About()    L25
+// --------------------------------------
+
 const description = `Hello world.
 
 I'm Andrew — a software designer, engineer and founder. I'm glad you've landed here, hopefully you find

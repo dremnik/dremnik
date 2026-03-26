@@ -1,6 +1,14 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { z } from "zod";
 
+// ---------------------
+// projects/dremnik/landing/content-collections.ts
+//
+// const posts       L12
+// transform()       L24
+// const projects    L37
+// ---------------------
+
 const posts = defineCollection({
   name: "posts",
   directory: "src/content/blog",

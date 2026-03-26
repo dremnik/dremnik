@@ -1,3 +1,16 @@
+// ----------------------------------
+// projects/dremnik/landing/src/components/ui/route-tabs.tsx
+//
+// type RouteTab                  L24
+// value                          L25
+// href                           L26
+// label                          L27
+// exact                          L28
+// export function RouteTabs()    L31
+// tabs                           L35
+// className                      L36
+// ----------------------------------
+
 "use client";
 
 import Link from "next/link";

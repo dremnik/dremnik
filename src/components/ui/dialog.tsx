@@ -1,3 +1,21 @@
+// ------------------------------------
+// projects/dremnik/landing/src/components/ui/dialog.tsx
+//
+// function Dialog()                L27
+// function DialogTrigger()         L33
+// function DialogPortal()          L39
+// function DialogClose()           L45
+// function DialogOverlay()         L51
+// function DialogContent()         L67
+// showCloseButton                  L75
+// overlayClassName                 L76
+// fullScreen                       L77
+// function DialogHeader()         L107
+// function DialogFooter()         L117
+// function DialogTitle()          L130
+// function DialogDescription()    L143
+// ------------------------------------
+
 "use client"
 
 import * as React from "react"

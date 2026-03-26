@@ -1,3 +1,12 @@
+// -----------------------------------
+// projects/dremnik/landing/src/components/youtube-embed.tsx
+//
+// interface VideoEmbedProps       L10
+//   video                         L11
+//   title                         L12
+// export function VideoEmbed()    L15
+// -----------------------------------
+
 interface VideoEmbedProps {
   video: string;
   title?: string;

@@ -1,3 +1,10 @@
+// ------------------------------------------------
+// projects/dremnik/landing/src/app/portfolio/layout.tsx
+//
+// export default function PortfolioLayout()    L13
+// children                                     L16
+// ------------------------------------------------
+
 'use client';
 
 import { Nav } from '@/components/nav';

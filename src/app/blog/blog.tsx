@@ -1,3 +1,9 @@
+// -------------------------------------
+// projects/dremnik/landing/src/app/blog/blog.tsx
+//
+// export default function Blog()    L16
+// -------------------------------------
+
 "use client";
 
 import Link from "next/link";

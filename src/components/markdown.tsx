@@ -7,6 +7,15 @@ import rehypeKatex from "rehype-katex";
 import type { Components } from "react-markdown";
 import Image from "next/image";
 
+// ----------------------------------
+// projects/dremnik/landing/src/components/markdown.tsx
+//
+// const components               L19
+// interface MarkdownProps       L152
+//   content                     L153
+// export function Markdown()    L156
+// ----------------------------------
+
 const components: Components = {
   h1: ({ children }) => (
     <h1 className="text-3xl font-founder-grotesk font-normal text-white mb-8 mt-10 first:mt-0">
