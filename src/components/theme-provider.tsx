@@ -1,3 +1,10 @@
+// --------------------------------------
+// projects/dremnik/landing/src/components/theme-provider.tsx
+//
+// export function ThemeProvider()    L13
+// children                           L16
+// --------------------------------------
+
 "use client";
 
 import * as React from "react";
@@ -11,8 +18,7 @@ export function ThemeProvider({
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      forcedTheme="dark"
       disableTransitionOnChange
     >
       {children}

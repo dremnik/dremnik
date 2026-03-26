@@ -1,3 +1,11 @@
+// -------------------------------
+// projects/dremnik/landing/src/components/header.tsx
+//
+// const LINKEDIN_URL          L20
+// const GITHUB_URL            L21
+// export function Header()    L23
+// -------------------------------
+
 "use client";
 
 import Link from "next/link";
@@ -7,7 +15,6 @@ import { useState, useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 import { IconGithub, IconLinkedIn, IconTwitterX } from "@/components/ui/icons";
 import { MobileMenu } from "@/components/mobile-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/andrew-jones-013154219";
 const GITHUB_URL = "https://github.com/dremnik";
@@ -74,8 +81,6 @@ export function Header() {
                     <IconGithub className="size-3.5" />
                   </a>
                 </div>
-                <Separator orientation="vertical" className="!h-4" />
-                <ThemeToggle />
               </div>
             </div>
             <div className="md:hidden pointer-events-auto">
