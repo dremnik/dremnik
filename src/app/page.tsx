@@ -1,5 +1,5 @@
 // -------------------------------------
-// projects/dremnik/landing/src/app/page.tsx
+// projects/dremnik/src/app/page.tsx
 //
 // export default function Home()    L17
 // -------------------------------------

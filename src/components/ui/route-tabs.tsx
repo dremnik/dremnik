@@ -1,5 +1,5 @@
 // ----------------------------------
-// projects/dremnik/landing/src/components/ui/route-tabs.tsx
+// projects/dremnik/src/components/ui/route-tabs.tsx
 //
 // type RouteTab                  L24
 // value                          L25

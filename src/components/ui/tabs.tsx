@@ -1,5 +1,5 @@
 // ----------------------------------------
-// projects/dremnik/landing/src/components/ui/tabs.tsx
+// projects/dremnik/src/components/ui/tabs.tsx
 //
 // function Tabs()                      L26
 // function TabsList()                  L39

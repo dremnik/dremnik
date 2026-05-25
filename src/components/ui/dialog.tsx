@@ -1,5 +1,5 @@
 // ------------------------------------
-// projects/dremnik/landing/src/components/ui/dialog.tsx
+// projects/dremnik/src/components/ui/dialog.tsx
 //
 // function Dialog()                L27
 // function DialogTrigger()         L33

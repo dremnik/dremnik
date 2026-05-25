@@ -2,7 +2,7 @@ import { withContentCollections } from "@content-collections/next";
 import type { NextConfig } from "next";
 
 // -----------------------
-// projects/dremnik/landing/next.config.ts
+// projects/dremnik/next.config.ts
 //
 // const nextConfig    L10
 // -----------------------

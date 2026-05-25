@@ -1,5 +1,5 @@
 // --------------------------------
-// projects/dremnik/landing/src/components/ui/avatar.tsx
+// projects/dremnik/src/components/ui/avatar.tsx
 //
 // function Avatar()            L16
 // function AvatarImage()       L32

@@ -3,6 +3,7 @@ title: "you can't scale clarity"
 date: "2025-12-27"
 slug: "you-cant-scale-clarity"
 description: "you can't scale clarity"
+published: false
 ogImage: "/blog/design-is-the-new-bottleneck/amdahls-law-speedup.png"
 path: dremnik/landing/src/content/blog/2025/you-cant-scale-clarity.md
 outline: |

@@ -1,5 +1,5 @@
 // ----------------------------
-// projects/dremnik/landing/src/components/nav.tsx
+// projects/dremnik/src/components/nav.tsx
 //
 // interface NavProps       L20
 //   children               L21

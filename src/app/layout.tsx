@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { sfPro, sfProDisplay, sfMono, founderGrotesk } from "@/lib/fonts";
+import { inter, sfProDisplay, sfMono, founderGrotesk, spezia } from "@/lib/fonts";
 import { Header } from "@/components/header";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -8,7 +8,7 @@ import "./globals.css";
 import "katex/dist/katex.min.css";
 
 // -------------------------------------------
-// projects/dremnik/landing/src/app/layout.tsx
+// projects/dremnik/src/app/layout.tsx
 //
 // export const metadata                   L18
 // export default function RootLayout()    L24
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sfPro.variable} ${sfProDisplay.variable} ${sfMono.variable} ${founderGrotesk.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${inter.variable} ${sfProDisplay.variable} ${sfMono.variable} ${founderGrotesk.variable} ${spezia.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
           <div className="min-h-[100svh]">

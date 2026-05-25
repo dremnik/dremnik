@@ -1,5 +1,5 @@
 // ---------------------------
-// projects/dremnik/landing/src/components/ui/separator.tsx
+// projects/dremnik/src/components/ui/separator.tsx
 //
 // function Separator()    L14
 // ---------------------------

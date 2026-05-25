@@ -1,5 +1,5 @@
 // ------------------------------------------------
-// projects/dremnik/landing/src/app/portfolio/layout.tsx
+// projects/dremnik/src/app/portfolio/layout.tsx
 //
 // export default function PortfolioLayout()    L13
 // children                                     L16

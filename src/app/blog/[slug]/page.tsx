@@ -6,7 +6,7 @@ import { IconChevronLeftSmall, IconLeaf } from "@/components/ui/icons";
 import { Markdown } from "@/components/markdown";
 
 // ---------------------------------------------------
-// projects/dremnik/landing/src/app/blog/[slug]/page.tsx
+// projects/dremnik/src/app/blog/[slug]/page.tsx
 //
 // interface Props                                 L19
 //   params                                        L20
@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <div className="relative">
             <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-accent-mono size-5" />
-            <h1 className="text-[32px] font-founder-grotesk font-normal text-foreground mb-2">
+            <h1 className="text-[32px] font-spezia font-normal text-foreground mb-2">
               {post.title}
             </h1>
             {post.description ? (

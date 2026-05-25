@@ -1,17 +1,19 @@
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 
 // ----------------------------------
-// projects/dremnik/landing/src/lib/fonts.ts
+// projects/dremnik/src/lib/fonts.ts
 //
-// export const sfPro             L12
-// export const sfProDisplay      L17
-// export const sfMono            L38
-// export const founderGrotesk    L54
+// export const inter             L13
+// export const sfProDisplay      L19
+// export const sfMono            L40
+// export const founderGrotesk    L56
 // ----------------------------------
 
-export const sfPro = localFont({
-  src: "../../public/fonts/SF/SF-Pro.ttf",
-  variable: "--font-sf-pro",
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const sfProDisplay = localFont({
@@ -54,4 +56,15 @@ export const sfMono = localFont({
 export const founderGrotesk = localFont({
   src: "../../public/fonts/FoundersGrotesk/TestFoundersGrotesk-Regular.otf",
   variable: "--font-founder-grotesk",
+});
+
+export const spezia = localFont({
+  src: [
+    { path: "../../public/fonts/Spezia/Spezia-Light.woff2", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Spezia/Spezia-Book.woff2", weight: "350", style: "normal" },
+    { path: "../../public/fonts/Spezia/Spezia-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Spezia/Spezia-Medium.woff2", weight: "500", style: "normal" },
+  ],
+  variable: "--font-spezia",
+  display: "swap",
 });

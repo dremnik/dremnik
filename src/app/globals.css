@@ -9,10 +9,11 @@
     --color-foreground-soft: var(--foreground-soft);
     --color-muted-foreground: var(--muted-foreground);
     --color-prose: var(--prose);
-    --font-sans: var(--font-sf-pro);
+    --font-sans: var(--font-inter);
     --font-sans-display: var(--font-sf-pro-display);
     --font-mono: var(--font-sf-mono);
     --font-founder-grotesk: var(--font-founder-grotesk);
+    --font-spezia: var(--font-spezia);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

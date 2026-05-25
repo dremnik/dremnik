@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 // -----------------------------------
-// projects/dremnik/landing/src/middleware.ts
+// projects/dremnik/src/middleware.ts
 //
 // export function middleware()    L11
 // export const config             L22

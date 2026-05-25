@@ -1,9 +1,9 @@
 // -------------------------------
-// projects/dremnik/landing/src/components/header.tsx
+// projects/dremnik/src/components/header.tsx
 //
-// const LINKEDIN_URL          L20
-// const GITHUB_URL            L21
-// export function Header()    L23
+// const LINKEDIN_URL          L19
+// const GITHUB_URL            L20
+// export function Header()    L22
 // -------------------------------
 
 "use client";
@@ -45,7 +45,7 @@ export function Header() {
         <div className="flex items-center">
           <div className="flex-1 min-w-0 pointer-events-auto">
             <Link href="/">
-              <h2 className="text-[18.4px] font-founder-grotesk">Andrew Jones</h2>
+              <h2 className="text-[16.5px] font-spezia tracking-[-0.04em]">Andrew Jones</h2>
             </Link>
           </div>
           <div className="md:hidden flex-1 flex justify-center pointer-events-auto">

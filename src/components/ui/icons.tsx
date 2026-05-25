@@ -4,7 +4,7 @@ import Image from "next/image";
 // PROJECTS
 
 // --------------------------------------------------
-// projects/dremnik/landing/src/components/ui/icons.tsx
+// projects/dremnik/src/components/ui/icons.tsx
 //
 // export const PROJECT_ICONS                     L42
 // export function IconKernl()                    L51
@@ -40,6 +40,8 @@ import Image from "next/image";
 // --------------------------------------------------
 
 export const PROJECT_ICONS = {
+  hermaeus: <IconHermaeus className="size-8" />,
+  apocrypha: <IconApocrypha className="size-16" />,
   kernl: <IconKernl className="size-9" />,
   microprojects: <IconMicroprojects className="size-9" />,
   reverie: <IconReverie className="size-6" />,
@@ -47,6 +49,42 @@ export const PROJECT_ICONS = {
   propics: <IconPropics height={40} width={40} />,
   esonut: <IconEsonut className="size-10" />,
 } as const;
+
+export function IconHermaeus({
+  className,
+  ...props
+}: React.ComponentProps<"svg">) {
+  return (
+    <svg
+      viewBox="0 6 19 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Hermaeus"
+      className={cn("size-6", className)}
+      {...props}
+    >
+      <path
+        d="M7.21811 23.356V24H0.666109V23.356C2.34611 23.356 3.10211 23.328 3.10211 22.012V9.02C3.10211 7.704 2.34611 7.676 0.666109 7.676V7.032H7.21811V7.676C5.53811 7.676 4.78211 7.704 4.78211 9.02V14.732H14.2181V9.02C14.2181 7.704 13.4621 7.676 11.7821 7.676V7.032H18.3341V7.676C16.6541 7.676 15.8981 7.704 15.8981 9.02V22.012C15.8981 23.328 16.6541 23.356 18.3341 23.356V24H11.7821V23.356C13.4621 23.356 14.2181 23.328 14.2181 22.012V15.516H4.78211V22.012C4.78211 23.328 5.53811 23.356 7.21811 23.356Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+export function IconApocrypha({
+  className,
+  ...props
+}: React.ComponentProps<"img">) {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/apocrypha-mark.svg"
+      alt="Apocrypha"
+      className={cn("size-9 object-contain", className)}
+      {...props}
+    />
+  );
+}
 
 export function IconKernl({
   className,

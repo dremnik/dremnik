@@ -1,5 +1,5 @@
 // -----------------------------------
-// projects/dremnik/landing/src/components/youtube-embed.tsx
+// projects/dremnik/src/components/youtube-embed.tsx
 //
 // interface VideoEmbedProps       L10
 //   video                         L11

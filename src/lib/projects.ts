@@ -1,5 +1,5 @@
 // ----------------------------------------------
-// projects/dremnik/landing/src/lib/projects.ts
+// projects/dremnik/src/lib/projects.ts
 //
 // export type Project                        L37
 // slug                                       L38
@@ -41,6 +41,8 @@ export type Project = {
   tagline: string;
   description: string;
   descriptionMobile?: string;
+  kind?: "project" | "concept";
+  thumbnail?: { bg?: string; fg?: string; image?: string };
   tags: string[] | { name: string; url?: string }[];
   github?: string;
   url?: string;
@@ -57,16 +59,20 @@ export type Project = {
   };
 };
 
-const KERNL_DESCRIPTION = `kernl is an ongoing experiment to answer the question of the interface for AGI. It is an AI workspace where tasks complete themselves, inspired by a couple principles:
+const KERNL_DESCRIPTION = `Chat is the wrong primitive for AI work. As agents become more autonomous, intellectual work shifts toward coordinating autonomous workers — and we already have a mental model for that. It's how we work with other people. The shift is toward async forms of work, and kernl sits at the coordination layer.
 
-* Minimalism + noise reduction
-* Vim-inspired keyboard navigation
+A project management tool, Linear + Notion lineage, with two structural ideas:
+
+1. **Tasks as the unit of human-agent coordination.** Dispatch, monitor, review — the way you work with a person who is partially trusted.
+2. **Documents as intermediate execution artifacts.** You inspect what the agents did, not just what they output.
 `;
 
-const KERNL_DESCRIPTION_MOBILE = `kernl is an ongoing experiment to answer the question of the interface for AGI. It is an AI workspace where tasks complete themselves, inspired by a couple principles:
+const KERNL_DESCRIPTION_MOBILE = `Chat is the wrong primitive for AI work. As agents become more autonomous, intellectual work shifts toward coordinating autonomous workers — and we already have a mental model for that. It's how we work with other people. The shift is toward async forms of work, and kernl sits at the coordination layer.
 
-* Minimalism + noise reduction
-* Vim-inspired keyboard navigation
+A project management tool, Linear + Notion lineage, with two structural ideas:
+
+1. **Tasks as the unit of human-agent coordination.** Dispatch, monitor, review — the way you work with a person who is partially trusted.
+2. **Documents as intermediate execution artifacts.** You inspect what the agents did, not just what they output.
 `;
 
 // ==========
@@ -113,6 +119,26 @@ On the tech side, here was my first exposure to some of the distributed systems 
 
 // ==========
 
+const HERMAEUS_DESCRIPTION = `Bloomberg's premise was simple: trustworthy information for making investing decisions.
+
+Filings, fundamentals, and the rest of the institutional data layer still matter, but they've been freed: ingested, entity-resolved, and queryable by API instead of locked behind a $25K terminal. At the same time, new frontiers have opened — the most valuable commentary now sits in podcasts, Substacks, and independent RSS, where leaders go direct rather than through wires and sell-side desks. Generic search has degraded enough from AI/SEO slop that a hand-picked corpus is a felt need on contact.
+
+Hermaeus indexes wherever the signal lives — whether it's a number from a 10-K or a take from a podcast — under one trust contract:
+
+1. **Source-linked.** Every data point traces back to the original document. Audit-ready by default.
+2. **Entity-resolved.** Companies, people, subsidiaries, filings, and the people writing about them — cross-referenced into one coherent graph.
+3. **API-first.** One key, one query language. Structured signal for analysts, developers, and the agents working alongside them.
+
+Built for the investors, analysts, and agents making real decisions on the new information frontier.`;
+
+// ==========
+
+const APOCRYPHA_DESCRIPTION = `Apocrypha is a publication for the reader who still desires long-form, low-cadence, primary-source-heavy reflection. The subject is the long arc of the evolution of human systems — capital, machines, structural shifts taking place — written for the kind of attention that has become rare. Treating markets, capital, machines, and information as objects worthy of serious cultural inquiry, not as discourse to be reacted to.
+
+The formats that publish thinking today — X, LinkedIn, the conference fireside — reward certainty and controversy. Meanwhile the volume of slop continues to increase and our attention continues to be abused. The reader who wants to understand what is happening is offered very little that is honest, slow, or built to last. That is the goal of The Apocrypha.`;
+
+// ==========
+
 const ESONUT_DESCRIPTION = `esonut was an all-in-one platform for ESO—covering wikis, builds, tools, and interactive game resources. It was my first big project and a blast to create. My friends and I were playing this game quite a lot at the time (during COVID especially).
 
 It was my first real taste of the joy in design, and the freedom of having no constraints. Its sole purpose was to be a project of fun & learning, a way to get our toes wet in the world of programming, and it satisfied all of these objectives thoroughly.
@@ -139,18 +165,47 @@ Core features:
 
 export const PROJECTS: Project[] = [
   {
+    slug: "apocrypha",
+    name: "The Apocrypha",
+    year: 2026,
+    tagline: "Long-form on capital, machines, and the period we are in",
+    description: APOCRYPHA_DESCRIPTION,
+    thumbnail: { bg: "#101011", fg: "#FFFFFF", image: "/apocrypha-mark.svg" },
+    url: "https://theapocrypha.xyz",
+    tags: [],
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+  {
+    slug: "hermaeus",
+    name: "Hermaeus",
+    year: 2026,
+    tagline: "Indexing the information frontier",
+    description: HERMAEUS_DESCRIPTION,
+    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
+    url: "https://hermaeus.xyz",
+    tags: [],
+    gallery: {
+      videos: [],
+      images: [],
+    },
+  },
+  {
     slug: "kernl",
     name: "kernl",
     year: 2025,
-    tagline: "A vim-centric AI workspace",
+    tagline: "The interface for AGI",
     description: KERNL_DESCRIPTION,
     descriptionMobile: KERNL_DESCRIPTION_MOBILE,
+    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
     tags: [
       { name: "rust", url: "https://www.rust-lang.org/" },
       { name: "tauri", url: "https://tauri.app/" },
       { name: "k8s", url: "https://kubernetes.io/" },
     ],
-    // url: "https://kernl.sh",
+    url: "https://kernl.sh",
     // github: "dremnik/kernl",
     gallery: {
       videos: ["file:/projects/kernl/demo.mp4"], // Format: "youtube:videoId" or "file:/path/to/video.mp4"
@@ -305,6 +360,8 @@ export const PROJECTS: Project[] = [
     year: 2025,
     tagline: "AI canvas and multimodal library for creatives",
     description: REVERIE_DESCRIPTION,
+    kind: "concept",
+    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
     tags: [],
     gallery: {
       videos: [],
@@ -359,8 +416,9 @@ export const PROJECTS: Project[] = [
     slug: "emblem",
     name: "Emblem",
     year: 2023,
-    tagline: "AI operating system for investors — PE, VC, IB",
+    tagline: "AI operating system for investors",
     description: EMBLEM_DESCRIPTION,
+    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
     tags: [
       { name: "next.js", url: "https://nextjs.org/" },
       { name: "mastra", url: "https://mastra.ai/" },
@@ -386,31 +444,12 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "propics",
-    name: "ProPics",
-    year: 2023,
-    tagline: "Professional AI headshots using Dreambooth",
-    description: PROPICS_DESCRIPTION,
-    tags: [
-      { name: "dreambooth", url: "https://dreambooth.github.io/" },
-      // { name: "tensorflow", url: "https://www.tensorflow.org/" },
-      {
-        name: "argo workflows",
-        url: "https://argoproj.github.io/workflows/",
-      },
-    ],
-    url: "https://propics.ai",
-    gallery: {
-      videos: [],
-      images: [],
-    },
-  },
-  {
     slug: "esonut",
     name: "esonut",
     year: 2021,
     tagline: "Wiki for The Elder Scrolls Online",
     description: ESONUT_DESCRIPTION,
+    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
     tags: [
       { name: "next.js", url: "https://nextjs.org/" },
       { name: "go", url: "https://golang.org/" },
@@ -425,13 +464,13 @@ export const PROJECTS: Project[] = [
           title: "Landing Page",
           width: 3840,
           height: 8000,
+          ref: true,
         },
         {
           src: "/projects/esonut/2 - Login.png",
           title: "Login",
           width: 3840,
           height: 2148,
-          ref: true,
         },
         {
           src: "/projects/esonut/3 - User Profile.png",

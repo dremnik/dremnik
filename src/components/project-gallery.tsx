@@ -1,5 +1,5 @@
 // ---------------------------------------
-// projects/dremnik/landing/src/components/project-gallery.tsx
+// projects/dremnik/src/components/project-gallery.tsx
 //
 // interface ProjectGalleryProps       L36
 //   videos                            L37

@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 // ------------------------------
-// projects/dremnik/landing/src/components/ui/blockquote.tsx
+// projects/dremnik/src/components/ui/blockquote.tsx
 //
 // const Blockquote           L13
 // const BlockquoteContent    L21

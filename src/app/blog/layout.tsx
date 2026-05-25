@@ -1,5 +1,5 @@
 // -------------------------------------------
-// projects/dremnik/landing/src/app/blog/layout.tsx
+// projects/dremnik/src/app/blog/layout.tsx
 //
 // export default function BlogLayout()    L13
 // children                                L16

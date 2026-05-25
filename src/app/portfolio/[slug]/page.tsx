@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/icons";
 
 // ---------------------------------------------------
-// projects/dremnik/landing/src/app/portfolio/[slug]/page.tsx
+// projects/dremnik/src/app/portfolio/[slug]/page.tsx
 //
 // export async function generateStaticParams()    L25
 // export default async function ProjectPage()     L31
@@ -64,7 +64,18 @@ export default async function ProjectPage({
       <div className="mb-2.5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-5 min-w-0">
-            <h1 className="text-3xl font-medium text-foreground truncate">
+            <h1
+              className="text-foreground truncate"
+              style={{
+                fontFamily: "var(--font-spezia), sans-serif",
+                fontSize: "2.125rem",
+                fontWeight: 400,
+                lineHeight: 1.2,
+                letterSpacing: "-0.045em",
+                marginTop: 0,
+                marginBottom: 0,
+              }}
+            >
               {project.name}
             </h1>
             <div className="flex items-center gap-3">

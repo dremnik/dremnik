@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 // ---------------------------
-// projects/dremnik/landing/src/lib/utils.ts
+// projects/dremnik/src/lib/utils.ts
 //
 // export function cn()    L10
 // ---------------------------

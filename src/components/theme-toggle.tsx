@@ -1,5 +1,5 @@
 // ------------------------------------
-// projects/dremnik/landing/src/components/theme-toggle.tsx
+// projects/dremnik/src/components/theme-toggle.tsx
 //
 // export function ThemeToggle()    L13
 // ------------------------------------

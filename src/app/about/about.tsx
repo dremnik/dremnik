@@ -6,19 +6,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Markdown } from "@/components/markdown";
 
 // --------------------------------------
-// projects/dremnik/landing/src/app/about/about.tsx
+// projects/dremnik/src/app/about/about.tsx
 //
 // const description                  L16
 // const LATEST_LENGTH                L23
 // export default function About()    L25
 // --------------------------------------
 
-const description = `Hello world.
+const description = `I build and write at the intersection of capital, machines, and intelligence.
 
-I'm Andrew — a software designer, engineer and founder. I'm glad you've landed here, hopefully you find
-some things that spark your curiosity.
-
-I have a bit of an obsession with minimalism + craft, and my current goal is to push the frontier of human-AI collaboration.`;
+Most recently CTO of an AI-for-PE startup. Independent projects: Kernl — the interface for AGI (2024). Hermaeus — an index of the information frontier. Kairos — a structured world model. Apocrypha — long-form on the period we are in.`;
 
 const LATEST_LENGTH = 3;
 
@@ -40,11 +37,11 @@ export default function About() {
           <AvatarFallback>AJ</AvatarFallback>
         </Avatar>
 
-        <h2 className="text-2xl font-normal mb-3 font-founder-grotesk">
+        <h2 className="text-[22px] font-normal mb-3 font-spezia tracking-[-0.04em]">
           Andrew Jones
         </h2>
-        <p className="text-mono text-[13px] font-mono font-medium dark:font-normal">
-          [ Designer, Engineer, & Student of Life ]
+        <p className="text-[16px]" style={{ color: "#535565" }}>
+          Founder. Writer.
         </p>
       </div>
 

@@ -1,7 +1,7 @@
 import Blog from "./blog";
 
 // ----------------------------------------
-// projects/dremnik/landing/src/app/blog/page.tsx
+// projects/dremnik/src/app/blog/page.tsx
 //
 // export default function BlogPage()    L9
 // ----------------------------------------

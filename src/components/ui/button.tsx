@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 // ---------------------------
-// projects/dremnik/landing/src/components/ui/button.tsx
+// projects/dremnik/src/components/ui/button.tsx
 //
 // const buttonVariants    L15
 // function Button()       L46

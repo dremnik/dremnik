@@ -1,5 +1,5 @@
 // -------------------------------------
-// projects/dremnik/landing/src/app/blog/blog.tsx
+// projects/dremnik/src/app/blog/blog.tsx
 //
 // export default function Blog()    L16
 // -------------------------------------

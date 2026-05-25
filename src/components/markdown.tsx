@@ -8,7 +8,7 @@ import type { Components } from "react-markdown";
 import Image from "next/image";
 
 // ----------------------------------
-// projects/dremnik/landing/src/components/markdown.tsx
+// projects/dremnik/src/components/markdown.tsx
 //
 // const components               L19
 // interface MarkdownProps       L152
@@ -18,22 +18,22 @@ import Image from "next/image";
 
 const components: Components = {
   h1: ({ children }) => (
-    <h1 className="text-3xl font-founder-grotesk font-normal text-white mb-8 mt-10 first:mt-0">
+    <h1 className="text-3xl font-spezia font-normal text-white mb-8 mt-10 first:mt-0">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-2xl font-founder-grotesk font-normal text-white mb-6 mt-10">
+    <h2 className="text-2xl font-spezia font-normal text-white mb-6 mt-10">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-xl font-founder-grotesk font-normal text-white mb-4 mt-8">
+    <h3 className="text-xl font-spezia font-normal text-white mb-4 mt-8">
       {children}
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="text-[22px] font-founder-grotesk font-medium text-primary mb-6 mt-12">
+    <h4 className="text-[22px] font-spezia font-medium text-primary mb-6 mt-12">
       {children}
     </h4>
   ),

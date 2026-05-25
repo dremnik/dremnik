@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 // --------------------------
-// projects/dremnik/landing/src/components/ui/badge.tsx
+// projects/dremnik/src/components/ui/badge.tsx
 //
 // const badgeVariants    L15
 // function Badge()       L36

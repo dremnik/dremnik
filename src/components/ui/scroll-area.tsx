@@ -1,5 +1,5 @@
 // ----------------------------
-// projects/dremnik/landing/src/components/ui/scroll-area.tsx
+// projects/dremnik/src/components/ui/scroll-area.tsx
 //
 // function ScrollArea()    L15
 // function ScrollBar()     L38

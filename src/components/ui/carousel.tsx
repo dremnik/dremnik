@@ -1,5 +1,5 @@
 // -----------------------------------
-// projects/dremnik/landing/src/components/ui/carousel.tsx
+// projects/dremnik/src/components/ui/carousel.tsx
 //
 // type CarouselApi                L39
 // type UseCarouselParameters      L40

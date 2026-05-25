@@ -2,7 +2,7 @@ import { defineCollection, defineConfig } from "@content-collections/core";
 import { z } from "zod";
 
 // ---------------------
-// projects/dremnik/landing/content-collections.ts
+// projects/dremnik/content-collections.ts
 //
 // const posts       L12
 // transform()       L24

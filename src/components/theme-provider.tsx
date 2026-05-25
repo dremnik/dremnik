@@ -1,5 +1,5 @@
 // --------------------------------------
-// projects/dremnik/landing/src/components/theme-provider.tsx
+// projects/dremnik/src/components/theme-provider.tsx
 //
 // export function ThemeProvider()    L13
 // children                           L16

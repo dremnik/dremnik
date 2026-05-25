@@ -1,5 +1,5 @@
 // -----------------------------------
-// projects/dremnik/landing/src/components/mobile-menu.tsx
+// projects/dremnik/src/components/mobile-menu.tsx
 //
 // const NAV_LINKS                 L25
 // export function MobileMenu()    L31
@@ -80,7 +80,7 @@ export function MobileMenu() {
           <div className="flex items-center">
             <div className="flex-1 min-w-0">
               <Link href="/">
-                <h2 className="text-[18.4px] font-founder-grotesk">Andrew Jones</h2>
+                <h2 className="text-[16.5px] font-spezia tracking-[-0.04em]">Andrew Jones</h2>
               </Link>
             </div>
             <div className="flex-1 flex justify-center">
