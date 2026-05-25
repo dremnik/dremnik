@@ -15,7 +15,7 @@ import { Markdown } from "@/components/markdown";
 
 const description = `I build and write at the intersection of capital, machines, and intelligence.
 
-Most recently CTO of an AI-for-PE startup. Independent projects: Kernl — the interface for AGI (2024). Hermaeus — an index of the information frontier. Kairos — a structured world model. Apocrypha — long-form on the period we are in.`;
+Most recently CTO of an AI-for-PE startup. Independent projects: Kernl — the interface for AGI (2024). Hermaeus — an index of the information frontier. Apocrypha — long-form on the period we are in.`;
 
 const LATEST_LENGTH = 3;
 
