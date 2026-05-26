@@ -1,5 +1,60 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Inter, Geist, Geist_Mono } from "next/font/google";
+
+export const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+export const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
+export const ppFamily = localFont({
+  src: [
+    { path: "../../public/fonts/Family/TestFamilyVF-Roman.ttf", style: "normal" },
+    { path: "../../public/fonts/Family/TestFamily-Italic.otf", style: "italic", weight: "400" },
+    { path: "../../public/fonts/Family/TestFamily-MediumItalic.otf", style: "italic", weight: "500" },
+  ],
+  variable: "--font-family",
+  display: "swap",
+});
+
+export const financierText = localFont({
+  src: [
+    { path: "../../public/fonts/Family/TestFinancierText-Regular.otf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Family/TestFinancierText-RegularItalic.otf", weight: "400", style: "italic" },
+  ],
+  variable: "--font-financier-text",
+  display: "swap",
+});
+
+export const tiemposText = localFont({
+  src: [
+    { path: "../../public/fonts/Tiempos/TestTiemposText-Regular.otf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-RegularItalic.otf", weight: "400", style: "italic" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-Medium.otf", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-MediumItalic.otf", weight: "500", style: "italic" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-Semibold.otf", weight: "600", style: "normal" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-SemiboldItalic.otf", weight: "600", style: "italic" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-Bold.otf", weight: "700", style: "normal" },
+    { path: "../../public/fonts/Tiempos/TestTiemposText-BoldItalic.otf", weight: "700", style: "italic" },
+  ],
+  variable: "--font-tiempos",
+  display: "swap",
+});
+
+export const financierDisplay = localFont({
+  src: [
+    { path: "../../public/fonts/Family/TestFinancierDisplay-Light.otf", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Family/TestFinancierDisplay-Regular.otf", weight: "400", style: "normal" },
+  ],
+  variable: "--font-financier-display",
+  display: "swap",
+});
 
 // ----------------------------------
 // projects/dremnik/src/lib/fonts.ts

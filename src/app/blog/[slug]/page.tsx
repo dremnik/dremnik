@@ -2,22 +2,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allPosts } from "content-collections";
 
-import { IconChevronLeftSmall, IconLeaf } from "@/components/ui/icons";
 import { Markdown } from "@/components/markdown";
-
-// ---------------------------------------------------
-// projects/dremnik/src/app/blog/[slug]/page.tsx
-//
-// interface Props                                 L19
-//   params                                        L20
-//   slug                                          L20
-// export default async function BlogPostPage()    L23
-// export async function generateStaticParams()    L75
-// export async function generateMetadata()        L83
-// ---------------------------------------------------
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+function formatDate(d: Date | string) {
+  const date = new Date(d);
+  return date
+    .toLocaleDateString("en-US", {
+      month: "numeric",
+      day: "numeric",
+      year: "numeric",
+    })
+    .replaceAll("/", ".");
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -29,42 +28,38 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-[var(--content-width)] -mt-3 mx-auto px-6">
-      <div className="mb-8 hidden md:block">
+    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24">
+      <div className="mb-12">
         <Link
           href="/blog"
-          className="text-muted hover:text-primary transition-colors text-xs font-mono inline-flex items-center gap-1"
+          className="font-mono text-[8.5pt] text-muted hover:text-ink transition-colors"
         >
-          <IconChevronLeftSmall />
-          back
+          ← back
         </Link>
       </div>
 
-      <article className="prose prose-lg max-w-none dark:prose-invert">
-        <header className="mb-8 space-y-2">
-          <div className="text-mono text-[13px] font-mono">
-            {new Date(post.date)
-              .toLocaleDateString("en-US", {
-                month: "numeric",
-                day: "numeric",
-                year: "2-digit",
-              })
-              .replaceAll("/", ".")}
-          </div>
-          <div className="relative">
-            <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-9 text-accent-mono size-5" />
-            <h1 className="text-[32px] font-spezia font-normal text-foreground mb-2">
-              {post.title}
-            </h1>
-            {post.description ? (
-              <div className="text-muted-foreground text-[15px] leading-snug max-w-prose">
-                {post.description}
-              </div>
-            ) : null}
+      <article>
+        <header className="flex flex-col gap-3 pb-10">
+          <h1 className="text-[28pt] md:text-[32pt] font-medium text-ink tracking-[-0.035em] leading-[1.1]">
+            {post.title}
+          </h1>
+          <div className="font-mono text-[9pt] text-muted">
+            {formatDate(post.date)}
           </div>
         </header>
 
-        <div className="leading-relaxed">
+        {post.hero && (
+          <figure className="mb-12">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.hero}
+              alt={post.heroAlt ?? post.title}
+              className="w-full h-auto rounded-lg"
+            />
+          </figure>
+        )}
+
+        <div className="prose-tilde">
           <Markdown content={post.content} />
         </div>
       </article>
@@ -92,7 +87,7 @@ export async function generateMetadata({ params }: Props) {
   const ogImage = post.ogImage;
 
   return {
-    title: `${post.title} - dremnik`,
+    title: `${post.title} · dremnik`,
     description: post.description ?? post.title,
     openGraph: {
       title: post.title,

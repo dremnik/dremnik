@@ -19,6 +19,8 @@ const posts = defineCollection({
     slug: z.string(),
     description: z.string().optional(),
     ogImage: z.string(),
+    hero: z.string().optional(),
+    heroAlt: z.string().optional(),
     published: z.boolean().default(true),
   }),
   transform(document, context) {

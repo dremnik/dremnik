@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import { inter, sfProDisplay, sfMono, founderGrotesk, spezia } from "@/lib/fonts";
-import { Header } from "@/components/header";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { ThemeProvider } from "@/components/theme-provider";
+import { geist, geistMono, tiemposText, financierDisplay, spezia } from "@/lib/fonts";
 
 import "./globals.css";
-import "katex/dist/katex.min.css";
-
-// -------------------------------------------
-// projects/dremnik/src/app/layout.tsx
-//
-// export const metadata                   L18
-// export default function RootLayout()    L24
-// children                                L27
-// -------------------------------------------
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dremnik.com"),
-  title: "Andrew Jones | dremnik",
-  description: "Designer, Engineer, Student of Life",
+  title: "Andrew Jones · dremnik",
+  description: "I build and write at the intersection of capital, machines, and intelligence.",
 };
 
 export default function RootLayout({
@@ -27,16 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${inter.variable} ${sfProDisplay.variable} ${sfMono.variable} ${founderGrotesk.variable} ${spezia.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${geist.variable} ${geistMono.variable} ${tiemposText.variable} ${financierDisplay.variable} ${spezia.variable} font-sans antialiased`}
       >
-        <ThemeProvider>
-          <div className="min-h-[100svh]">
-            <Header />
-            <ScrollArea className="w-full h-auto md:h-[100dvh]">{children}</ScrollArea>
-          </div>
-        </ThemeProvider>
+        <div className="min-h-[100svh] flex flex-col">
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );

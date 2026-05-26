@@ -1,30 +1,27 @@
-// -------------------------------------
-// projects/dremnik/src/app/blog/blog.tsx
-//
-// export default function Blog()    L16
-// -------------------------------------
-
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { allPosts } from "content-collections";
-import { motion } from "motion/react";
 
-import { IconLeaf } from "@/components/ui/icons";
+function formatDate(d: Date | string) {
+  const date = new Date(d);
+  return date
+    .toLocaleDateString("en-US", {
+      month: "numeric",
+      day: "numeric",
+      year: "2-digit",
+    })
+    .replaceAll("/", ".");
+}
 
 export default function Blog() {
-  const [hoveredPost, setHoveredPost] = useState<string | null>(null);
-
   const groupedPosts = useMemo(() => {
-    // Sort posts by date (newest first)
     const sortedPosts = [...allPosts]
       .filter((post) => post.published)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    // Group posts by year
     const grouped: { [key: string]: typeof allPosts } = {};
-
     sortedPosts.forEach((post) => {
       const year = new Date(post.date).getFullYear().toString();
       if (!grouped[year]) grouped[year] = [];
@@ -35,80 +32,32 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="max-w-[var(--content-width)] mx-auto px-6">
+    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24 text-[10.5pt]">
       {Object.entries(groupedPosts)
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
         .map(([year, posts]) => (
-          <div key={year} className="mb-16">
-            <h2 className="text-muted-foreground text-xs mb-7">{year}</h2>
-
-            <div className="relative space-y-4">
-              {posts.map((post, index) => (
-                <div
-                  key={post.slug}
-                  className="group relative"
-                  onMouseEnter={() => setHoveredPost(post.slug)}
-                  onMouseLeave={() => setHoveredPost(null)}
-                >
-                  <Link href={`/blog/${post.slug}`}>
-                    <div className="relative flex items-center py-2 transition-colors rounded-sm px-2 -mx-2">
-                      <div className="flex items-center gap-3">
-                        {/* Desktop: absolute leaf outside the content edge */}
-                        <IconLeaf className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-[26px] text-accent-mono size-4.5" />
-                        {/* Mobile: inline leaf to avoid overflow */}
-                        <IconLeaf className="md:hidden text-accent-mono size-4" />
-                        <h3 className="border-b text-[18px] font-sans-display tracking-[0.001em] font-normal hover:text-foreground/70 dark:hover:text-white/80 transition-colors">
-                          {post.title}
-                        </h3>
-                      </div>
-
-                      {/* Dotted line with spring-animated mask reveal */}
-                      <div className="flex-1 mx-4 relative overflow-hidden">
-                        {/* The actual dotted line - always present */}
-                        <div
-                          className="h-px w-full"
-                          style={{
-                            backgroundImage:
-                              "radial-gradient(circle, hsl(0, 0%, 40%) 0.5px, transparent 0.5px)",
-                            backgroundSize: "12px 12px",
-                            backgroundRepeat: "repeat-x",
-                            backgroundPosition: "center",
-                          }}
-                        ></div>
-                        {/* Blocking div with spring animation (hidden on mobile) */}
-                        <motion.div
-                          className="hidden md:block absolute inset-0 bg-background"
-                          initial={{ x: 0 }}
-                          animate={{
-                            x: hoveredPost === post.slug ? "100%" : 0,
-                          }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 300,
-                            damping: 40,
-                          }}
-                        />
-                      </div>
-
-                      <div className="relative font-mono text-mono text-[11px]">
-                        {new Date(post.date)
-                          .toLocaleDateString("en-US", {
-                            month: "numeric",
-                            day: "numeric",
-                            year: "2-digit",
-                          })
-                          .replaceAll("/", ".")}
-                        {/* Vertical connector line - hidden for last item */}
-                        {index < posts.length - 1 && (
-                          <div className="absolute right-0 top-full mt-2 w-px h-6 bg-primary/20" />
-                        )}
-                      </div>
-                    </div>
+          <section key={year} className="mb-10">
+            <h2 className="font-mono text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
+              {year}
+            </h2>
+            <ul className="space-y-1.5">
+              {posts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group flex items-baseline justify-between gap-4"
+                  >
+                    <span className="text-ink text-[10.5pt] font-medium tracking-[-0.015em] group-hover:text-link transition-colors">
+                      {post.title}
+                    </span>
+                    <span className="font-mono text-[8.5pt] text-muted shrink-0">
+                      {formatDate(post.date)}
+                    </span>
                   </Link>
-                </div>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </section>
         ))}
     </div>
   );
