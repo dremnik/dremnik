@@ -1,5 +1,24 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
+import { IconGithub } from "@/components/ui/icons";
+
+// ------------------------------------
+// projects/dremnik/src/app/cv/page.tsx
+//
+// export const metadata            L22
+// type Block                       L27
+// title                            L28
+// url                              L29
+// years                            L30
+// body                             L31
+// const independent                L34
+// const experience                 L74
+// function Section()              L103
+// label                           L108
+// intro                           L109
+// blocks                          L110
+// export default function CV()    L155
+// ------------------------------------
 
 export const metadata: Metadata = {
   title: "CV · Andrew Jones",
@@ -19,9 +38,9 @@ const independent: Block[] = [
     url: "https://theapocrypha.xyz",
     body: (
       <>
-        Long-form, low-cadence publication on the arc of capital, machines, and
-        the evolution of human systems. Written for the reader who wants
-        something honest, slow, and built to last — against a media stack that
+        Long-form, low-cadence publication on capital, machines, and
+        the evolution of human systems. Written for those who want
+        something slow, honest, and reflective — against a consensus that
         rewards certainty and controversy.
       </>
     ),
@@ -33,11 +52,9 @@ const independent: Block[] = [
       <>
         Financial data infrastructure for analysts, developers, and AI agents.
         Ingests SEC filings and other authoritative sources, resolves entities
-        into a single source-linked graph. Parallel pipeline indexes the
-        independent media frontier (podcasts, Substacks, RSS) with ASR,
-        diarization, and passage-level semantic search. Stack: Dagster
-        pipelines → PlanetScale + turbopuffer; XBRL extraction; MCP + REST API
-        surfaces.
+        into a single source-linked graph. Indexes the independent media
+        frontier (podcasts, Substacks, RSS) with ASR, diarization, and
+        passage-level semantic search.
       </>
     ),
   },
@@ -55,6 +72,34 @@ const independent: Block[] = [
   },
 ];
 
+type SideProject = {
+  title: string;
+  desc: string;
+  github?: string;
+};
+
+const sideProjects: SideProject[] = [
+  {
+    title: "kdb",
+    desc: "Structural codebase index",
+    github: "https://github.com/dremnik/kdb",
+  },
+  {
+    title: "opendoc",
+    desc: "Agent-friendly document format",
+    github: "https://github.com/dremnik/opendoc",
+  },
+  {
+    title: "rêverie",
+    desc: "AI-native creative suite concept",
+  },
+  {
+    title: "parrot",
+    desc: "Ultra-minimalist macOS dictation",
+    github: "https://github.com/digimata/parrot",
+  },
+];
+
 const experience: Block[] = [
   {
     title: "Cofounder & CTO — Emblem PE",
@@ -62,12 +107,11 @@ const experience: Block[] = [
     years: "2023—2024",
     body: (
       <>
-        Built an AI investment platform for PE, VC, and IB — deal sourcing,
+        Built an AI investment platform for PE, VC, and family offices: deal sourcing,
         diligence, and portfolio workflows. Designed and shipped the full
-        product end-to-end: research interfaces, portfolio dashboards, deal
+        product end-to-end, including research interfaces, portfolio dashboards, deal
         pipeline, document-ingestion ETL, semantic search, agent orchestration,
-        and multi-tenant infrastructure. Led user research with PE investors on
-        how deals are actually evaluated.
+        and multi-tenant infrastructure.
       </>
     ),
   },
@@ -95,7 +139,7 @@ function Section({
   blocks: Block[];
 }) {
   return (
-    <section className="mt-8">
+    <section className="mt-12">
       <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
         {label}
       </h2>
@@ -104,7 +148,7 @@ function Section({
           {intro}
         </p>
       )}
-      <div className="space-y-8 md:space-y-4">
+      <div className="space-y-10 md:space-y-6">
         {blocks.map((b) => (
           <div key={b.title}>
             <div className="flex items-baseline justify-between gap-3 mb-1">
@@ -156,7 +200,40 @@ export default function CV() {
 
       <Section label="Experience" blocks={experience} />
 
-      <section className="mt-8">
+      <section className="mt-12">
+        <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
+          Side projects
+        </h2>
+        <ul className="space-y-3 md:space-y-2">
+          {sideProjects.map((p) => (
+            <li
+              key={p.title}
+              className="flex items-baseline justify-between gap-4"
+            >
+              <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
+                <span className="font-medium text-ink tracking-[-0.015em]">
+                  {p.title}
+                </span>
+                <span className="text-muted"> — </span>
+                {p.desc}
+              </p>
+              {p.github && (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.title} on GitHub`}
+                  className="text-muted hover:text-ink transition-colors duration-200 shrink-0 translate-y-[2px]"
+                >
+                  <IconGithub className="size-[13px]" />
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12">
         <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
           Stack
         </h2>

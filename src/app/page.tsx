@@ -3,6 +3,22 @@ import { allPosts } from "content-collections";
 import { IconGithub, IconLinkedIn, IconTwitterX } from "@/components/ui/icons";
 import { Header } from "@/components/header";
 
+// -------------------------------------
+// projects/dremnik/src/app/page.tsx
+//
+// const X_URL                       L22
+// const GITHUB_URL                  L23
+// const LINKEDIN_URL                L24
+// type Project                      L26
+// title                             L27
+// url                               L28
+// body                              L29
+// const projects                    L32
+// const latestPosts                 L54
+// function formatDate()             L59
+// export default function Home()    L70
+// -------------------------------------
+
 const X_URL = "https://x.com/dremnik";
 const GITHUB_URL = "https://github.com/dremnik";
 const LINKEDIN_URL = "https://www.linkedin.com/in/andrew-jones-013154219";
@@ -19,7 +35,7 @@ const projects: Project[] = [
     url: "https://theapocrypha.xyz",
     body: (
       <>
-        Long-form, low-cadence publication on the arc of capital, machines, and
+        Long-form, low-cadence publication on capital, machines, and
         the evolution of human systems.
       </>
     ),
@@ -56,7 +72,7 @@ export default function Home() {
     <>
     <Header />
     <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24 text-[11pt] md:text-[10.5pt] leading-[1.5]">
-      <section className="mb-10">
+      <section className="mb-12">
         <h1 className="text-[22pt] md:text-[20pt] font-medium tracking-[-0.035em] text-ink leading-tight">
           Andrew Jones
         </h1>
@@ -131,7 +147,7 @@ export default function Home() {
       </section>
 
       {latestPosts.length > 0 && (
-        <section className="mt-10">
+        <section className="mt-12">
           <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
             Top of mind
           </h2>
