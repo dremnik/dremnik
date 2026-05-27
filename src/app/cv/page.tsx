@@ -81,7 +81,7 @@ type SideProject = {
 const sideProjects: SideProject[] = [
   {
     title: "kdb",
-    desc: "Structural codebase index",
+    desc: "A CLI for knowledge and work",
     github: "https://github.com/dremnik/kdb",
   },
   {
