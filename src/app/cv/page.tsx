@@ -90,13 +90,13 @@ const sideProjects: SideProject[] = [
     github: "https://github.com/dremnik/opendoc",
   },
   {
-    title: "rêverie",
-    desc: "AI-native creative suite concept",
-  },
-  {
     title: "parrot",
     desc: "Ultra-minimalist macOS dictation",
     github: "https://github.com/digimata/parrot",
+  },
+  {
+    title: "rêverie",
+    desc: "AI-native creative suite concept",
   },
 ];
 
