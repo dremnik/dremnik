@@ -16,16 +16,20 @@ export function ThemeToggle() {
 
   React.useEffect(() => setMounted(true), []);
 
-  const isDark = mounted ? resolvedTheme === "dark" : true;
+  if (!mounted) {
+    return <span className="inline-block size-[13px]" aria-hidden="true" />;
+  }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
       type="button"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="text-foreground-soft hover:text-foreground transition-colors cursor-pointer"
+      className="text-muted hover:text-ink transition-colors duration-200 cursor-pointer inline-flex items-center"
     >
-      {isDark ? <IconSun className="size-3" /> : <IconMoon className="size-3" />}
+      {isDark ? <IconSun className="size-[13px]" /> : <IconMoon className="size-[13px]" />}
     </button>
   );
 }

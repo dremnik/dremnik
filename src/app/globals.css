@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
     --color-background: var(--bg);
     --color-foreground: var(--ink);
@@ -34,6 +36,18 @@
     --rule: #e4e4e7;
     --bg: #f7f7f7;
     --link: #053961aa;
+    --code-bg: hsla(240, 6%, 90%, 0.5);
+}
+
+.dark {
+    --ink: #f5f5f5;
+    --body: #e6e6ec;
+    --soft: #a1a1aa;
+    --muted: #71717a;
+    --rule: #27272a;
+    --bg: #0f1014;
+    --link: #B5D6FB;       /* apocrypha steel-500 */
+    --code-bg: hsla(220, 8%, 18%, 0.7);
 }
 
 @layer base {

@@ -28,14 +28,16 @@ const components: Components = {
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[11pt] text-body leading-[1.7] my-3">{children}</p>
+    <p className="text-[14pt] md:text-[11pt] text-body leading-[1.65] md:leading-[1.7] my-3">
+      {children}
+    </p>
   ),
   a: ({ href, children }) => (
     <a
       href={href}
       target={href?.startsWith("http") ? "_blank" : undefined}
       rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
-      className="text-body underline decoration-[#525252] decoration-[0.06em] underline-offset-[2px] hover:text-link hover:decoration-link transition-colors"
+      className="text-body underline decoration-[#525252] decoration-[0.06em] underline-offset-[2px] hover:text-link hover:decoration-link transition-colors duration-200"
     >
       {children}
     </a>
@@ -46,12 +48,12 @@ const components: Components = {
     </blockquote>
   ),
   ul: ({ children }) => (
-    <ul className="list-disc list-outside text-body text-[11pt] leading-[1.7] space-y-1.5 my-4 ml-5">
+    <ul className="list-disc list-outside text-body text-[14pt] md:text-[11pt] leading-[1.65] md:leading-[1.7] space-y-1.5 my-4 ml-5">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal list-outside text-body text-[11pt] leading-[1.7] space-y-1.5 my-4 ml-5 marker:text-muted">
+    <ol className="list-decimal list-outside text-body text-[14pt] md:text-[11pt] leading-[1.65] md:leading-[1.7] space-y-1.5 my-4 ml-5 marker:text-muted">
       {children}
     </ol>
   ),
@@ -63,13 +65,13 @@ const components: Components = {
       return <code className={className}>{children}</code>;
     }
     return (
-      <code className="font-mono text-[10pt] bg-[hsla(240,6%,90%,0.5)] text-ink px-1 py-0.5 rounded-md">
+      <code className="font-mono text-[10pt] bg-[var(--code-bg)] text-ink px-1 py-0.5 rounded-md">
         {children}
       </code>
     );
   },
   pre: ({ children }) => (
-    <pre className="overflow-x-auto rounded-lg bg-[hsla(240,6%,90%,0.5)] text-ink p-4 my-6 text-[8.5pt] leading-[1.5] font-mono">
+    <pre className="overflow-x-auto rounded-lg bg-[var(--code-bg)] text-ink p-4 my-6 text-[8.5pt] leading-[1.5] font-mono">
       {children}
     </pre>
   ),

@@ -47,7 +47,7 @@ export default function Blog() {
                     href={`/blog/${post.slug}`}
                     className="group flex items-baseline justify-between gap-4"
                   >
-                    <span className="text-ink text-[10.5pt] font-medium tracking-[-0.015em] group-hover:text-link transition-colors">
+                    <span className="text-ink text-[10.5pt] font-medium tracking-[-0.015em] group-hover:underline underline-offset-4 decoration-[1px] decoration-muted">
                       {post.title}
                     </span>
                     <span className="font-mono text-[8.5pt] text-muted shrink-0">

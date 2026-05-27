@@ -32,7 +32,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mb-12">
         <Link
           href="/blog"
-          className="font-mono text-[8.5pt] text-muted hover:text-ink transition-colors"
+          className="font-mono text-[8.5pt] text-muted hover:underline underline-offset-4 decoration-[1px] decoration-muted"
         >
           ← back
         </Link>
