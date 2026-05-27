@@ -28,7 +28,7 @@ const components: Components = {
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[12pt] md:text-[10.5pt] text-body leading-[1.65] md:leading-[1.6] my-3">
+    <p className="text-[12.5pt] md:text-[11pt] text-body leading-[1.65] md:leading-[1.6] my-3">
       {children}
     </p>
   ),
@@ -48,12 +48,12 @@ const components: Components = {
     </blockquote>
   ),
   ul: ({ children }) => (
-    <ul className="list-disc list-outside text-body text-[12pt] md:text-[10.5pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5">
+    <ul className="list-disc list-outside text-body text-[12.5pt] md:text-[11pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal list-outside text-body text-[12pt] md:text-[10.5pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5 marker:text-muted">
+    <ol className="list-decimal list-outside text-body text-[12.5pt] md:text-[11pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5 marker:text-muted">
       {children}
     </ol>
   ),
