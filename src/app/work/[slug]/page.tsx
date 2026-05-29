@@ -106,7 +106,7 @@ export default async function ProjectPage({
 
           {/* About */}
           <div className="space-y-4">
-            <p className="font-sans-display text-lg text-muted-foreground">
+            <p className="font-sans-display text-lg tracking-[-0.02em] text-muted-foreground">
               {project.tagline}
             </p>
             {project.descriptionMobile ? (
