@@ -87,7 +87,7 @@ export default function Home() {
           >
             andrew@dremnik.com
           </a>
-          <div className="flex items-center gap-4 text-muted shrink-0">
+          <div className="flex items-center gap-4 shrink-0 text-[#051a24] dark:text-[#F6FCFF]">
             <a
               href={X_URL}
               target="_blank"

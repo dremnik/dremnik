@@ -41,6 +41,9 @@ export type Project = {
   tagline: string;
   description: string;
   descriptionMobile?: string;
+  // Showcase projects get a gallery card on /work + a detail page.
+  // Everything else lives in the experience text only.
+  showcase?: boolean;
   kind?: "project" | "concept";
   thumbnail?: { bg?: string; fg?: string; image?: string };
   tags: string[] | { name: string; url?: string }[];
@@ -142,25 +145,6 @@ The formats that publish thinking today — X, LinkedIn, the conference fireside
 const ESONUT_DESCRIPTION = `esonut was an all-in-one platform for ESO—covering wikis, builds, tools, and interactive game resources. It was my first big project and a blast to create. My friends and I were playing this game quite a lot at the time (during COVID especially).
 
 It was my first real taste of the joy in design, and the freedom of having no constraints. Its sole purpose was to be a project of fun & learning, a way to get our toes wet in the world of programming, and it satisfied all of these objectives thoroughly.
-
-Core features:
-
-**Wiki & Game Database**
-
-* Deep dives into ESO content—classes, skills, sets, champion points, crafting, companions, and more.
-* Access to interactive resources like maps, zone info, and collectibles such as mounts and pets.
-* Stay informed on events, daily/weekly tasks, vendors, and server status.
-
-**Build Tools & Editor**
-
-* Create, customize, and share player builds using the Build Editor.
-* Explore pre-made builds categorized by role (Tank, Healer, DPS, One‑Bar, PvE, PvP, subclassing).
-* Simulate crafting and progression with dedicated tools for scribing, alchemy, champions, and potion making.
-
-**Community Forum & Messaging**
-
-* Forums where players could discuss aspects of the game—strategies, builds, news, etc.
-* Ability to share and discuss builds made with the build editor.
 `;
 
 export const PROJECTS: Project[] = [
@@ -197,14 +181,11 @@ export const PROJECTS: Project[] = [
     name: "kernl",
     year: 2025,
     tagline: "The interface for AGI",
+    showcase: true,
     description: KERNL_DESCRIPTION,
     descriptionMobile: KERNL_DESCRIPTION_MOBILE,
     thumbnail: { bg: "#101011", fg: "#FFFFFF" },
-    tags: [
-      { name: "rust", url: "https://www.rust-lang.org/" },
-      { name: "tauri", url: "https://tauri.app/" },
-      { name: "k8s", url: "https://kubernetes.io/" },
-    ],
+    tags: [],
     url: "https://kernl.sh",
     // github: "dremnik/kernl",
     gallery: {
@@ -359,6 +340,7 @@ export const PROJECTS: Project[] = [
     name: "rêverie",
     year: 2025,
     tagline: "AI canvas and multimodal library for creatives",
+    showcase: true,
     description: REVERIE_DESCRIPTION,
     kind: "concept",
     thumbnail: { bg: "#101011", fg: "#FFFFFF" },
@@ -448,6 +430,7 @@ export const PROJECTS: Project[] = [
     name: "esonut",
     year: 2021,
     tagline: "Wiki for The Elder Scrolls Online",
+    showcase: true,
     description: ESONUT_DESCRIPTION,
     thumbnail: { bg: "#101011", fg: "#FFFFFF" },
     tags: [

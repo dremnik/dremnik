@@ -20,10 +20,10 @@ export function Header() {
               Blog
             </Link>
             <Link
-              href="/cv"
+              href="/work"
               className="text-muted hover:text-ink transition-colors duration-200"
             >
-              CV
+              Work
             </Link>
             <ThemeToggle />
           </div>

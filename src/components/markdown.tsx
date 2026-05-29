@@ -71,7 +71,7 @@ const components: Components = {
     );
   },
   pre: ({ children }) => (
-    <pre className="overflow-x-auto rounded-lg bg-[var(--code-bg)] text-ink p-4 my-6 text-[8.5pt] leading-[1.5] font-mono">
+    <pre className="overflow-x-auto rounded-2xl bg-[var(--code-bg)] text-ink p-4 my-6 text-[8.5pt] leading-[1.5] font-mono">
       {children}
     </pre>
   ),

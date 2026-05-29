@@ -1,29 +1,19 @@
-import type { Metadata } from "next";
-import { Header } from "@/components/header";
-import { IconGithub } from "@/components/ui/icons";
-
-// ------------------------------------
-// projects/dremnik/src/app/cv/page.tsx
+// -----------------------------------------------------
+// projects/dremnik/src/app/work/experience.tsx
 //
-// export const metadata            L22
-// type Block                       L27
-// title                            L28
-// url                              L29
-// years                            L30
-// body                             L31
-// const independent                L34
-// const experience                 L74
-// function Section()              L103
-// label                           L108
-// intro                           L109
-// blocks                          L110
-// export default function CV()    L155
-// ------------------------------------
+// Résumé content (formerly /cv), rendered below the work
+// grid so /work is the single unified showcase page.
+//
+// type Block                          L?
+// const independent                   L?
+// type SideProject                    L?
+// const sideProjects                  L?
+// const experience                    L?
+// function Section()                  L?
+// export function WorkExperience()    L?
+// -----------------------------------------------------
 
-export const metadata: Metadata = {
-  title: "CV · Andrew Jones",
-  description: "Curriculum vitae for Andrew Jones.",
-};
+import { IconGithub } from "@/components/ui/icons";
 
 type Block = {
   title: string;
@@ -87,16 +77,12 @@ const sideProjects: SideProject[] = [
   {
     title: "opendoc",
     desc: "Agent-friendly document format",
-    github: "https://github.com/dremnik/opendoc",
+    github: "https://github.com/digimata/opendoc",
   },
   {
     title: "parrot",
     desc: "Ultra-minimalist macOS dictation",
     github: "https://github.com/digimata/parrot",
-  },
-  {
-    title: "rêverie",
-    desc: "AI-native creative suite concept",
   },
 ];
 
@@ -181,14 +167,12 @@ function Section({
   );
 }
 
-export default function CV() {
+export function WorkExperience() {
   return (
-    <>
-    <Header />
-    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24 text-[11pt] md:text-[10.5pt] leading-[1.5]">
+    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pb-24 text-[11pt] md:text-[10.5pt] leading-[1.5]">
       <section className="mb-8">
         <h1 className="text-[22pt] md:text-[20pt] font-medium tracking-[-0.035em] text-ink">
-          CV
+          Work
         </h1>
       </section>
 
@@ -232,17 +216,6 @@ export default function CV() {
           ))}
         </ul>
       </section>
-
-      <section className="mt-12">
-        <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
-          Stack
-        </h2>
-        <p className="text-soft text-[10.5pt] md:text-[9.5pt] leading-[1.55]">
-          TypeScript, Rust, Python, Go · Next.js, React, Tauri · Postgres,
-          turbopuffer, Dagster, Kubernetes, Temporal · Figma
-        </p>
-      </section>
     </div>
-    </>
   );
 }
