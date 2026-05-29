@@ -1,13 +1,14 @@
 // -----------------------------------------------------
 // projects/dremnik/src/app/work/work-index.tsx
 //
-// Two-up work grid: lead shot per project, name + year +
-// tagline below each card.
+// Portfolio grid: bracket-framed project cards (thumbnail,
+// year-dot badge, name, tagline), with a separate Concepts
+// section. Brought back from dremnik-v0, re-pointed to /work.
 //
-// function leadImage()                 L?
-// function LeadImage()                 L?
-// function boxBg()                     L?
-// export default function WorkIndex()  L?
+// export default function WorkIndex()
+// function Section()
+// function ProjectCard()
+// function getThumbnail()
 // -----------------------------------------------------
 
 import { cloneElement, isValidElement } from "react";
@@ -17,113 +18,126 @@ import Image from "next/image";
 import { PROJECTS, type Project } from "@/lib/projects";
 import { PROJECT_ICONS } from "@/components/ui/icons";
 
-// Representative shot: the ref image, else the first gallery image.
-function leadImage(project: Project) {
+// Curated overview — explicit order, only projects with real design work.
+const OVERVIEW_SLUGS = ["kernl", "emblem", "reverie", "esonut"];
+
+export default function WorkIndex() {
+  const items = OVERVIEW_SLUGS.map((slug) =>
+    PROJECTS.find((p) => p.slug === slug)
+  ).filter((p): p is Project => Boolean(p));
+
+  return (
+    <div className="max-w-[1360px] mx-auto px-8 md:px-12 pb-24">
+      <Section items={items} />
+    </div>
+  );
+}
+
+function Section({ label, items }: { label?: string; items: Project[] }) {
+  return (
+    <section>
+      {label && (
+        <h2 className="mb-8 text-foreground/80 font-mono text-[11px] font-medium tracking-[0.18em] uppercase">
+          {label}
+        </h2>
+      )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-x-6 gap-y-14">
+        {items.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  const icon = PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS];
+  // When a project has a thumbnail config, prefer it over the gallery
+  // screenshot — gives the portfolio a unified texture.
+  const thumb = project.thumbnail ? null : getThumbnail(project);
+
+  return (
+    <Link
+      href={`/work/${project.slug}`}
+      className="group block"
+    >
+      <article className="flex flex-col">
+        <div
+          className="relative aspect-square w-full overflow-hidden bg-muted/40"
+          style={
+            !thumb && project.thumbnail?.bg
+              ? { backgroundColor: project.thumbnail.bg }
+              : undefined
+          }
+        >
+          {thumb ? (
+            <Image
+              src={thumb.src}
+              alt={`${project.name} preview`}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            />
+          ) : project.thumbnail?.image ? (
+            <div className="absolute inset-0 flex items-center justify-center p-40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={project.thumbnail.image}
+                alt={`${project.name} mark`}
+                className="max-h-full max-w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+              />
+            </div>
+          ) : (
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                color: project.thumbnail?.fg ?? "rgba(0,0,0,0.6)",
+              }}
+            >
+              {icon && isValidElement(icon) ? (
+                cloneElement(icon as React.ReactElement<{ className?: string }>, {
+                  className: "size-16",
+                })
+              ) : (
+                <span className="text-6xl">{project.name.slice(0, 1)}</span>
+              )}
+            </div>
+          )}
+
+          {/* Year badge — top-left, dot + label (kernl blue steel) */}
+          <div
+            className="absolute top-4 left-4 flex items-center gap-2 font-mono text-[11px] font-medium tracking-[0.14em] uppercase"
+            style={{ color: "#B5D1FF" }}
+          >
+            <span
+              className="block h-1.5 w-1.5 rounded-full"
+              style={{ backgroundColor: "#B5D1FF" }}
+            />
+            <span>{project.year}</span>
+          </div>
+        </div>
+
+        <h2
+          className="mt-6 font-normal text-foreground transition-opacity group-hover:opacity-80"
+          style={{
+            fontFamily: "var(--font-inter), var(--font-sans)",
+            fontSize: "clamp(17px, 1.3vw, 21px)",
+            lineHeight: 1.1,
+            letterSpacing: "-0.045em",
+          }}
+        >
+          {project.name}
+        </h2>
+        <p className="mt-2 font-sans-display text-[15.5px] leading-[1.55] text-muted-foreground">
+          {project.tagline}
+        </p>
+      </article>
+    </Link>
+  );
+}
+
+function getThumbnail(project: Project) {
   const images = project.gallery?.images;
   if (!images || images.length === 0) return null;
   return images.find((img) => img.ref) ?? images[0];
-}
-
-function LeadImage({ project, sizes }: { project: Project; sizes?: string }) {
-  const shot = leadImage(project);
-  const icon = PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS];
-
-  if (shot) {
-    return (
-      <Image
-        src={shot.src}
-        alt={`${project.name} preview`}
-        fill
-        sizes={sizes}
-        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-      />
-    );
-  }
-
-  if (project.thumbnail?.image) {
-    return (
-      <div className="absolute inset-0 flex items-center justify-center p-[18%]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={project.thumbnail.image}
-          alt={`${project.name} mark`}
-          className="max-h-full max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className="absolute inset-0 flex items-center justify-center"
-      style={{ color: project.thumbnail?.fg ?? "rgba(255,255,255,0.9)" }}
-    >
-      {icon && isValidElement(icon) ? (
-        cloneElement(icon as React.ReactElement<{ className?: string }>, {
-          className: "size-16",
-        })
-      ) : (
-        <span className="text-6xl">{project.name.slice(0, 1)}</span>
-      )}
-    </div>
-  );
-}
-
-// Color the tile only when there's no screenshot to fill it.
-function boxBg(project: Project): React.CSSProperties | undefined {
-  if (leadImage(project)) return undefined;
-  return project.thumbnail?.bg
-    ? { backgroundColor: project.thumbnail.bg }
-    : undefined;
-}
-
-export default function WorkIndex() {
-  const showcase = PROJECTS.filter((p) => p.showcase);
-
-  return (
-    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pb-24">
-      <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-6 pb-1.5 border-b border-rule">
-        Selected work
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-14">
-        {showcase.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/work/${project.slug}`}
-            className="group block"
-          >
-            <div
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-muted/40"
-              style={boxBg(project)}
-            >
-              <LeadImage
-                project={project}
-                sizes="(min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-            <div className="mt-4 flex items-baseline justify-between gap-4">
-              <h2
-                className="text-foreground transition-opacity group-hover:opacity-80"
-                style={{
-                  fontFamily: "var(--font-spezia), sans-serif",
-                  fontWeight: 400,
-                  fontSize: "21px",
-                  letterSpacing: "-0.045em",
-                  lineHeight: 1.1,
-                }}
-              >
-                {project.name}
-              </h2>
-              <span className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted-foreground shrink-0">
-                {project.year}
-              </span>
-            </div>
-            <p className="mt-1.5 font-sans-display text-[14.5px] leading-[1.5] text-muted-foreground">
-              {project.tagline}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
 }

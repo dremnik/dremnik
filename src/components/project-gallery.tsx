@@ -66,7 +66,7 @@ export function ProjectGallery({
     <div className="space-y-3">
       {/* Videos first, full width */}
       {videos?.map((video, index) => (
-        <div key={`video-${index}`} className="aspect-video rounded-2xl overflow-hidden">
+        <div key={`video-${index}`} className="aspect-video rounded-xl overflow-hidden">
           <VideoEmbed
             video={video}
             title={`${projectName} video ${index + 1}`}
@@ -78,7 +78,7 @@ export function ProjectGallery({
       {normalizedImages?.map((image, index) => (
         <div
           key={`image-${index}`}
-          className="bg-secondary shadow rounded-2xl overflow-hidden cursor-pointer"
+          className="bg-secondary shadow rounded-xl overflow-hidden cursor-pointer"
           onClick={() => setSelected(image)}
         >
           <Image
@@ -101,13 +101,13 @@ export function ProjectGallery({
             {selected?.title || projectName}
           </DialogTitle>
           {selected && (
-            <div className="max-h-[90vh] overflow-y-auto rounded-2xl">
+            <div className="max-h-[90vh] overflow-y-auto rounded-xl">
               <Image
                 src={selected.src}
                 alt={selected.title || projectName}
                 width={selected.width || 1920}
                 height={selected.height || 1080}
-                className="block w-full h-auto select-none rounded-2xl"
+                className="block w-full h-auto select-none rounded-xl"
               />
             </div>
           )}

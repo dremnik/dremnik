@@ -102,15 +102,11 @@ const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim o
 
 // ==========
 
-const EMBLEM_DESCRIPTION = `Emblem is an AI operating system for investors—combining deal management, portfolio monitoring, and automated reporting into a single platform. It is designed to accelerate and automate investor workflows end-to-end.
+const EMBLEM_DESCRIPTION = `Emblem is an AI operating system for investors—deal management, portfolio monitoring, and automated reporting in a single platform, built to automate investor workflows end-to-end.
 
-Emblem gives firms a single, integrated platform to run their core workflows:
-
-* **Deal Management**. Track pipelines, manage relationships, and centralize diligence—all in one place.
-* **Portfolio Monitoring**. Eliminating spreadsheet chaos with a single source of truth for portfolio company financials. CFOs can submit data directly, which flows seamlessly into the platform.
-* **Automated Reporting**. Generate IC decks, investment memos, portfolio tearsheets, and updates instantly—branded and polished to your firm’s standards.
-
-With Emblem, firms reduce friction across deals, monitoring, and reporting—freeing teams to focus on sourcing, strategy, and value creation instead of chasing data and formatting slides.`;
+* **Deal Management**. Track pipelines, manage relationships, and centralize diligence.
+* **Portfolio Monitoring**. A single source of truth for portfolio financials; CFOs submit data directly.
+* **Automated Reporting**. Generate IC decks, memos, and tearsheets instantly, branded to your firm.`;
 
 // ==========
 
@@ -349,11 +345,29 @@ export const PROJECTS: Project[] = [
       videos: [],
       images: [
         {
+          src: "/projects/reverie/5 - My Library.png",
+          title: "Asset Library",
+          width: 3028,
+          height: 2038,
+          ref: true,
+        },
+        {
+          src: "/projects/reverie/7 - Collection - Favorites.png",
+          title: "Collection - Favorites",
+          width: 3028,
+          height: 2038,
+        },
+        {
+          src: "/projects/reverie/6 - Library - Collections.png",
+          title: "Library - Collections",
+          width: 3028,
+          height: 2038,
+        },
+        {
           src: "/projects/reverie/1 - Moodboard.png",
           title: "Moodboard",
           width: 3028,
           height: 2038,
-          ref: true,
         },
         {
           src: "/projects/reverie/2 - Moodboard - Modal.png",
@@ -373,24 +387,6 @@ export const PROJECTS: Project[] = [
           width: 3028,
           height: 2038,
         },
-        {
-          src: "/projects/reverie/5 - My Library.png",
-          title: "Asset Library",
-          width: 3028,
-          height: 2038,
-        },
-        {
-          src: "/projects/reverie/6 - Library - Collections.png",
-          title: "Library - Collections",
-          width: 3028,
-          height: 2038,
-        },
-        {
-          src: "/projects/reverie/7 - Collection - Favorites.png",
-          title: "Collection - Favorites",
-          width: 3028,
-          height: 2038,
-        },
       ],
     },
   },
@@ -400,7 +396,11 @@ export const PROJECTS: Project[] = [
     year: 2023,
     tagline: "AI operating system for investors",
     description: EMBLEM_DESCRIPTION,
-    thumbnail: { bg: "#101011", fg: "#FFFFFF" },
+    thumbnail: {
+      bg: "#101011",
+      fg: "#FFFFFF",
+      image: "https://www.emblem.pe/emblem-logo-white.png",
+    },
     tags: [
       { name: "next.js", url: "https://nextjs.org/" },
       { name: "mastra", url: "https://mastra.ai/" },

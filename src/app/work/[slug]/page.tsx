@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getProjectBySlug, PROJECTS } from "@/lib/projects";
-import { Badge } from "@/components/ui/badge";
 import { ProjectGallery } from "@/components/project-gallery";
 import { Markdown } from "@/components/markdown";
 import { IconGithub, PROJECT_ICONS } from "@/components/ui/icons";
@@ -17,7 +16,7 @@ import { IconGithub, PROJECT_ICONS } from "@/components/ui/icons";
 // ---------------------------------------------------
 
 export async function generateStaticParams() {
-  return PROJECTS.filter((p) => p.showcase).map((project) => ({
+  return PROJECTS.map((project) => ({
     slug: project.slug,
   }));
 }
@@ -30,7 +29,7 @@ export default async function ProjectPage({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
-  if (!project || !project.showcase) {
+  if (!project) {
     notFound();
   }
 
@@ -41,13 +40,10 @@ export default async function ProjectPage({
     ((project.gallery.videos && project.gallery.videos.length > 0) ||
       (project.gallery.images && project.gallery.images.length > 0));
 
-  return (
-    <div className="max-w-[1180px] mx-auto px-6 md:px-10 pt-8 pb-24">
-      <div className="lg:grid lg:grid-cols-[minmax(0,400px)_minmax(0,1fr)] lg:gap-14 xl:gap-20 lg:items-start">
-        {/* Left: text — pinned, vertically centered, while the gallery scrolls */}
-        <div className="lg:sticky lg:top-0 lg:self-start lg:h-screen lg:flex lg:flex-col lg:justify-center">
-          {/* Back */}
-          <div className="mb-12">
+  const textColumn = (
+    <>
+      {/* Back */}
+      <div className="mb-12">
             <Link
               href="/work"
               className="font-mono text-[8.5pt] text-muted hover:text-ink transition-colors duration-200"
@@ -63,49 +59,20 @@ export default async function ProjectPage({
 
           {/* Title + tags */}
           <div className="mb-2.5">
-            <div className="flex items-center gap-x-5 gap-y-2 flex-wrap min-w-0">
-              <h1
-                className="text-foreground"
-                style={{
-                  fontFamily: "var(--font-spezia), sans-serif",
-                  fontSize: "2.125rem",
-                  fontWeight: 400,
-                  lineHeight: 1.2,
-                  letterSpacing: "-0.045em",
-                  marginTop: 0,
-                  marginBottom: 0,
-                }}
-              >
-                {project.name}
-              </h1>
-              <div className="flex items-center gap-3">
-                {project.tags.map((tag) => {
-                  const tagName = typeof tag === "string" ? tag : tag.name;
-                  const tagUrl = typeof tag === "string" ? undefined : tag.url;
-
-                  if (tagUrl) {
-                    return (
-                      <Link
-                        key={tagName}
-                        href={tagUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Badge className="font-mono text-[13px] hover:bg-muted-foreground/20 transition-colors cursor-pointer">
-                          {tagName}
-                        </Badge>
-                      </Link>
-                    );
-                  }
-
-                  return (
-                    <Badge key={tagName} className="font-mono text-[13px]">
-                      {tagName}
-                    </Badge>
-                  );
-                })}
-              </div>
-            </div>
+            <h1
+              className="text-foreground"
+              style={{
+                fontFamily: "var(--font-spezia), sans-serif",
+                fontSize: "2.125rem",
+                fontWeight: 400,
+                lineHeight: 1.2,
+                letterSpacing: "-0.045em",
+                marginTop: 0,
+                marginBottom: 0,
+              }}
+            >
+              {project.name}
+            </h1>
 
             {/* GitHub stacked under the title (narrow left rail) */}
             {project.github && (
@@ -155,19 +122,33 @@ export default async function ProjectPage({
               <Markdown content={project.description} />
             )}
           </div>
-        </div>
+    </>
+  );
 
-        {/* Right: gallery — scrolls past the pinned text */}
-        {hasGallery && (
-          <div className="mt-12 lg:mt-0">
+  return (
+    <div className="max-w-[1280px] mx-auto px-5 md:px-6 pt-6">
+      {hasGallery ? (
+        <div className="lg:grid lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-10 xl:gap-16 lg:items-start">
+          {/* Left: text — pinned, vertically centered, while the gallery scrolls.
+           * The bottom padding lives on the gallery column (not the outer
+           * container) so the grid extends to the page bottom — otherwise the
+           * full-height sticky column gets clamped upward at the end of scroll. */}
+          <div className="lg:sticky lg:top-6 lg:self-start lg:h-[calc(100vh-1.5rem)] lg:flex lg:flex-col lg:justify-center lg:pb-[14vh]">
+            {textColumn}
+          </div>
+
+          {/* Right: gallery — scrolls past the pinned text */}
+          <div className="mt-12 lg:mt-0 pb-24">
             <ProjectGallery
               videos={project.gallery!.videos}
               images={project.gallery!.images}
               projectName={project.name}
             />
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="max-w-[var(--content-width)] mx-auto pb-24">{textColumn}</div>
+      )}
     </div>
   );
 }
