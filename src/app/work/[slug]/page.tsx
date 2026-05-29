@@ -81,7 +81,7 @@ export default async function ProjectPage({
                   href={`https://github.com/${project.github}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-3 hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center space-x-3 text-link hover:opacity-80 transition-opacity"
                 >
                   <IconGithub />
                   <span className="text-xs font-mono">{project.github}</span>
@@ -97,7 +97,7 @@ export default async function ProjectPage({
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-secondary font-mono text-[13.2px] pb-1 border-b border-transparent hover:border-secondary/20"
+                className="font-mono text-[13.2px] text-link hover:underline underline-offset-4 decoration-[1px] decoration-link/60"
               >
                 {project.url}
               </Link>

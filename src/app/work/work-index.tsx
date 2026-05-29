@@ -63,12 +63,7 @@ function ProjectCard({ project }: { project: Project }) {
     >
       <article className="flex flex-col">
         <div
-          className="relative aspect-square w-full overflow-hidden bg-muted/40"
-          style={
-            !thumb && project.thumbnail?.bg
-              ? { backgroundColor: project.thumbnail.bg }
-              : undefined
-          }
+          className="relative aspect-square w-full overflow-hidden bg-card"
         >
           {thumb ? (
             <Image
