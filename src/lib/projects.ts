@@ -79,16 +79,16 @@ const KERNL_DESCRIPTION = `Chat is the wrong primitive for AI work. As agents be
 
 A project management tool, Linear + Notion lineage, with two structural ideas:
 
-1. **Tasks as the unit of human-agent coordination.** Dispatch, monitor, review — the way you work with a person who is partially trusted.
-2. **Documents as intermediate execution artifacts.** You inspect what the agents did, not just what they output.
+1. Tasks as the unit of human-agent coordination. Dispatch, monitor, review — the way you work with a person who is partially trusted.
+2. Documents as intermediate execution artifacts. You inspect what the agents did, not just what they output.
 `;
 
 const KERNL_DESCRIPTION_MOBILE = `Chat is the wrong primitive for AI work. As agents become more autonomous, intellectual work shifts toward coordinating autonomous workers — and we already have a mental model for that. It's how we work with other people. The shift is toward async forms of work, and kernl sits at the coordination layer.
 
 A project management tool, Linear + Notion lineage, with two structural ideas:
 
-1. **Tasks as the unit of human-agent coordination.** Dispatch, monitor, review — the way you work with a person who is partially trusted.
-2. **Documents as intermediate execution artifacts.** You inspect what the agents did, not just what they output.
+1. Tasks as the unit of human-agent coordination. Dispatch, monitor, review — the way you work with a person who is partially trusted.
+2. Documents as intermediate execution artifacts. You inspect what the agents did, not just what they output.
 `;
 
 // ==========
@@ -97,17 +97,17 @@ const MICROPROJECTS_DESCRIPTION = `A Next.js template inspired by everything I'v
 
 Key features:
 
-* **Authentication with Clerk**. Secure, scalable auth system with support for multi-user workspaces.
-* **Multi-Tenancy**. Workspace-based separation of data to enable team and enterprise use cases.
-* **Billing & Payments**. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
+* Authentication with Clerk. Secure, scalable auth system with support for multi-user workspaces.
+* Multi-Tenancy. Workspace-based separation of data to enable team and enterprise use cases.
+* Billing & Payments. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
 
 const MICROPROJECTS_DESCRIPTION_MOBILE = `A Next.js template inspired by everything I've learned building web apps, designed for rapidly launching SaaS products with all the standard boilerplate.
 
 Key features:
 
-* **Authentication with Clerk**. Secure, scalable auth system with support for multi-user workspaces.
-* **Multi-Tenancy**. Workspace-based separation of data to enable team and enterprise use cases.
-* **Billing & Payments**. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
+* Authentication with Clerk. Secure, scalable auth system with support for multi-user workspaces.
+* Multi-Tenancy. Workspace-based separation of data to enable team and enterprise use cases.
+* Billing & Payments. Stripe integration supporting both subscriptions and usage-based billing for metered AI workloads.`;
 
 // ==========
 
@@ -115,11 +115,13 @@ const REVERIE_DESCRIPTION = `rêverie is a concept design project with the aim o
 
 // ==========
 
-const EMBLEM_DESCRIPTION = `Emblem is an AI operating system for investors—deal management, portfolio monitoring, and automated reporting in a single platform, built to automate investor workflows end-to-end.
+const EMBLEM_DESCRIPTION = `Emblem is an AI operating system for investors that manages deal flow for firms overseeing more than $1B in AUM, unifying deal management, portfolio monitoring, and automated reporting in a single platform—accelerating diligence and cutting manual work out of investor workflows:
 
-* **Deal Management**. Track pipelines, manage relationships, and centralize diligence.
-* **Portfolio Monitoring**. A single source of truth for portfolio financials; CFOs submit data directly.
-* **Automated Reporting**. Generate IC decks, memos, and tearsheets instantly, branded to your firm.`;
+* Deal Management — track pipelines, manage relationships, and centralize diligence.
+* Portfolio Monitoring — a single source of truth for portfolio financials.
+* Accelerated Diligence — generate IC decks, memos, LBO models, and tearsheets instantly, learned from the firm's style.
+
+As sole technical cofounder, I ran the user research, translated those needs into product design, and led development of the entire platform from discovery to pilot through multiple iterations with our design partners.`;
 
 // ==========
 
@@ -137,9 +139,9 @@ Filings, fundamentals, and the rest of the institutional data layer still matter
 
 Hermaeus indexes wherever the signal lives — whether it's a number from a 10-K or a take from a podcast — under one trust contract:
 
-1. **Source-linked.** Every data point traces back to the original document. Audit-ready by default.
-2. **Entity-resolved.** Companies, people, subsidiaries, filings, and the people writing about them — cross-referenced into one coherent graph.
-3. **API-first.** One key, one query language. Structured signal for analysts, developers, and the agents working alongside them.
+1. Source-linked. Every data point traces back to the original document. Audit-ready by default.
+2. Entity-resolved. Companies, people, subsidiaries, filings, and the people writing about them — cross-referenced into one coherent graph.
+3. API-first. One key, one query language. Structured signal for analysts, developers, and the agents working alongside them.
 
 Built for the investors, analysts, and agents making real decisions on the new information frontier.`;
 

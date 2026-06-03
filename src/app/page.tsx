@@ -77,7 +77,7 @@ export default function Home() {
               aria-label="LinkedIn"
               className="hover:text-ink transition-colors duration-200"
             >
-              <IconLinkedIn className="size-[14px] md:size-[13px]" />
+              <IconLinkedIn className="size-[16px] md:size-[15px]" />
             </a>
           </div>
         </div>
