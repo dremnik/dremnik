@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { geist, geistMono, tiemposText, financierDisplay, spezia } from "@/lib/fonts";
-import { ThemeProvider } from "@/components/theme-provider";
+import { geist, geistMono, tiemposText, financierDisplay, edictDisplay, spezia } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -16,15 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
-        className={`${geist.variable} ${geistMono.variable} ${tiemposText.variable} ${financierDisplay.variable} ${spezia.variable} font-sans antialiased`}
+        className={`${geist.variable} ${geistMono.variable} ${tiemposText.variable} ${financierDisplay.variable} ${edictDisplay.variable} ${spezia.variable} font-sans antialiased`}
       >
-        <ThemeProvider>
-          <div className="min-h-[100svh] flex flex-col">
-            <main className="flex-1">{children}</main>
-          </div>
-        </ThemeProvider>
+        <div className="min-h-[100svh] flex flex-col">
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );

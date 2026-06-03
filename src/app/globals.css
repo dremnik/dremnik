@@ -20,9 +20,10 @@
     --font-sans: var(--font-geist);
     --font-sans-display: var(--font-spezia);
     --font-mono: var(--font-geist-mono);
-    --font-serif: var(--font-tiempos);
+    --font-serif: var(--font-edict);
     --font-serif-display: var(--font-financier-display);
     --font-tiempos: var(--font-tiempos);
+    --font-edict: var(--font-edict);
     --font-financier-display: var(--font-financier-display);
     --font-spezia: var(--font-spezia);
 

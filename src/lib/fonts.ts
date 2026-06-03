@@ -47,6 +47,20 @@ export const tiemposText = localFont({
   display: "swap",
 });
 
+export const edictDisplay = localFont({
+  src: [
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-Light.otf", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-LightItalic.otf", weight: "300", style: "italic" },
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-Regular.otf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-RegularItalic.otf", weight: "400", style: "italic" },
+    // no Medium in the trial — map 500 -> Regular to avoid faux-bold
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-Regular.otf", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Edict/EdictDisplayTrial-RegularItalic.otf", weight: "500", style: "italic" },
+  ],
+  variable: "--font-edict",
+  display: "swap",
+});
+
 export const financierDisplay = localFont({
   src: [
     { path: "../../public/fonts/Family/TestFinancierDisplay-Light.otf", weight: "300", style: "normal" },
