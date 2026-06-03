@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { geist, geistMono, tiemposText, financierDisplay, edictDisplay, spezia } from "@/lib/fonts";
 
 import "./globals.css";
@@ -22,6 +23,7 @@ export default function RootLayout({
         <div className="min-h-[100svh] flex flex-col">
           <main className="flex-1">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
