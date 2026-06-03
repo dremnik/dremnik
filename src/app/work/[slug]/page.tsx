@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, PROJECTS } from "@/lib/projects";
 import { GalleryPreview } from "@/components/project-gallery";
 import { Markdown } from "@/components/markdown";
+import { Header } from "@/components/header";
 import { IconGithub, PROJECT_ICONS } from "@/components/ui/icons";
 
 // ---------------------------------------------------
@@ -42,16 +43,6 @@ export default async function ProjectPage({
 
   const textColumn = (
     <>
-      {/* Back */}
-      <div className="mb-12">
-            <Link
-              href="/work"
-              className="font-mono text-[8.5pt] text-muted hover:text-ink transition-colors duration-200"
-            >
-              ← back
-            </Link>
-          </div>
-
           {/* Icon */}
           <div className="mb-7">
             {PROJECT_ICONS[project.slug as keyof typeof PROJECT_ICONS]}
@@ -126,6 +117,8 @@ export default async function ProjectPage({
   );
 
   return (
+    <>
+    <Header />
     <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24">
       {textColumn}
 
@@ -144,5 +137,6 @@ export default async function ProjectPage({
         </div>
       )}
     </div>
+    </>
   );
 }

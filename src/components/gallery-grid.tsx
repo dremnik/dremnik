@@ -20,17 +20,26 @@ interface GalleryGridProps {
   projectName: string;
 }
 
-// Masonry of every image. Columns flow independently (no row-alignment gaps),
-// but images are distributed round-robin so reading order stays left-to-right,
-// top-to-bottom (1 2 / 3 4 / ...). Clicking a tile opens a zoom lightbox.
-export function GalleryGrid({ images, projectName }: GalleryGridProps) {
-  const [selected, setSelected] = useState<GalleryImage | null>(null);
-
-  const Tile = ({ image, index }: { image: GalleryImage; index: number }) => (
+// Hoisted so its component identity is stable across GalleryGrid re-renders
+// (e.g. opening/closing the lightbox) — otherwise the tiles remount and the
+// blur-rise entrance animation replays every time.
+function GalleryTile({
+  image,
+  index,
+  projectName,
+  onSelect,
+}: {
+  image: GalleryImage;
+  index: number;
+  projectName: string;
+  onSelect: (image: GalleryImage) => void;
+}) {
+  return (
     <button
       type="button"
-      onClick={() => setSelected(image)}
-      className="group block w-full overflow-hidden rounded-xl bg-secondary shadow cursor-pointer"
+      onClick={() => onSelect(image)}
+      style={{ animationDelay: `${index * 60}ms` }}
+      className="group block w-full overflow-hidden rounded-lg bg-secondary shadow cursor-pointer animate-blur-rise"
     >
       <Image
         src={image.src}
@@ -41,6 +50,13 @@ export function GalleryGrid({ images, projectName }: GalleryGridProps) {
       />
     </button>
   );
+}
+
+// Masonry of every image. Columns flow independently (no row-alignment gaps),
+// but images are distributed so reading order stays left-to-right, top-to-bottom
+// (1 2 / 3 4 / ...). Clicking a tile opens a zoom lightbox.
+export function GalleryGrid({ images, projectName }: GalleryGridProps) {
+  const [selected, setSelected] = useState<GalleryImage | null>(null);
 
   // Balanced masonry: walk images in order and drop each into the currently
   // shorter column (estimated height = rendered aspect ratio, since columns are
@@ -60,16 +76,28 @@ export function GalleryGrid({ images, projectName }: GalleryGridProps) {
       {/* Mobile: single column in natural order */}
       <div className="flex flex-col gap-4 sm:hidden">
         {images.map((image, index) => (
-          <Tile key={`m-${index}`} image={image} index={index} />
+          <GalleryTile
+            key={`m-${index}`}
+            image={image}
+            index={index}
+            projectName={projectName}
+            onSelect={setSelected}
+          />
         ))}
       </div>
 
-      {/* sm+: two independent columns, round-robin so order reads 1 2 / 3 4 */}
+      {/* sm+: two independent columns, balanced so order reads 1 2 / 3 4 */}
       <div className="hidden gap-4 sm:flex">
         {columns.map((col, ci) => (
           <div key={`col-${ci}`} className="flex flex-1 flex-col gap-4">
             {col.map(({ image, index }) => (
-              <Tile key={`d-${index}`} image={image} index={index} />
+              <GalleryTile
+                key={`d-${index}`}
+                image={image}
+                index={index}
+                projectName={projectName}
+                onSelect={setSelected}
+              />
             ))}
           </div>
         ))}

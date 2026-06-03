@@ -54,7 +54,7 @@ export function GalleryPreview({
       ))}
 
       {previewImages.length > 0 && (
-        <div className="grid grid-cols-3 gap-3 max-w-[480px]">
+        <div className="grid grid-cols-3 gap-3">
           {previewImages.map((image, index) => {
             const isOverflowTile = index === 5 && remaining > 0;
             return (
@@ -66,7 +66,8 @@ export function GalleryPreview({
                     ? `View all ${normalizedImages.length} images`
                     : `Open ${projectName} gallery`
                 }
-                className={`group relative aspect-square overflow-hidden rounded-xl bg-secondary shadow ${
+                style={{ animationDelay: `${index * 70}ms` }}
+                className={`group relative aspect-square overflow-hidden bg-secondary animate-blur-rise ${
                   previewImages.length === 1 ? "col-span-3" : ""
                 }`}
               >
@@ -79,7 +80,7 @@ export function GalleryPreview({
                 />
                 {isOverflowTile && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/55 backdrop-blur-[1px]">
-                    <span className="font-mono text-[11pt] font-medium tracking-[0.02em] text-white">
+                    <span className="font-mono text-[11pt] font-medium tracking-[0.02em] text-[#B5D6FB]">
                       +{remaining} more
                     </span>
                   </div>

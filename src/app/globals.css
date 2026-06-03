@@ -36,7 +36,7 @@
     --soft: #52525b;
     --muted: #71717a;
     --rule: #e4e4e7;
-    --bg: #f4f4f5;
+    --bg: #ffffff;
     --card: #101011;
     --link: #053961aa;
     --code-bg: hsla(240, 6%, 90%, 0.5);
@@ -67,5 +67,31 @@
         font-family: var(--font-geist), -apple-system, system-ui, sans-serif;
         letter-spacing: -0.005em;
         -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* ─── Blur Rise Animation (gallery reveal) ─── */
+@keyframes blur-rise {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.animate-blur-rise {
+    animation: blur-rise 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-blur-rise {
+        animation: none;
+        opacity: 1;
     }
 }

@@ -56,16 +56,13 @@ export default async function GalleryPage({
 
   return (
     <div className="max-w-[1280px] mx-auto px-5 md:px-6 pt-6 pb-24">
-      <div className="mb-8 flex items-baseline justify-between gap-4">
+      <div className="mb-8">
         <Link
           href={`/work/${project.slug}`}
           className="font-mono text-[8.5pt] text-muted hover:text-ink transition-colors duration-200"
         >
-          ← {project.name}
+          ← back
         </Link>
-        <span className="font-mono text-[8.5pt] uppercase tracking-[0.08em] text-muted">
-          {images.length} images
-        </span>
       </div>
 
       <GalleryGrid images={images} projectName={project.name} />

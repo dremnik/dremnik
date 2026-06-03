@@ -27,7 +27,7 @@ export default function WorkIndex() {
   ).filter((p): p is Project => Boolean(p));
 
   return (
-    <div className="max-w-[1360px] mx-auto px-8 md:px-12 pb-24">
+    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pb-24">
       <Section items={items} />
     </div>
   );
@@ -41,7 +41,7 @@ function Section({ label, items }: { label?: string; items: Project[] }) {
           {label}
         </h2>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-x-6 gap-y-14">
+      <div className="grid grid-cols-1 sm:grid-cols-2 mt-4 gap-x-6 gap-y-14">
         {items.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
@@ -74,7 +74,7 @@ function ProjectCard({ project }: { project: Project }) {
               className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             />
           ) : project.thumbnail?.image ? (
-            <div className="absolute inset-0 flex items-center justify-center p-40">
+            <div className="absolute inset-0 flex items-center justify-center p-[42%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={project.thumbnail.image}
@@ -91,7 +91,7 @@ function ProjectCard({ project }: { project: Project }) {
             >
               {icon && isValidElement(icon) ? (
                 cloneElement(icon as React.ReactElement<{ className?: string }>, {
-                  className: "size-16",
+                  className: "size-12",
                 })
               ) : (
                 <span className="text-6xl">{project.name.slice(0, 1)}</span>
@@ -101,14 +101,10 @@ function ProjectCard({ project }: { project: Project }) {
 
           {/* Year badge — top-left, dot + label (kernl blue steel) */}
           <div
-            className="absolute top-4 left-4 flex items-center gap-2 font-mono text-[11px] font-medium tracking-[0.14em] uppercase"
+            className="absolute top-4 left-4 font-mono text-[11px] font-medium tracking-[0.14em] uppercase"
             style={{ color: "#B5D1FF" }}
           >
-            <span
-              className="block h-1.5 w-1.5 rounded-full"
-              style={{ backgroundColor: "#B5D1FF" }}
-            />
-            <span>{project.year}</span>
+            {project.year}
           </div>
         </div>
 
