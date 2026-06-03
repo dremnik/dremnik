@@ -20,29 +20,58 @@ interface GalleryGridProps {
   projectName: string;
 }
 
-// Focused two-column masonry of every image. Clicking one opens a single-image
-// zoom lightbox on top.
+// Masonry of every image. Columns flow independently (no row-alignment gaps),
+// but images are distributed round-robin so reading order stays left-to-right,
+// top-to-bottom (1 2 / 3 4 / ...). Clicking a tile opens a zoom lightbox.
 export function GalleryGrid({ images, projectName }: GalleryGridProps) {
   const [selected, setSelected] = useState<GalleryImage | null>(null);
 
+  const Tile = ({ image, index }: { image: GalleryImage; index: number }) => (
+    <button
+      type="button"
+      onClick={() => setSelected(image)}
+      className="group block w-full overflow-hidden rounded-xl bg-secondary shadow cursor-pointer"
+    >
+      <Image
+        src={image.src}
+        alt={image.title || `${projectName} screenshot ${index + 1}`}
+        width={image.width || 1920}
+        height={image.height || 1080}
+        className="block w-full h-auto transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+      />
+    </button>
+  );
+
+  // Balanced masonry: walk images in order and drop each into the currently
+  // shorter column (estimated height = rendered aspect ratio, since columns are
+  // equal width). Keeps heights even while preserving rough top-down order.
+  const columns: { image: GalleryImage; index: number }[][] = [[], []];
+  const colHeights = [0, 0];
+  images.forEach((image, index) => {
+    const ratio =
+      image.width && image.height ? image.height / image.width : 0.625;
+    const target = colHeights[0] <= colHeights[1] ? 0 : 1;
+    columns[target].push({ image, index });
+    colHeights[target] += ratio;
+  });
+
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-4">
+      {/* Mobile: single column in natural order */}
+      <div className="flex flex-col gap-4 sm:hidden">
         {images.map((image, index) => (
-          <button
-            key={`img-${index}`}
-            type="button"
-            onClick={() => setSelected(image)}
-            className="group block w-full self-start overflow-hidden rounded-xl bg-secondary shadow cursor-pointer"
-          >
-            <Image
-              src={image.src}
-              alt={image.title || `${projectName} screenshot ${index + 1}`}
-              width={image.width || 1920}
-              height={image.height || 1080}
-              className="block w-full h-auto transition-transform duration-500 ease-out group-hover:scale-[1.01]"
-            />
-          </button>
+          <Tile key={`m-${index}`} image={image} index={index} />
+        ))}
+      </div>
+
+      {/* sm+: two independent columns, round-robin so order reads 1 2 / 3 4 */}
+      <div className="hidden gap-4 sm:flex">
+        {columns.map((col, ci) => (
+          <div key={`col-${ci}`} className="flex flex-1 flex-col gap-4">
+            {col.map(({ image, index }) => (
+              <Tile key={`d-${index}`} image={image} index={index} />
+            ))}
+          </div>
         ))}
       </div>
 
