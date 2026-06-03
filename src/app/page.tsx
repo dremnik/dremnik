@@ -101,8 +101,8 @@ export default function Home() {
           </p>
           <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
             I find myself at home in the dark, searching for new language to
-            describe unknown possibilities. AI will happily optimize the wrong
-            thing with dazzling efficiency, but it won&rsquo;t tell you that
+            describe unknown possibilities. A question is its answer with noise:
+            AI will happily give you answers, but it won&rsquo;t tell you that
             you&rsquo;re asking the wrong question. We are still limited by our
             own lack of clarity.
           </p>
@@ -143,6 +143,16 @@ export default function Home() {
                   className="text-[#051a24] dark:text-[#F6FCFF] hover:text-ink transition-colors duration-200 shrink-0 translate-y-[2px]"
                 >
                   <IconGithub className="size-[14px] md:size-[13px]" />
+                </a>
+              )}
+              {p.url && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 font-mono text-[9pt] md:text-[8.5pt] text-link hover:underline underline-offset-4 decoration-[1px] transition-colors"
+                >
+                  {p.url.replace(/^https?:\/\//, "")}
                 </a>
               )}
             </li>

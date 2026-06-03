@@ -191,6 +191,16 @@ export function WorkExperience() {
                   <IconGithub className="size-[13px]" />
                 </a>
               )}
+              {p.url && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 font-mono text-[9pt] md:text-[8.5pt] text-link hover:underline underline-offset-4 decoration-[1px] transition-colors"
+                >
+                  {p.url.replace(/^https?:\/\//, "")}
+                </a>
+              )}
             </li>
           ))}
         </ul>

@@ -579,10 +579,16 @@ export type SideProject = {
   title: string;
   desc: string;
   github?: string;
+  url?: string;
 };
 
 // Smaller open-source tools — surfaced on the homepage and /cv.
 export const SIDE_PROJECTS: SideProject[] = [
+  {
+    title: "The Apocrypha",
+    desc: "Long-form writing on the period we're in",
+    url: "https://theapocrypha.xyz",
+  },
   {
     title: "kdb",
     desc: "A CLI for knowledge and work",
