@@ -27,13 +27,13 @@ export function GalleryGrid({ images, projectName }: GalleryGridProps) {
 
   return (
     <>
-      <div className="columns-1 sm:columns-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-4">
         {images.map((image, index) => (
           <button
             key={`img-${index}`}
             type="button"
             onClick={() => setSelected(image)}
-            className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl bg-secondary shadow cursor-pointer"
+            className="group block w-full self-start overflow-hidden rounded-xl bg-secondary shadow cursor-pointer"
           >
             <Image
               src={image.src}
