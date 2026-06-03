@@ -423,23 +423,11 @@ export const PROJECTS: Project[] = [
       videos: [],
       images: [
         {
-          src: "/projects/emblem/0 - Universal Chat - Tasks.png",
-          title: "Universal Chat — Tasks",
-          width: 3024,
-          height: 1964,
-          ref: true,
-        },
-        {
-          src: "/projects/emblem/1 - UC - Emblem Agents.png",
-          title: "Universal Chat — Emblem Agents",
-          width: 3024,
-          height: 1964,
-        },
-        {
           src: "/projects/emblem/2 - Pipeline.png",
           title: "Pipeline",
           width: 1512,
           height: 982,
+          ref: true,
         },
         {
           src: "/projects/emblem/3 - Company - Overview.png",
@@ -464,6 +452,18 @@ export const PROJECTS: Project[] = [
           title: "Company — Tasks",
           width: 1512,
           height: 982,
+        },
+        {
+          src: "/projects/emblem/0 - Universal Chat - Tasks.png",
+          title: "Universal Chat — Tasks",
+          width: 3024,
+          height: 1964,
+        },
+        {
+          src: "/projects/emblem/1 - UC - Emblem Agents.png",
+          title: "Universal Chat — Emblem Agents",
+          width: 3024,
+          height: 1964,
         },
       ],
     },
