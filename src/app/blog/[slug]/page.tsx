@@ -84,8 +84,8 @@ export async function generateMetadata({ params }: Props) {
   }
 
   const siteUrl = "https://dremnik.com";
-  const ogImage = post.ogImage;
 
+  // OG/Twitter images come from the dynamic opengraph-image.tsx in this route.
   return {
     title: `${post.title} · dremnik`,
     description: post.description ?? post.title,
@@ -94,13 +94,11 @@ export async function generateMetadata({ params }: Props) {
       description: post.description ?? post.title,
       url: `${siteUrl}/blog/${post.slug}`,
       type: "article",
-      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description ?? post.title,
-      images: [ogImage],
     },
   };
 }
