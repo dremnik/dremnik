@@ -1,37 +1,50 @@
 // ----------------------------------------------
 // projects/dremnik/src/lib/projects.ts
 //
-// export type Project                        L37
-// slug                                       L38
-// name                                       L39
-// year                                       L40
-// tagline                                    L41
-// description                                L42
-// descriptionMobile                          L43
-// name                                       L44
-// tags                                       L44
-// url                                        L44
-// github                                     L45
-// url                                        L46
-// gallery                                    L47
-// videos                                     L48
-// images                                     L49
-// src                                        L50
-// title                                      L51
-// width                                      L52
-// height                                     L53
-// ref                                        L54
-// caption                                    L56
-// const KERNL_DESCRIPTION                    L60
-// const KERNL_DESCRIPTION_MOBILE             L66
-// const MICROPROJECTS_DESCRIPTION            L74
-// const MICROPROJECTS_DESCRIPTION_MOBILE     L82
-// const REVERIE_DESCRIPTION                  L92
-// const EMBLEM_DESCRIPTION                   L96
-// const PROPICS_DESCRIPTION                 L108
-// const ESONUT_DESCRIPTION                  L116
-// export const PROJECTS                     L140
-// export function getProjectBySlug()        L501
+// export type Project                        L50
+// slug                                       L51
+// name                                       L52
+// year                                       L53
+// tagline                                    L54
+// description                                L55
+// descriptionMobile                          L56
+// showcase                                   L59
+// kind                                       L60
+// bg                                         L61
+// fg                                         L61
+// image                                      L61
+// thumbnail                                  L61
+// name                                       L62
+// tags                                       L62
+// url                                        L62
+// github                                     L63
+// url                                        L64
+// gallery                                    L65
+// videos                                     L66
+// images                                     L67
+// src                                        L68
+// title                                      L69
+// width                                      L70
+// height                                     L71
+// ref                                        L72
+// caption                                    L74
+// const KERNL_DESCRIPTION                    L78
+// const KERNL_DESCRIPTION_MOBILE             L86
+// const MICROPROJECTS_DESCRIPTION            L96
+// const MICROPROJECTS_DESCRIPTION_MOBILE    L104
+// const REVERIE_DESCRIPTION                 L114
+// const EMBLEM_DESCRIPTION                  L118
+// const PROPICS_DESCRIPTION                 L126
+// const HERMAEUS_DESCRIPTION                L134
+// const APOCRYPHA_DESCRIPTION               L148
+// const ESONUT_DESCRIPTION                  L154
+// export const PROJECTS                     L159
+// export function getProjectBySlug()        L536
+// export type SideProject                   L540
+// title                                     L541
+// desc                                      L542
+// github                                    L543
+// export const SIDE_PROJECTS                L547
 // ----------------------------------------------
 
 export type Project = {
@@ -185,7 +198,7 @@ export const PROJECTS: Project[] = [
     url: "https://kernl.sh",
     // github: "dremnik/kernl",
     gallery: {
-      videos: ["file:/projects/kernl/demo.mp4"], // Format: "youtube:videoId" or "file:/path/to/video.mp4"
+      videos: [], // Format: "youtube:videoId" or "file:/path/to/video.mp4"
       images: [
         {
           src: "/projects/kernl/1 — Tasks — List View.png",
@@ -523,3 +536,28 @@ export const PROJECTS: Project[] = [
 export function getProjectBySlug(slug: string): Project | undefined {
   return PROJECTS.find((project) => project.slug === slug);
 }
+
+export type SideProject = {
+  title: string;
+  desc: string;
+  github?: string;
+};
+
+// Smaller open-source tools — surfaced on the homepage and /cv.
+export const SIDE_PROJECTS: SideProject[] = [
+  {
+    title: "kdb",
+    desc: "A CLI for knowledge and work",
+    github: "https://github.com/dremnik/kdb",
+  },
+  {
+    title: "opendoc",
+    desc: "Agent-friendly document format",
+    github: "https://github.com/digimata/opendoc",
+  },
+  {
+    title: "parrot",
+    desc: "Ultra-minimalist macOS dictation",
+    github: "https://github.com/digimata/parrot",
+  },
+];

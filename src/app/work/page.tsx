@@ -3,7 +3,7 @@ import Link from "next/link";
 import WorkIndex from "./work-index";
 
 export const metadata: Metadata = {
-  title: "Work · Andrew Jones",
+  title: "Portfolio · Andrew Jones",
   description: "Selected product and design work.",
 };
 
@@ -19,6 +19,9 @@ export default function WorkPage() {
         >
           ← back
         </Link>
+        <h1 className="mt-6 text-[22pt] md:text-[20pt] font-medium tracking-[-0.035em] text-ink">
+          Portfolio
+        </h1>
       </div>
       <WorkIndex />
     </div>

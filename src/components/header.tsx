@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   return (
@@ -8,7 +7,7 @@ export function Header() {
         <nav className="flex items-center justify-between">
           <Link
             href="/"
-            className="font-mono text-[9pt] tracking-[0.02em] text-muted hover:text-ink transition-colors duration-200"
+            className="font-mono text-[9pt] tracking-[0.02em] text-link hover:text-link/80 transition-colors duration-200"
           >
             dremnik
           </Link>
@@ -25,7 +24,6 @@ export function Header() {
             >
               Work
             </Link>
-            <ThemeToggle />
           </div>
         </nav>
       </div>

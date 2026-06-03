@@ -1,118 +1,94 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { normalizeGalleryImages } from "@/lib/gallery";
+import { VideoEmbed } from "@/components/youtube-embed";
+
 // ---------------------------------------
 // projects/dremnik/src/components/project-gallery.tsx
 //
-// interface ProjectGalleryProps
-//   videos
-//   images
-//   projectName
-// export function ProjectGallery()
+// interface GalleryPreviewProps       L23
+//   videos                            L24
+//   images                            L25
+//   height                            L27
+//   ref                               L27
+//   src                               L27
+//   title                             L27
+//   width                             L27
+//   projectName                       L29
+//   projectSlug                       L30
+// export function GalleryPreview()    L36
 // ---------------------------------------
 
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
-
-/* components */
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { VideoEmbed } from "@/components/youtube-embed";
-
-interface ProjectGalleryProps {
+interface GalleryPreviewProps {
   videos?: string[];
   images?: (
     | string
     | { src: string; title?: string; width?: number; height?: number; ref?: boolean }
   )[];
   projectName: string;
+  projectSlug: string;
 }
 
-type GalleryImage = {
-  src: string;
-  title: string;
-  width?: number;
-  height?: number;
-};
-
-export function ProjectGallery({
+// Compact gallery on the project detail page: any videos full-width, then a
+// 2×2 square preview that links out to the focused /work/<slug>/gallery view.
+// The 4th tile carries a "+N more" overlay when there are extra images.
+export function GalleryPreview({
   videos = [],
   images = [],
   projectName,
-}: ProjectGalleryProps) {
-  const [selected, setSelected] = useState<GalleryImage | null>(null);
-
-  // Normalize images to objects with title and dimensions
-  const normalizedImages: GalleryImage[] = (images || []).map((img) =>
-    typeof img === "string"
-      ? {
-          src: img,
-          title:
-            img
-              .split("/")
-              .pop()
-              ?.replace(/\.[^.]+$/, "")
-              ?.replace(/[\-_]+/g, " ") || "",
-          width: undefined,
-          height: undefined,
-        }
-      : {
-          src: img.src,
-          title: img.title || "",
-          width: img.width,
-          height: img.height,
-        }
-  );
+  projectSlug,
+}: GalleryPreviewProps) {
+  const normalizedImages = normalizeGalleryImages(images);
+  const previewImages = normalizedImages.slice(0, 6);
+  const remaining = normalizedImages.length - 6;
+  const galleryHref = `/work/${projectSlug}/gallery`;
 
   return (
     <div className="space-y-3">
       {/* Videos first, full width */}
       {videos?.map((video, index) => (
         <div key={`video-${index}`} className="aspect-video rounded-xl overflow-hidden">
-          <VideoEmbed
-            video={video}
-            title={`${projectName} video ${index + 1}`}
-          />
+          <VideoEmbed video={video} title={`${projectName} video ${index + 1}`} />
         </div>
       ))}
 
-      {/* Then images, each at its natural aspect ratio — click to open the focused view */}
-      {normalizedImages?.map((image, index) => (
-        <div
-          key={`image-${index}`}
-          className="bg-secondary shadow rounded-xl overflow-hidden cursor-pointer"
-          onClick={() => setSelected(image)}
-        >
-          <Image
-            src={image.src}
-            alt={image.title || `${projectName} screenshot ${index + 1}`}
-            width={image.width || 1920}
-            height={image.height || 1080}
-            className="block w-full h-auto"
-          />
+      {previewImages.length > 0 && (
+        <div className="grid grid-cols-3 gap-3 max-w-[480px]">
+          {previewImages.map((image, index) => {
+            const isOverflowTile = index === 5 && remaining > 0;
+            return (
+              <Link
+                key={`preview-${index}`}
+                href={galleryHref}
+                aria-label={
+                  isOverflowTile
+                    ? `View all ${normalizedImages.length} images`
+                    : `Open ${projectName} gallery`
+                }
+                className={`group relative aspect-square overflow-hidden rounded-xl bg-secondary shadow ${
+                  previewImages.length === 1 ? "col-span-3" : ""
+                }`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.title || `${projectName} screenshot ${index + 1}`}
+                  fill
+                  sizes="(min-width: 1024px) 160px, 33vw"
+                  className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                />
+                {isOverflowTile && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/55 backdrop-blur-[1px]">
+                    <span className="font-mono text-[11pt] font-medium tracking-[0.02em] text-white">
+                      +{remaining} more
+                    </span>
+                  </div>
+                )}
+              </Link>
+            );
+          })}
         </div>
-      ))}
-
-      {/* Focused single-image view */}
-      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DialogContent
-          overlayClassName="bg-black/30 dark:bg-black/40 backdrop-blur-[2px]"
-          className="w-[min(95vw,1400px)] max-w-[1400px] sm:max-w-[1400px] max-h-[90vh] p-0 border-0 bg-transparent shadow-none overflow-hidden"
-        >
-          <DialogTitle className="sr-only">
-            {selected?.title || projectName}
-          </DialogTitle>
-          {selected && (
-            <div className="max-h-[90vh] overflow-y-auto rounded-xl">
-              <Image
-                src={selected.src}
-                alt={selected.title || projectName}
-                width={selected.width || 1920}
-                height={selected.height || 1080}
-                className="block w-full h-auto select-none rounded-xl"
-              />
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      )}
     </div>
   );
 }

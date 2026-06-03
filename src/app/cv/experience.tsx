@@ -1,19 +1,22 @@
-// -----------------------------------------------------
-// projects/dremnik/src/app/work/experience.tsx
-//
-// Résumé content (formerly /cv), rendered below the work
-// grid so /work is the single unified showcase page.
-//
-// type Block                          L?
-// const independent                   L?
-// type SideProject                    L?
-// const sideProjects                  L?
-// const experience                    L?
-// function Section()                  L?
-// export function WorkExperience()    L?
-// -----------------------------------------------------
-
 import { IconGithub } from "@/components/ui/icons";
+import { SIDE_PROJECTS } from "@/lib/projects";
+
+// ----------------------------------------
+// projects/dremnik/src/app/cv/experience.tsx
+//
+// type Block                           L21
+// title                                L22
+// url                                  L23
+// years                                L24
+// body                                 L25
+// const independent                    L28
+// const experience                     L68
+// function Section()                   L97
+// label                               L102
+// intro                               L103
+// blocks                              L104
+// export function WorkExperience()    L149
+// ----------------------------------------
 
 type Block = {
   title: string;
@@ -62,35 +65,11 @@ const independent: Block[] = [
   },
 ];
 
-type SideProject = {
-  title: string;
-  desc: string;
-  github?: string;
-};
-
-const sideProjects: SideProject[] = [
-  {
-    title: "kdb",
-    desc: "A CLI for knowledge and work",
-    github: "https://github.com/dremnik/kdb",
-  },
-  {
-    title: "opendoc",
-    desc: "Agent-friendly document format",
-    github: "https://github.com/digimata/opendoc",
-  },
-  {
-    title: "parrot",
-    desc: "Ultra-minimalist macOS dictation",
-    github: "https://github.com/digimata/parrot",
-  },
-];
-
 const experience: Block[] = [
   {
     title: "Cofounder & CTO — Emblem PE",
     url: "https://emblem.pe",
-    years: "2023—2024",
+    years: "2023—2025",
     body: (
       <>
         Built an AI investment platform for PE, VC, and family offices: deal sourcing,
@@ -177,7 +156,7 @@ export function WorkExperience() {
       </section>
 
       <Section
-        label="Independent work · 2025—"
+        label="Independent work · 2026—"
         intro="Building and selective advisory work since Emblem."
         blocks={independent}
       />
@@ -189,7 +168,7 @@ export function WorkExperience() {
           Side projects
         </h2>
         <ul className="space-y-3 md:space-y-2">
-          {sideProjects.map((p) => (
+          {SIDE_PROJECTS.map((p) => (
             <li
               key={p.title}
               className="flex items-baseline justify-between gap-4"

@@ -2,17 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getProjectBySlug, PROJECTS } from "@/lib/projects";
-import { ProjectGallery } from "@/components/project-gallery";
+import { GalleryPreview } from "@/components/project-gallery";
 import { Markdown } from "@/components/markdown";
 import { IconGithub, PROJECT_ICONS } from "@/components/ui/icons";
 
 // ---------------------------------------------------
 // projects/dremnik/src/app/work/[slug]/page.tsx
 //
-// export async function generateStaticParams()    L19
-// export default async function ProjectPage()     L25
-// params                                          L28
-// slug                                            L28
+// export async function generateStaticParams()    L18
+// export default async function ProjectPage()     L24
+// params                                          L27
+// slug                                            L27
 // ---------------------------------------------------
 
 export async function generateStaticParams() {
@@ -126,28 +126,22 @@ export default async function ProjectPage({
   );
 
   return (
-    <div className="max-w-[1280px] mx-auto px-5 md:px-6 pt-6">
-      {hasGallery ? (
-        <div className="lg:grid lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-10 xl:gap-16 lg:items-start">
-          {/* Left: text — pinned, vertically centered, while the gallery scrolls.
-           * The bottom padding lives on the gallery column (not the outer
-           * container) so the grid extends to the page bottom — otherwise the
-           * full-height sticky column gets clamped upward at the end of scroll. */}
-          <div className="lg:sticky lg:top-6 lg:self-start lg:h-[calc(100vh-1.5rem)] lg:flex lg:flex-col lg:justify-center lg:pb-[14vh]">
-            {textColumn}
-          </div>
+    <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24">
+      {textColumn}
 
-          {/* Right: gallery — scrolls past the pinned text */}
-          <div className="mt-12 lg:mt-0 pb-24">
-            <ProjectGallery
-              videos={project.gallery!.videos}
-              images={project.gallery!.images}
-              projectName={project.name}
-            />
-          </div>
+      {/* Gallery preview below the description */}
+      {hasGallery && (
+        <div className="mt-14">
+          <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-5 pb-1.5 border-b border-rule">
+            Gallery
+          </h2>
+          <GalleryPreview
+            videos={project.gallery!.videos}
+            images={project.gallery!.images}
+            projectName={project.name}
+            projectSlug={project.slug}
+          />
         </div>
-      ) : (
-        <div className="max-w-[var(--content-width)] mx-auto pb-24">{textColumn}</div>
       )}
     </div>
   );

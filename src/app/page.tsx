@@ -2,54 +2,22 @@ import Link from "next/link";
 import { allPosts } from "content-collections";
 import { IconGithub, IconLinkedIn, IconTwitterX } from "@/components/ui/icons";
 import { Header } from "@/components/header";
+import { SIDE_PROJECTS } from "@/lib/projects";
 
 // -------------------------------------
 // projects/dremnik/src/app/page.tsx
 //
-// const X_URL                       L22
-// const GITHUB_URL                  L23
-// const LINKEDIN_URL                L24
-// type Project                      L26
-// title                             L27
-// url                               L28
-// body                              L29
-// const projects                    L32
-// const latestPosts                 L54
-// function formatDate()             L59
-// export default function Home()    L70
+// const X_URL                       L18
+// const GITHUB_URL                  L19
+// const LINKEDIN_URL                L20
+// const latestPosts                 L22
+// function formatDate()             L27
+// export default function Home()    L38
 // -------------------------------------
 
 const X_URL = "https://x.com/dremnik";
 const GITHUB_URL = "https://github.com/dremnik";
 const LINKEDIN_URL = "https://www.linkedin.com/in/andrew-jones-013154219";
-
-type Project = {
-  title: string;
-  url: string;
-  body: React.ReactNode;
-};
-
-const projects: Project[] = [
-  {
-    title: "The Apocrypha",
-    url: "https://theapocrypha.xyz",
-    body: (
-      <>
-        Long-form, low-cadence publication on capital, machines, and
-        the evolution of human systems.
-      </>
-    ),
-  },
-  {
-    title: "Hermaeus",
-    url: "https://hermaeus.xyz",
-    body: (
-      <>
-        Financial data infrastructure for analysts, developers, and AI agents.
-      </>
-    ),
-  },
-];
 
 const latestPosts = [...allPosts]
   .filter((p) => p.published)
@@ -76,11 +44,7 @@ export default function Home() {
         <h1 className="text-[22pt] md:text-[20pt] font-medium tracking-[-0.035em] text-ink leading-tight">
           Andrew Jones
         </h1>
-        <p className="text-[11pt] md:text-[10.5pt] text-ink tracking-[-0.015em] mt-3">
-          I build and write at the intersection of capital, machines, and
-          intelligence.
-        </p>
-        <div className="mt-5 flex items-center justify-between gap-4">
+        <div className="mt-4 flex items-center justify-between gap-4">
           <a
             href="mailto:andrew@dremnik.com"
             className="text-muted text-[10.5pt] md:text-[9.5pt] hover:underline underline-offset-4 decoration-[1px] decoration-muted"
@@ -117,33 +81,66 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        <div className="mt-6 space-y-4">
+          <p className="text-[11pt] md:text-[10.5pt] text-ink tracking-[-0.015em] leading-[1.6]">
+            I&rsquo;m a founder, designer, and engineer operating at the frontier
+            of human&ndash;machine collaboration.
+          </p>
+          <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
+            Most recently I was cofounder and CTO of{" "}
+            <Link
+              href="/work/emblem"
+              className="text-link underline underline-offset-4 decoration-[1px] decoration-link/40 hover:decoration-link transition-colors"
+            >
+              Emblem
+            </Link>
+            , an AI operating system for private equity, venture, and family
+            offices, where I designed and built a product accelerating diligence
+            for firms managing over $1B in assets.
+          </p>
+          <div className="pt-5">
+            <p className="font-medium text-ink text-[11pt] md:text-[10pt] leading-[1.6]">
+              Interests
+            </p>
+            <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6] mt-1.5">
+              Piano, Philosophy, Art, History, and Biology.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-5 pb-1.5 border-b border-rule">
-          Currently
+      <section className="mt-12">
+        <h2 className="font-mono text-[9.5pt] md:text-[8.5pt] uppercase tracking-[0.08em] text-muted mb-3 pb-1.5 border-b border-rule">
+          Side projects
         </h2>
-
-        <div className="space-y-8 md:space-y-7">
-          {projects.map((p) => (
-            <div key={p.title}>
-              <div className="flex items-baseline justify-between gap-3 mb-2">
-                <h3 className="text-[12pt] md:text-[11pt] font-medium tracking-[-0.02em] text-ink">
+        <ul className="space-y-3 md:space-y-2">
+          {SIDE_PROJECTS.map((p) => (
+            <li
+              key={p.title}
+              className="flex items-baseline justify-between gap-4"
+            >
+              <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
+                <span className="font-medium text-ink tracking-[-0.015em]">
                   {p.title}
-                </h3>
+                </span>
+                <span className="text-muted"> — </span>
+                {p.desc}
+              </p>
+              {p.github && (
                 <a
-                  href={p.url}
+                  href={p.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-[8.5pt] text-link hover:underline underline-offset-4 decoration-[1px] decoration-link/60"
+                  aria-label={`${p.title} on GitHub`}
+                  className="text-[#051a24] dark:text-[#F6FCFF] hover:text-ink transition-colors duration-200 shrink-0 translate-y-[2px]"
                 >
-                  {p.url.replace("https://", "")}
+                  <IconGithub className="size-[14px] md:size-[13px]" />
                 </a>
-              </div>
-              <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">{p.body}</p>
-            </div>
+              )}
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {latestPosts.length > 0 && (
