@@ -39,7 +39,7 @@ In business the objective function is simple — maximize profit within your con
 
 Within that framework, each department has its own way of executing the basic loop. For engineering it is an SDLC (requirements → spec → design → build → verify → release). For GTM it is a campaign (target list → messaging → outreach → follow-up). For hiring it is a pipeline. But the outer structure is always the same.
 
-The smallest complete turn of this loop is a *cycle* — plan, execute, review. That is the atomic unit of the epistemic loop: the shortest span over which you can actually form a hypothesis, test it against reality, and update what you believe. The *daily* rhythm beneath it — morning brief → work → shutdown — is execution: you are running the experiment and capturing what happened, not forming a new belief every morning.
+The smallest complete turn of this loop is a *cycle* — plan, execute, review. That is the atomic unit of the epistemic loop: the shortest span over which you can actually form a hypothesis, test it against reality, and update what you believe. The *daily* rhythm beneath it is execution: you are running the experiment and capturing what happened, not forming a new belief every morning.
 
 Above the cycle, the loop runs at longer timescales. *Monthly and quarterly* reviews consolidate the beliefs that survived multiple cycles into worldview and strategy. Each level feeds the next: daily observations bubble up into the weekly review, weekly learnings update the worldview, durable worldview shifts reshape strategy, and strategy constrains the next cycle's planning. It compounds.
 

@@ -99,6 +99,13 @@ export default function Home() {
             offices, where I designed and built a product accelerating diligence
             for firms managing over $1B in assets.
           </p>
+          <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
+            I find myself at home in the dark, searching for new language to
+            describe unknown possibilities. AI will happily optimize the wrong
+            thing with dazzling efficiency, but it won&rsquo;t tell you that
+            you&rsquo;re asking the wrong question. We are still limited by our
+            own lack of clarity.
+          </p>
           <div className="pt-5">
             <p className="font-medium text-ink text-[11pt] md:text-[10pt] leading-[1.6]">
               Interests
