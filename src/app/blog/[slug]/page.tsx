@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { allPosts } from "content-collections";
 
 import { Markdown } from "@/components/markdown";
+import { ReadingProgress } from "@/components/reading-progress";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -28,6 +29,8 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   return (
+    <>
+    <ReadingProgress />
     <div className="max-w-[var(--content-width)] mx-auto px-6 md:px-10 pt-8 pb-24">
       <div className="mb-12">
         <Link
@@ -64,6 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
     </div>
+    </>
   );
 }
 
