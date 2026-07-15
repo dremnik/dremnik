@@ -7,7 +7,7 @@ ogImage: "/favicon.ico"
 published: true
 ---
 
-I wanted to share some ramblings about some of my experiences lately for those interested.
+I wanted to share some ramblings about some of my experiences lately.
 
 As CTO of my last company, in a world where AI was still not good enough to meaningfully accelerate development, I was used to systems being built and maintained at the speed of human cognition. Which is to say insanely slow by today's standards.
 
