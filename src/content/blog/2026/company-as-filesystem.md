@@ -4,7 +4,7 @@ date: "2026-03-08"
 slug: "designing-an-autonomous-company"
 description: "Every piece of company state lives in a folder. Markdown files and shell scripts. The filesystem is the API."
 ogImage: "/favicon.ico"
-published: true
+published: false
 ---
 
 Context graphs are the hot thing at the moment. Everyone is trying to figure out how to give agents a view of the full state of a business, so they can run off and be autonomous little workers.

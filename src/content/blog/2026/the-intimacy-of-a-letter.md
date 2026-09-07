@@ -1,5 +1,5 @@
 ---
-title: "The Intimacy of a Letter"
+title: "The intimacy of a letter"
 date: "2026-09-06"
 slug: "the-intimacy-of-a-letter"
 description: "analog reflections on the pace of our relationships"
