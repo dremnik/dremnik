@@ -89,12 +89,14 @@ export default function Home() {
           </p>
           <p className="text-body text-[11pt] md:text-[10pt] leading-[1.6]">
             Most recently I was cofounder and CTO of{" "}
-            <Link
-              href="/work/emblem"
+            <a
+              href="https://emblem.pe"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-link underline underline-offset-4 decoration-[1px] decoration-link/40 hover:decoration-link transition-colors"
             >
               Emblem
-            </Link>
+            </a>
             , an AI operating system for private equity, venture, and family
             offices, where I designed and built a product accelerating diligence
             for firms managing over $1B in assets.

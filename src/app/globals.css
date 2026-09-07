@@ -68,6 +68,12 @@
         letter-spacing: -0.005em;
         -webkit-font-smoothing: antialiased;
     }
+    /* Selection inverts the page's own pair: ink block, paper text.
+       --body/--bg swap per theme, so dark mode gets a light block with dark text. */
+    ::selection {
+        background: var(--body);
+        color: var(--bg);
+    }
 }
 
 /* ─── Blur Rise Animation (gallery reveal) ─── */

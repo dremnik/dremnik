@@ -582,26 +582,26 @@ export type SideProject = {
   url?: string;
 };
 
-// Smaller open-source tools — surfaced on the homepage and /cv.
+// Smaller tools, ordered by popularity — surfaced on the homepage and /cv.
 export const SIDE_PROJECTS: SideProject[] = [
   {
-    title: "The Apocrypha",
-    desc: "Long-form writing on the period we're in",
-    url: "https://theapocrypha.xyz",
-  },
-  {
-    title: "kdb",
-    desc: "A CLI for knowledge and work",
-    github: "https://github.com/dremnik/kdb",
-  },
-  {
-    title: "opendoc",
-    desc: "Agent-friendly document format",
-    github: "https://github.com/digimata/opendoc",
+    title: "quill",
+    desc: "Ultra-minimalist macOS recording + transcription",
+    github: "https://github.com/digimata/quill",
   },
   {
     title: "parrot",
     desc: "Ultra-minimalist macOS dictation",
     github: "https://github.com/digimata/parrot",
+  },
+  {
+    title: "paper",
+    desc: "A quiet, native markdown editor for macOS",
+    url: "https://papel.sh",
+  },
+  {
+    title: "kdb",
+    desc: "A CLI for knowledge and work",
+    github: "https://github.com/digimata/kdb",
   },
 ];

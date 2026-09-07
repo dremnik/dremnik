@@ -19,12 +19,14 @@ export function Header() {
             >
               Blog
             </Link>
+            {/* Work hidden for now — site is focused on the blog.
             <Link
               href="/work"
               className="text-muted hover:text-ink transition-colors duration-200"
             >
               Work
             </Link>
+            */}
             <ThemeToggle />
           </div>
         </nav>
