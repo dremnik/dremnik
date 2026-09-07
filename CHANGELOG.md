@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 · 2026.09.07
+
+- Remove the aside about email being the tersest medium.
+
+- Format blog-list dates as MM.DD and article dates as YYYY.MM.DD consistently across time zones.
+
 ## 0.1.3 · 2026.09.07
 
 - Use sentence case for “The intimacy of a letter.”

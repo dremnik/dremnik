@@ -8,7 +8,7 @@ published: true
 
 I have lately been fascinated by the idea of letters.
 
-I have even started writing a few of them to my close friends and family. As a form of communication, this extended, solitary meditation addressed to a *single* person has no real modern equivalent. A text message tends to be a short update or response; a phone call lacks the solitary nature of the internal stream of thought; and email, which could have been the closest analog, ended up becoming basically a logistics medium—often the tersest of them all.
+I have even started writing a few of them to my close friends and family. As a form of communication, this extended, solitary meditation addressed to a *single* person has no real modern equivalent. A text message tends to be a short update or response; a phone call lacks the solitary nature of the internal stream of thought; and email, which could have been the closest analog, ended up becoming basically a logistics medium.
 
 There is, I believe, something uniquely intimate about the solitary nature of a letter. It communicates, “I devoted this lengthy stream of consciousness to *you alone*, which cost me both time and attention,” and, being a form of writing, it is a little window into someone’s mind—there is an intimacy to the written word that conversation alone can never achieve. It is this costly kind of focused attention which I find so charming.
 

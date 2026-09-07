@@ -3,17 +3,8 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { allPosts } from "content-collections";
+import { formatBlogDate } from "@/lib/blog-date";
 
-function formatDate(d: Date | string) {
-  const date = new Date(d);
-  return date
-    .toLocaleDateString("en-US", {
-      month: "numeric",
-      day: "numeric",
-      year: "2-digit",
-    })
-    .replaceAll("/", ".");
-}
 
 export default function Blog() {
   const groupedPosts = useMemo(() => {
@@ -51,7 +42,7 @@ export default function Blog() {
                       {post.title}
                     </span>
                     <span className="font-mono text-[8.5pt] text-muted shrink-0">
-                      {formatDate(post.date)}
+                      {formatBlogDate(post.date, false)}
                     </span>
                   </Link>
                 </li>

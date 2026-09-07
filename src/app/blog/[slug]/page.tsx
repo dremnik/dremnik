@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allPosts } from "content-collections";
+import { formatBlogDate } from "@/lib/blog-date";
 
 import { Markdown } from "@/components/markdown";
 
@@ -8,16 +9,6 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-function formatDate(d: Date | string) {
-  const date = new Date(d);
-  return date
-    .toLocaleDateString("en-US", {
-      month: "numeric",
-      day: "numeric",
-      year: "numeric",
-    })
-    .replaceAll("/", ".");
-}
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
@@ -45,7 +36,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           <div className="font-mono text-[9pt] text-muted">
-            {formatDate(post.date)}
+            {formatBlogDate(post.date)}
           </div>
         </header>
 
