@@ -74,6 +74,27 @@
         background: var(--body);
         color: var(--bg);
     }
+    /* Scrollbar: a rounded grey pill on no track, the way native macOS draws it. */
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--muted) transparent;
+    }
+    ::-webkit-scrollbar {
+        width: 9px;
+        height: 9px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--muted);
+        border-radius: 999px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--soft);
+    }
 }
 
 /* ─── Blur Rise Animation (gallery reveal) ─── */

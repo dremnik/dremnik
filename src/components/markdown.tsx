@@ -8,27 +8,27 @@ import type { Components } from "react-markdown";
 
 const components: Components = {
   h1: ({ children }) => (
-    <h1 className="font-serif font-medium text-[28pt] text-ink tracking-[-0.02em] mt-12 mb-5 first:mt-0">
+    <h1 className="font-medium text-[20pt] text-ink mt-12 mb-5 first:mt-0">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="font-serif font-medium text-[21pt] text-ink tracking-[-0.02em] mt-10 mb-4">
+    <h2 className="font-medium text-[15.5pt] text-ink mt-10 mb-4">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="font-serif font-medium text-[17pt] text-ink tracking-[-0.015em] mt-8 mb-3">
+    <h3 className="font-medium text-[13.5pt] text-ink mt-8 mb-3">
       {children}
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="font-serif font-medium text-[15pt] text-ink mt-6 mb-3">
+    <h4 className="font-medium text-[12pt] text-ink mt-6 mb-3">
       {children}
     </h4>
   ),
   p: ({ children }) => (
-    <p className="text-[12.5pt] md:text-[11pt] text-body leading-[1.65] md:leading-[1.6] my-3">
+    <p className="text-[12pt] md:text-[11pt] text-body leading-[1.6] md:leading-[1.55] my-6">
       {children}
     </p>
   ),
@@ -48,12 +48,12 @@ const components: Components = {
     </blockquote>
   ),
   ul: ({ children }) => (
-    <ul className="list-disc list-outside text-body text-[12.5pt] md:text-[11pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5">
+    <ul className="list-disc list-outside text-body text-[12pt] md:text-[11pt] leading-[1.6] md:leading-[1.55] space-y-2 my-6 ml-5">
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className="list-decimal list-outside text-body text-[12.5pt] md:text-[11pt] leading-[1.65] md:leading-[1.6] space-y-1.5 my-4 ml-5 marker:text-muted">
+    <ol className="list-decimal list-outside text-body text-[12pt] md:text-[11pt] leading-[1.6] md:leading-[1.55] space-y-2 my-6 ml-5 marker:text-muted">
       {children}
     </ol>
   ),

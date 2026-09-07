@@ -40,8 +40,8 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       <article>
-        <header className="flex flex-col gap-3 pb-10">
-          <h1 className="text-[28pt] md:text-[32pt] font-medium text-ink tracking-[-0.035em] leading-[1.1]">
+        <header className="flex flex-col gap-2 pb-2">
+          <h1 className="text-[22pt] md:text-[25pt] font-medium text-ink tracking-[-0.02em] leading-[1.15]">
             {post.title}
           </h1>
           <div className="font-mono text-[9pt] text-muted">
